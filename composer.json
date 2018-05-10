@@ -2,7 +2,6 @@
     "name": "iddqd-roman",
     "version": "dev-master",
     "description": "The stolen project",
-    "keywords": ["easyii"],
     "type": "yii2-extension",
     "minimum-stability": "dev",
     "support": {
@@ -28,11 +27,5 @@
         "vova07/yii2-imperavi-widget": "*",
         "stojg/crop": "*",
         "moonlandsoft/yii2-phpexcel": "*"
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
     }
 }
