@@ -1,0 +1,139 @@
+#easyii-navbar {
+    background: #1d212a none repeat scroll 0 0;
+    border-color: #080808;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    margin-bottom: 20px;
+    height: 50px;
+    display: block;
+    font-size: 14px;
+    color: #b3b8c3;
+    font-family: "Open Sans",sans-serif !important;
+    box-sizing: border-box;
+}
+#easyii-navbar::before, #easyii-navbar::after{
+    content: " ";
+    display: table;
+    box-sizing: border-box;
+}
+#easyii-navbar::after{
+    clear: both;
+}
+#easyii-navbar .easyii-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    #easyii-navbar .easyii-container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    #easyii-navbar .easyii-container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    #easyii-navbar .easyii-container {
+        width: 1170px;
+    }
+}
+#easyii-navbar a {
+    color: #9d9d9d;
+    text-decoration: none;
+}
+#easyii-navbar a:hover,#easyii-navbar a:active {
+    color: #fff;
+}
+#easyii-navbar .live-edit-label {
+    margin: 0 10px 0 20px;
+    cursor: pointer;
+    font-weight: normal;
+}
+#easyii-navbar .live-edit-label:hover {
+    color: #fff;
+}
+#easyii-navbar .pull-left {
+    float: left;
+}
+#easyii-navbar .pull-right {
+    float: right;
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+#easyii-navbar .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-arrow-left:before {
+    content: "\e091";
+}
+.glyphicon-pencil:before {
+    content: "\270f";
+}
+.glyphicon-log-out:before {
+    content: "\e163";
+}
+#easyii-navbar .switcher{
+    margin-top: 15px;
+    border: none;
+    background: #b3b8c3;
+    color: #FFF;
+    height: 20px;
+    min-width: 40px;
+    font-size: 11px;
+    border-radius: 10px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+#easyii-navbar .switcher .slider{
+    background: #f0f3f3;
+    height: 18px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #999;
+}
+#easyii-navbar .switcher.is-active{
+    background: #27b6af;
+}
+#easyii-navbar .switcher .textNo{
+    color: #fff;
+}
+/*#easyii-navbar li.live-edit a:hover{
+    background: #27b6af;
+}*/
+
+span.easyiicms-edit{
+    display: inline-block;
+}
+
+.easyiicms-edit{
+    position: relative;
+}
+.easyiicms-goedit{
+    position: absolute; top: 0; left: 0;
+
+}
+.easyiicms-goedit:hover{
+    border: 1px solid #337ab7;
+    box-shadow: 0 0 10px #337ab7;
+    background-color: rgba(51, 122, 183, 0.2);
+}
