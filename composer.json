@@ -1,21 +1,17 @@
 {
-    "name": "noumo/easyii",
+    "name": "iddqd-roman",
     "version": "dev-master",
-    "description": "Easy CMS based on Yii2 Framework - Development package",
+    "description": "The stolen project",
     "keywords": ["easyii"],
-    "homepage": "http://easyiicms.com",
     "type": "yii2-extension",
-    "license": "GNU GPL V3",
     "minimum-stability": "dev",
     "support": {
-        "wiki": "http://easyiicms.com/docs",
-        "source": "https://github.com/noumo/easyii.git",
-        "issues": "https://github.com/noumo/easyii/issues"
+        "source": "https://github.com/iddqd-roman/cms.git",
+        "issues": "https://github.com/iddqd-roman/cms/issues"
     },
     "authors": [
         {
-            "name": "Ivan Vasilkov",
-            "email": "noumohope@gmail.com",
+            "name": "Rocker",
             "role" : "Developer"
         }
     ],
@@ -32,11 +28,6 @@
         "vova07/yii2-imperavi-widget": "*",
         "stojg/crop": "*",
         "moonlandsoft/yii2-phpexcel": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "yii\\easyii\\": "/"
-        }
     },
     "extra": {
         "asset-installer-paths": {
