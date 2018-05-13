@@ -1,11 +1,8 @@
 {
     "name": "iddqd-roman/cms",
     "version": "dev-master",
-    "description": "Easy CMS based on Yii2 Framework - Development package",
-    "keywords": ["cms"],
-    "name": "iddqd-roman",
-    "version": "dev-master",
     "description": "The stolen project",
+    "keywords": ["cms"],
     "type": "yii2-extension",
     "minimum-stability": "dev",
     "support": {
