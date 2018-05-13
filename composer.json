@@ -1,33 +1,22 @@
 {
-<<<<<<< HEAD
     "name": "iddqd-roman/cms",
     "version": "dev-master",
     "description": "Easy CMS based on Yii2 Framework - Development package",
     "keywords": ["cms"],
-    "homepage": "http://cmscms.com",
-=======
     "name": "iddqd-roman",
     "version": "dev-master",
     "description": "The stolen project",
->>>>>>> 939bcefc17209e908d6dcfaa2825c2d93f6540f5
     "type": "yii2-extension",
     "minimum-stability": "dev",
     "support": {
-<<<<<<< HEAD
-        "wiki": "http://cmscms.com/docs",
-=======
->>>>>>> 939bcefc17209e908d6dcfaa2825c2d93f6540f5
         "source": "https://github.com/iddqd-roman/cms.git",
         "issues": "https://github.com/iddqd-roman/cms/issues"
     },
     "authors": [
         {
-<<<<<<< HEAD
             "name": "Ivan Vasilkov",
             "email": "iddqd-romanhope@gmail.com",
-=======
             "name": "Rocker",
->>>>>>> 939bcefc17209e908d6dcfaa2825c2d93f6540f5
             "role" : "Developer"
         }
     ],
@@ -44,7 +33,6 @@
         "vova07/yii2-imperavi-widget": "*",
         "stojg/crop": "*",
         "moonlandsoft/yii2-phpexcel": "*"
-<<<<<<< HEAD
     },
     "autoload": {
         "psr-4": {
@@ -56,7 +44,5 @@
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
         }
-=======
->>>>>>> 939bcefc17209e908d6dcfaa2825c2d93f6540f5
     }
 }
