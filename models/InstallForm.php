@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
 use yii\base\Model;
 
 class InstallForm extends Model
 {
-    const RETURN_URL_KEY = 'easyii_install_root_password';
-    const ROOT_PASSWORD_KEY = 'easyii_install_success_return';
+    const RETURN_URL_KEY = 'cms_install_root_password';
+    const ROOT_PASSWORD_KEY = 'cms_install_success_return';
 
     public $root_password;
     public $recaptcha_key = '';
@@ -33,12 +33,12 @@ class InstallForm extends Model
     public function attributeLabels()
     {
         return [
-            'root_password' => Yii::t('easyii/install', 'Root password'),
-            'admin_email' => Yii::t('easyii/install', 'Admin E-mail'),
-            'robot_email' => Yii::t('easyii/install', 'Robot E-mail'),
-            'telegram_chat_id' => Yii::t('easyii/install', 'Telegram chat ID'),
-            'telegram_bot_token' => Yii::t('easyii/install', 'Telegram bot token'),
-            'metrika' => Yii::t('easyii/install', 'Yandex.Metrika counter'),
+            'root_password' => Yii::t('cms/install', 'Root password'),
+            'admin_email' => Yii::t('cms/install', 'Admin E-mail'),
+            'robot_email' => Yii::t('cms/install', 'Robot E-mail'),
+            'telegram_chat_id' => Yii::t('cms/install', 'Telegram chat ID'),
+            'telegram_bot_token' => Yii::t('cms/install', 'Telegram bot token'),
+            'metrika' => Yii::t('cms/install', 'Yandex.Metrika counter'),
         ];
     }
 

@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\subscribe\models;
+namespace yii\cms\modules\subscribe\models;
 
 use Yii;
 
-class History extends \yii\easyii\components\ActiveRecord
+class History extends \yii\cms\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_subscribe_history';
+        return 'cms_subscribe_history';
     }
 
     public function rules()
@@ -23,8 +23,8 @@ class History extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'subject' => Yii::t('easyii/subscribe', 'Subject'),
-            'body' => Yii::t('easyii/subscribe', 'Body'),
+            'subject' => Yii::t('cms/subscribe', 'Subject'),
+            'body' => Yii::t('cms/subscribe', 'Body'),
         ];
     }
 }

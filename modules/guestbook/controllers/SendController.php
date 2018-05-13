@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\modules\guestbook\controllers;
+namespace yii\cms\modules\guestbook\controllers;
 
 use Yii;
-use yii\easyii\modules\guestbook\models\Guestbook as GuestbookModel;
+use yii\cms\modules\guestbook\models\Guestbook as GuestbookModel;
 
 class SendController extends \yii\web\Controller
 {

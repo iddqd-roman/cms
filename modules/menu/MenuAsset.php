@@ -1,10 +1,10 @@
 <?php
-namespace yii\easyii\modules\menu;
+namespace yii\cms\modules\menu;
 
 use yii\web\AssetBundle;
 
 class MenuAsset extends AssetBundle{
-    public $sourcePath = '@easyii/modules/menu/assets';
+    public $sourcePath = '@cms/modules/menu/assets';
     public $baseUrl = '@web';
     public $js = [
         'js/Sortable.min.js',

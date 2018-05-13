@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\catalog\api;
+namespace yii\cms\modules\catalog\api;
 
 use Yii;
-use yii\easyii\components\API;
-use yii\easyii\models\Photo;
-use yii\easyii\modules\catalog\models\Item;
+use yii\cms\components\API;
+use yii\cms\models\Photo;
+use yii\cms\modules\catalog\models\Item;
 use yii\helpers\Url;
 
-class ItemObject extends \yii\easyii\components\ApiObject
+class ItemObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $data;

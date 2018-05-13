@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 
 class Telegram
 {

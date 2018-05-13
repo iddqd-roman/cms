@@ -1,9 +1,9 @@
 <?php
-use yii\easyii\modules\entity\models\Item;
+use yii\cms\modules\entity\models\Item;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii/entity', 'Entity');
+$this->title = Yii::t('cms/entity', 'Entity');
 
 $module = $this->context->module->id;
 ?>
@@ -14,8 +14,8 @@ $module = $this->context->module->id;
         <thead>
         <tr>
             <th width="50">#</th>
-            <th><?= Yii::t('easyii', 'Name') ?></th>
-            <th width="100"><?= Yii::t('easyii', 'Status') ?></th>
+            <th><?= Yii::t('cms', 'Name') ?></th>
+            <th width="100"><?= Yii::t('cms', 'Status') ?></th>
             <th width="120"></th>
         </tr>
         </thead>
@@ -33,9 +33,9 @@ $module = $this->context->module->id;
                 </td>
                 <td class="text-right">
                     <div class="btn-group btn-group-sm" role="group">
-                        <a href="<?= Url::to(['/admin/'.$module.'/items/up', 'id' => $item->primaryKey, 'category_id' => $category->primaryKey]) ?>" class="btn btn-default move-up" title="<?= Yii::t('easyii', 'Move up') ?>"><span class="glyphicon glyphicon-arrow-up"></span></a>
-                        <a href="<?= Url::to(['/admin/'.$module.'/items/down', 'id' => $item->primaryKey, 'category_id' => $category->primaryKey]) ?>" class="btn btn-default move-down" title="<?= Yii::t('easyii', 'Move down') ?>"><span class="glyphicon glyphicon-arrow-down"></span></a>
-                        <a href="<?= Url::to(['/admin/'.$module.'/items/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a href="<?= Url::to(['/admin/'.$module.'/items/up', 'id' => $item->primaryKey, 'category_id' => $category->primaryKey]) ?>" class="btn btn-default move-up" title="<?= Yii::t('cms', 'Move up') ?>"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                        <a href="<?= Url::to(['/admin/'.$module.'/items/down', 'id' => $item->primaryKey, 'category_id' => $category->primaryKey]) ?>" class="btn btn-default move-down" title="<?= Yii::t('cms', 'Move down') ?>"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                        <a href="<?= Url::to(['/admin/'.$module.'/items/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
                     </div>
                 </td>
             </tr>
@@ -43,5 +43,5 @@ $module = $this->context->module->id;
         </tbody>
     </table>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

@@ -1,25 +1,25 @@
 <?php
-namespace yii\easyii\modules\faq\controllers;
+namespace yii\cms\modules\faq\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
 use yii\widgets\ActiveForm;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\faq\models\Faq;
+use yii\cms\components\Controller;
+use yii\cms\modules\faq\models\Faq;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\faq\models\Faq';
+    public $modelClass = 'yii\cms\modules\faq\models\Faq';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/faq', 'Entry deleted')
+                'successMessage' => Yii::t('cms/faq', 'Entry deleted')
             ],
             'up' => SortByNumAction::className(),
             'down' => SortByNumAction::className(),
@@ -49,11 +49,11 @@ class AController extends Controller
             }
             else{
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/faq', 'Entry created'));
+                    $this->flash('success', Yii::t('cms/faq', 'Entry created'));
                     return $this->redirect(['/admin/'.$this->module->id]);
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -78,10 +78,10 @@ class AController extends Controller
             }
             else{
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/faq', 'Entry updated'));
+                    $this->flash('success', Yii::t('cms/faq', 'Entry updated'));
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }

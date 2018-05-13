@@ -1,9 +1,9 @@
 <?php
 
 use yii\db\Schema;
-use yii\easyii\models;
-use \yii\easyii\modules\content\modules\contentElements\models\ElementOption;
-use yii\easyii\modules\menu\models\Menu;
+use yii\cms\models;
+use \yii\cms\modules\content\modules\contentElements\models\ElementOption;
+use yii\cms\modules\menu\models\Menu;
 
 class m000009_200003_module_menu extends \yii\db\Migration
 {

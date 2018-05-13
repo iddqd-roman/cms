@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\helpers\Upload;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\helpers\Upload;
 
 /**
  * @property integer $id
@@ -14,14 +14,14 @@ use yii\easyii\helpers\Upload;
  *
  * @property string $image
 */
-class Photo extends \yii\easyii\components\ActiveRecord
+class Photo extends \yii\cms\components\ActiveRecord
 {
     const PHOTO_THUMB_WIDTH = 120;
     const PHOTO_THUMB_HEIGHT = 90;
 
     public static function tableName()
     {
-        return 'easyii_photos';
+        return 'cms_photos';
     }
 
     public function rules()

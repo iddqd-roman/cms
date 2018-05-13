@@ -1,21 +1,21 @@
 <?php
 use yii\db\Schema;
-use yii\easyii\models;
+use yii\cms\models;
 
-use yii\easyii\modules\catalog;
-use yii\easyii\modules\shopcart;
-use yii\easyii\modules\article;
-use yii\easyii\modules\carousel\models\Carousel;
-use yii\easyii\modules\faq\models\Faq;
-use yii\easyii\modules\feedback\models\Feedback;
-use yii\easyii\modules\file\models\File;
-use yii\easyii\modules\gallery;
-use yii\easyii\modules\guestbook\models\Guestbook;
-use yii\easyii\modules\news\models\News;
-use yii\easyii\modules\page\models\Page;
-use yii\easyii\modules\subscribe\models\Subscriber;
-use yii\easyii\modules\subscribe\models\History;
-use yii\easyii\modules\text\models\Text;
+use yii\cms\modules\catalog;
+use yii\cms\modules\shopcart;
+use yii\cms\modules\article;
+use yii\cms\modules\carousel\models\Carousel;
+use yii\cms\modules\faq\models\Faq;
+use yii\cms\modules\feedback\models\Feedback;
+use yii\cms\modules\file\models\File;
+use yii\cms\modules\gallery;
+use yii\cms\modules\guestbook\models\Guestbook;
+use yii\cms\modules\news\models\News;
+use yii\cms\modules\page\models\Page;
+use yii\cms\modules\subscribe\models\Subscriber;
+use yii\cms\modules\subscribe\models\History;
+use yii\cms\modules\text\models\Text;
 
 class m000000_000000_install extends \yii\db\Migration
 {
@@ -331,11 +331,11 @@ class m000000_000000_install extends \yii\db\Migration
         $this->createIndex('item_tag', models\TagAssign::tableName(), ['item_id', 'tag_id']);
 
         //INSERT VERSION
-        $this->delete(models\Setting::tableName(), ['name' => 'easyii_version']);
+        $this->delete(models\Setting::tableName(), ['name' => 'cms_version']);
         $this->insert(models\Setting::tableName(), [
-            'name' => 'easyii_version',
+            'name' => 'cms_version',
             'value' => self::VERSION,
-            'title' => 'EasyiiCMS version',
+            'title' => 'cmsCMS version',
             'visibility' => models\Setting::VISIBLE_NONE
         ]);
     }

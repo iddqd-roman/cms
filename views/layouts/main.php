@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\easyii\assets\AdminAsset;
+use yii\cms\assets\AdminAsset;
 
 $asset = AdminAsset::register($this);
 $moduleName = $this->context->module->id;
@@ -11,7 +11,7 @@ $moduleName = $this->context->module->id;
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <?= Html::csrfMetaTags() ?>
-    <title><?= Yii::t('easyii', 'Control Panel') ?> - <?= Html::encode($this->title) ?></title>
+    <title><?= Yii::t('cms', 'Control Panel') ?> - <?= Html::encode($this->title) ?></title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
@@ -24,11 +24,11 @@ $moduleName = $this->context->module->id;
         <div class="wrapper">
             <div class="header">
                 <a href="<?= Url::to(['/admin']) ?>" class="logo">
-                    <img src="<?= $asset->baseUrl ?>/img/logo_20.png">EasyiiCMS
+                    <img src="<?= $asset->baseUrl ?>/img/logo_20.png">cmsCMS
                 </a>
                 <div class="nav">
-                    <a href="<?= Yii::$app->homeUrl ?>" class="pull-left"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('easyii', 'Open site') ?></a>
-                    <a href="<?= Url::to(['/admin/sign/out']) ?>" class="pull-right"><i class="glyphicon glyphicon-log-out"></i> <?= Yii::t('easyii', 'Logout') ?></a>
+                    <a href="<?= Yii::$app->homeUrl ?>" class="pull-left"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('cms', 'Open site') ?></a>
+                    <a href="<?= Url::to(['/admin/sign/out']) ?>" class="pull-right"><i class="glyphicon glyphicon-log-out"></i> <?= Yii::t('cms', 'Logout') ?></a>
                 </div>
             </div>
             <div class="main">
@@ -46,20 +46,20 @@ $moduleName = $this->context->module->id;
                     <?php endforeach; ?>
                     <a href="<?= Url::to(['/admin/settings']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'settings') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-cog"></i>
-                        <?= Yii::t('easyii', 'Settings') ?>
+                        <?= Yii::t('cms', 'Settings') ?>
                     </a>
                     <?php if(IS_ROOT) : ?>
                         <a href="<?= Url::to(['/admin/modules']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'modules') ? 'active' :'' ?>">
                             <i class="glyphicon glyphicon-folder-close"></i>
-                            <?= Yii::t('easyii', 'Modules') ?>
+                            <?= Yii::t('cms', 'Modules') ?>
                         </a>
                         <a href="<?= Url::to(['/admin/admins']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'admins') ? 'active' :'' ?>">
                             <i class="glyphicon glyphicon-user"></i>
-                            <?= Yii::t('easyii', 'Admins') ?>
+                            <?= Yii::t('cms', 'Admins') ?>
                         </a>
                         <a href="<?= Url::to(['/admin/system']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'system') ? 'active' :'' ?>">
                             <i class="glyphicon glyphicon-hdd"></i>
-                            <?= Yii::t('easyii', 'System') ?>
+                            <?= Yii::t('cms', 'System') ?>
                         </a>
                     <?php endif; ?>
                 </div>

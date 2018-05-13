@@ -1,18 +1,18 @@
 <?php
-namespace yii\easyii\modules\page\controllers;
+namespace yii\cms\modules\page\controllers;
 
 use Yii;
-use yii\easyii\behaviors\Fields;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\components\CategoryController;
-use yii\easyii\modules\page\PageModule;
+use yii\cms\behaviors\Fields;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\components\CategoryController;
+use yii\cms\modules\page\PageModule;
 use yii\widgets\ActiveForm;
-use yii\easyii\modules\page\models\Page;
+use yii\cms\modules\page\models\Page;
 
 class AController extends CategoryController
 {
-    public $categoryClass = 'yii\easyii\modules\page\models\Page';
-    public $modelClass = 'yii\easyii\modules\page\models\Page';
+    public $categoryClass = 'yii\cms\modules\page\models\Page';
+    public $modelClass = 'yii\cms\modules\page\models\Page';
 
     public function behaviors()
     {
@@ -60,10 +60,10 @@ class AController extends CategoryController
                 $model->data = $this->parseData($model);
 
                 if ($model->create(Yii::$app->request->post('parent', null))) {
-                    $this->flash('success', Yii::t('easyii/page', 'Page created'));
+                    $this->flash('success', Yii::t('cms/page', 'Page created'));
                     return $this->redirect(['/admin/page', 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -95,9 +95,9 @@ class AController extends CategoryController
                 $model->data = $this->parseData($model);
 
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii/page', 'Page updated'));
+                    $this->flash('success', Yii::t('cms/page', 'Page updated'));
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }
@@ -123,9 +123,9 @@ class AController extends CategoryController
         $model->slug = null;
 
         if ($model->create()) {
-            $this->flash('success', Yii::t('easyii/page', 'Page copied'));
+            $this->flash('success', Yii::t('cms/page', 'Page copied'));
         } else {
-            $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+            $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
         }
         return $this->back();
     }
@@ -146,6 +146,6 @@ class AController extends CategoryController
             $child->afterDelete();
         }
 
-        return $this->formatResponse(Yii::t('easyii/page', 'Page deleted'));
+        return $this->formatResponse(Yii::t('cms/page', 'Page deleted'));
     }
 }

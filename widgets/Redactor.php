@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use Yii;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 use yii\helpers\Url;
 
 class Redactor extends \vova07\imperavi\Widget

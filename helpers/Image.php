@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 use Yii;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 use yii\web\UploadedFile;
 use yii\web\HttpException;
 use yii\helpers\FileHelper;
 use yii\helpers\Url;
-use yii\easyii\helpers\GD;
+use yii\cms\helpers\GD;
 
 class Image
 {

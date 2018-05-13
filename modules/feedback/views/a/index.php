@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
-use yii\easyii\modules\feedback\models\Feedback;
+use yii\cms\modules\feedback\models\Feedback;
 
-$this->title = Yii::t('easyii/feedback', 'Feedback');
+$this->title = Yii::t('cms/feedback', 'Feedback');
 $module = $this->context->module->id;
 ?>
 
@@ -14,9 +14,9 @@ $module = $this->context->module->id;
         <thead>
             <tr>
                 <th width="50">#</th>
-                <th><?= Yii::t('easyii', $this->context->module->settings['enableTitle'] ? 'Title' : 'Text') ?></th>
-                <th width="150"><?= Yii::t('easyii', 'Date') ?></th>
-                <th width="100"><?= Yii::t('easyii/feedback', 'Answer') ?></th>
+                <th><?= Yii::t('cms', $this->context->module->settings['enableTitle'] ? 'Title' : 'Text') ?></th>
+                <th width="150"><?= Yii::t('cms', 'Date') ?></th>
+                <th width="100"><?= Yii::t('cms/feedback', 'Answer') ?></th>
                 <th width="30"></th>
             </tr>
         </thead>
@@ -28,12 +28,12 @@ $module = $this->context->module->id;
                 <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                 <td>
                     <?php if($item->status == Feedback::STATUS_ANSWERED) : ?>
-                        <span class="text-success"><?= Yii::t('easyii', 'Yes') ?></span>
+                        <span class="text-success"><?= Yii::t('cms', 'Yes') ?></span>
                     <?php else : ?>
-                        <span class="text-danger"><?= Yii::t('easyii', 'No') ?></span>
+                        <span class="text-danger"><?= Yii::t('cms', 'No') ?></span>
                     <?php endif; ?>
                 </td>
-                <td><a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"></a></td>
+                <td><a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -42,5 +42,5 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

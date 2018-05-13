@@ -1,23 +1,23 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\DeleteAction;
+use yii\cms\actions\DeleteAction;
 use yii\widgets\ActiveForm;
-use yii\easyii\models\Admin;
+use yii\cms\models\Admin;
 
-class AdminsController extends \yii\easyii\components\Controller
+class AdminsController extends \yii\cms\components\Controller
 {
     public $rootActions = 'all';
-    public $modelClass = 'yii\easyii\models\Admin';
+    public $modelClass = 'yii\cms\models\Admin';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii', 'Admin deleted')
+                'successMessage' => Yii::t('cms', 'Admin deleted')
             ]
         ];
     }
@@ -45,10 +45,10 @@ class AdminsController extends \yii\easyii\components\Controller
                 return ActiveForm::validate($model);
             } else {
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii', 'Admin created'));
+                    $this->flash('success', Yii::t('cms', 'Admin created'));
                     return $this->redirect(['/admin/admins']);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -69,9 +69,9 @@ class AdminsController extends \yii\easyii\components\Controller
                 return ActiveForm::validate($model);
             } else {
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii', 'Admin updated'));
+                    $this->flash('success', Yii::t('cms', 'Admin updated'));
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }

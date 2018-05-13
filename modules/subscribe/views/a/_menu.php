@@ -14,11 +14,11 @@ if($action === 'view'){
 ?>
 <ul class="nav nav-pills">
     <li <?= ($action === 'index') ? 'class="active"' : '' ?>>
-        <a href="<?= Url::to(['/admin/'.$module]) ?>"><?= Yii::t('easyii/subscribe', 'Subscribers') ?></a>
+        <a href="<?= Url::to(['/admin/'.$module]) ?>"><?= Yii::t('cms/subscribe', 'Subscribers') ?></a>
     </li>
     <li <?= ($action === 'create') ? 'class="active"' : '' ?>>
         <a href="<?= Url::to(['/admin/'.$module.'/a/create']) ?>">
-        <?= Yii::t('easyii/subscribe', 'Create subscribe') ?>
+        <?= Yii::t('cms/subscribe', 'Create subscribe') ?>
         </a>
     </li>
     <li <?= ($action === 'history') ? 'class="active"' : '' ?>>
@@ -26,7 +26,7 @@ if($action === 'view'){
             <?php if($action === 'view') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/subscribe', 'History') ?>
+            <?= Yii::t('cms/subscribe', 'History') ?>
         </a>
     </li>
 </ul>

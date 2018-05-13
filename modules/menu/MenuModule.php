@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\modules\menu;
+namespace yii\cms\modules\menu;
 
 use Yii;
 
-class MenuModule extends \yii\easyii\components\Module
+class MenuModule extends \yii\cms\components\Module
 {
     public $settings = [
         'slugImmutable' => false

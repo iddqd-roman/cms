@@ -31,7 +31,7 @@ if($action === 'view')
             <?php if($backTo === 'index') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii', 'New') ?>
+            <?= Yii::t('cms', 'New') ?>
             <?php if($this->context->new > 0) : ?>
                 <span class="badge"><?= $this->context->new ?></span>
             <?php endif; ?>
@@ -42,7 +42,7 @@ if($action === 'view')
             <?php if($backTo === 'noanswer') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/feedback', 'No answer') ?>
+            <?= Yii::t('cms/feedback', 'No answer') ?>
             <?php if($this->context->noAnswer > 0) : ?>
                 <span class="badge"><?= $this->context->noAnswer ?></span>
             <?php endif; ?>
@@ -53,12 +53,12 @@ if($action === 'view')
             <?php if($backTo === 'all') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii', 'All') ?>
+            <?= Yii::t('cms', 'All') ?>
         </a>
     </li>
     <?php if($action === 'view' && isset($noanswer) && !$noanswer) : ?>
         <li class="pull-right">
-            <a href="<?= Url::to(['/admin/'.$module.'/a/set-answer', 'id' => Yii::$app->request->get('id')]) ?>" class="text-warning"><span class="glyphicon glyphicon-ok"></span> <?= Yii::t('easyii/feedback', 'Mark as answered') ?></a>
+            <a href="<?= Url::to(['/admin/'.$module.'/a/set-answer', 'id' => Yii::$app->request->get('id')]) ?>" class="text-warning"><span class="glyphicon glyphicon-ok"></span> <?= Yii::t('cms/feedback', 'Mark as answered') ?></a>
         </li>
     <?php endif; ?>
 </ul>

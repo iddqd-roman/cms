@@ -1,17 +1,17 @@
 <?php
-namespace yii\easyii\modules\guestbook\models;
+namespace yii\cms\modules\guestbook\models;
 
 use Yii;
-use yii\easyii\behaviors\CalculateNotice;
-use yii\easyii\helpers\Mail;
-use yii\easyii\helpers\Telegram;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\guestbook\GuestbookModule;
-use yii\easyii\validators\ReCaptchaValidator;
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\behaviors\CalculateNotice;
+use yii\cms\helpers\Mail;
+use yii\cms\helpers\Telegram;
+use yii\cms\models\Setting;
+use yii\cms\modules\guestbook\GuestbookModule;
+use yii\cms\validators\ReCaptchaValidator;
+use yii\cms\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Guestbook extends \yii\easyii\components\ActiveRecord
+class Guestbook extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -21,7 +21,7 @@ class Guestbook extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_guestbook';
+        return 'cms_guestbook';
     }
 
     public function rules()
@@ -66,12 +66,12 @@ class Guestbook extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('easyii', 'Name'),
-            'title' => Yii::t('easyii', 'Title'),
+            'name' => Yii::t('cms', 'Name'),
+            'title' => Yii::t('cms', 'Title'),
             'email' => 'E-mail',
-            'text' => Yii::t('easyii', 'Text'),
-            'answer' => Yii::t('easyii/guestbook', 'Answer'),
-            'reCaptcha' => Yii::t('easyii', 'Anti-spam check')
+            'text' => Yii::t('cms', 'Text'),
+            'answer' => Yii::t('cms/guestbook', 'Answer'),
+            'reCaptcha' => Yii::t('cms', 'Anti-spam check')
         ];
     }
 

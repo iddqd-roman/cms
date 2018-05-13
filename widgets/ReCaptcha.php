@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\widgets\InputWidget;
 
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 
 class ReCaptcha extends InputWidget
 {

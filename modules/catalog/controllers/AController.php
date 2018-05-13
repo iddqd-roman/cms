@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\modules\catalog\controllers;
+namespace yii\cms\modules\catalog\controllers;
 
-use yii\easyii\components\CategoryController;
+use yii\cms\components\CategoryController;
 
 class AController extends CategoryController
 {
-    public $categoryClass = 'yii\easyii\modules\catalog\models\Category';
-    public $modelClass = 'yii\easyii\modules\catalog\models\Item';
+    public $categoryClass = 'yii\cms\modules\catalog\models\Category';
+    public $modelClass = 'yii\cms\modules\catalog\models\Item';
     public $moduleName = 'catalog';
 }

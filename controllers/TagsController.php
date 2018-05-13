@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
-use yii\easyii\models\Tag;
+use yii\cms\models\Tag;
 use yii\helpers\Html;
 use yii\web\Response;
 
-class TagsController extends \yii\easyii\components\Controller
+class TagsController extends \yii\cms\components\Controller
 {
     public function actionList($query)
     {

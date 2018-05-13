@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
-use yii\easyii\models\Module;
+use yii\cms\models\Module;
 
-class DefaultController extends \yii\easyii\components\Controller
+class DefaultController extends \yii\cms\components\Controller
 {
     public function actionIndex()
     {
@@ -16,7 +16,7 @@ class DefaultController extends \yii\easyii\components\Controller
 
     public function actionLiveEdit($id)
     {
-        \Yii::$app->session->set('easyii_live_edit', $id);
+        \Yii::$app->session->set('cms_live_edit', $id);
         $this->back();
     }
 }

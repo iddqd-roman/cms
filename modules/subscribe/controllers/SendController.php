@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\modules\subscribe\controllers;
+namespace yii\cms\modules\subscribe\controllers;
 
 use Yii;
-use yii\easyii\modules\subscribe\api\Subscribe;
+use yii\cms\modules\subscribe\api\Subscribe;
 use yii\widgets\ActiveForm;
 
-use yii\easyii\modules\subscribe\models\Subscriber;
+use yii\cms\modules\subscribe\models\Subscriber;
 
 class SendController extends \yii\web\Controller
 {
@@ -34,10 +34,10 @@ class SendController extends \yii\web\Controller
         if($email && filter_var($email, FILTER_VALIDATE_EMAIL))
         {
             Subscriber::deleteAll(['email' => $email]);
-            echo '<h1>'.Yii::t('easyii/subscribe/api', 'You have successfully unsubscribed!').'</h1>';
+            echo '<h1>'.Yii::t('cms/subscribe/api', 'You have successfully unsubscribed!').'</h1>';
         }
         else{
-            throw new \yii\web\BadRequestHttpException(Yii::t('easyii/subscribe/api', 'Incorrect E-mail'));
+            throw new \yii\web\BadRequestHttpException(Yii::t('cms/subscribe/api', 'Incorrect E-mail'));
         }
     }
 }

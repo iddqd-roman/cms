@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
-use yii\easyii\components\Module;
-use yii\easyii\helpers\Upload;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
+use yii\cms\components\Module;
+use yii\cms\helpers\Upload;
 use yii\web\UploadedFile;
 use yii\web\Response;
-use yii\easyii\helpers\Image;
-use yii\easyii\components\Controller;
-use yii\easyii\models\Photo;
+use yii\cms\helpers\Image;
+use yii\cms\components\Controller;
+use yii\cms\models\Photo;
 
 class PhotosController extends Controller
 {
-    public $modelClass = 'yii\easyii\models\Photo';
+    public $modelClass = 'yii\cms\models\Photo';
 
     public function behaviors()
     {
@@ -33,7 +33,7 @@ class PhotosController extends Controller
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii', 'Photo deleted')
+                'successMessage' => Yii::t('cms', 'Photo deleted')
             ],
             'up' => [
                 'class' => SortByNumAction::className(),
@@ -61,7 +61,7 @@ class PhotosController extends Controller
             if ($photo->image_file) {
                 if ($photo->save()) {
                     $success = [
-                        'message' => Yii::t('easyii', 'Photo uploaded'),
+                        'message' => Yii::t('cms', 'Photo uploaded'),
                         'photo' => [
                             'id' => $photo->primaryKey,
                             'image' => $photo->image,
@@ -71,13 +71,13 @@ class PhotosController extends Controller
                     ];
                 } else {
                     Upload::delete($photo->image_file);
-                    $this->error = Yii::t('easyii', 'Create error. {0}', $photo->formatErrors());
+                    $this->error = Yii::t('cms', 'Create error. {0}', $photo->formatErrors());
                 }
             } else {
-                $this->error = Yii::t('easyii', 'File upload error. Check uploads folder for write permissions');
+                $this->error = Yii::t('cms', 'File upload error. Check uploads folder for write permissions');
             }
         } else {
-            $this->error = Yii::t('easyii', 'File is incorrect');
+            $this->error = Yii::t('cms', 'File is incorrect');
         }
 
         return $this->formatResponse($success);
@@ -90,13 +90,13 @@ class PhotosController extends Controller
         if (Yii::$app->request->post('description')) {
             $model->description = Yii::$app->request->post('description');
             if (!$model->update()) {
-                $this->error = Yii::t('easyii', 'Update error. {0}', $model->formatErrors());
+                $this->error = Yii::t('cms', 'Update error. {0}', $model->formatErrors());
             }
         } else {
-            $this->error = Yii::t('easyii', 'Bad response');
+            $this->error = Yii::t('cms', 'Bad response');
         }
 
-        return $this->formatResponse(Yii::t('easyii', 'Photo description saved'));
+        return $this->formatResponse(Yii::t('cms', 'Photo description saved'));
     }
 
     public function actionImage($id)
@@ -114,7 +114,7 @@ class PhotosController extends Controller
                     Upload::delete($oldImage);
 
                     $success = [
-                        'message' => Yii::t('easyii', 'Photo uploaded'),
+                        'message' => Yii::t('cms', 'Photo uploaded'),
                         'photo' => [
                             'image' => $photo->image,
                             'thumb' => Image::thumb($photo->image_file, Photo::PHOTO_THUMB_WIDTH, Photo::PHOTO_THUMB_HEIGHT)
@@ -123,13 +123,13 @@ class PhotosController extends Controller
                 } else {
                     Upload::delete($photo->image_file);
 
-                    $this->error = Yii::t('easyii', 'Update error. {0}', $photo->formatErrors());
+                    $this->error = Yii::t('cms', 'Update error. {0}', $photo->formatErrors());
                 }
             } else {
-                $this->error = Yii::t('easyii', 'File upload error. Check uploads folder for write permissions');
+                $this->error = Yii::t('cms', 'File upload error. Check uploads folder for write permissions');
             }
         } else {
-            $this->error = Yii::t('easyii', 'File is incorrect');
+            $this->error = Yii::t('cms', 'File is incorrect');
         }
 
         return $this->formatResponse($success);

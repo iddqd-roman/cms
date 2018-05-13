@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use yii\base\Widget;
 use yii\base\InvalidConfigException;
-use yii\easyii\models\Photo;
+use yii\cms\models\Photo;
 
 class Photos extends Widget
 {

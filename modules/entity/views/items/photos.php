@@ -1,7 +1,7 @@
 <?php
-use yii\easyii\widgets\Photos;
+use yii\cms\widgets\Photos;
 
-$this->title = Yii::t('easyii', 'Photos') . ' ' . $model->title;
+$this->title = Yii::t('cms', 'Photos') . ' ' . $model->title;
 ?>
 
 <?= $this->render('_menu', ['category' => $model->category]) ?>

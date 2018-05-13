@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\modules\gallery\api;
+namespace yii\cms\modules\gallery\api;
 
 use Yii;
 
-use yii\easyii\models\Photo;
-use yii\easyii\modules\gallery\models\Category;
-use yii\easyii\widgets\Fancybox;
+use yii\cms\models\Photo;
+use yii\cms\modules\gallery\models\Category;
+use yii\cms\widgets\Fancybox;
 use yii\web\NotFoundHttpException;
 
 /**
  * Gallery module API
- * @package yii\easyii\modules\gallery\api
+ * @package yii\cms\modules\gallery\api
  *
  * @method static CategoryObject cat(mixed $id_slug) Get gallery category by id or slug
  * @method static array tree() Get gallery categories as tree
@@ -22,7 +22,7 @@ use yii\web\NotFoundHttpException;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Gallery extends \yii\easyii\components\API
+class Gallery extends \yii\cms\components\API
 {
     private $_cats;
     private $_photos;
@@ -85,7 +85,7 @@ class Gallery extends \yii\easyii\components\API
     public function api_plugin($options = [])
     {
         Fancybox::widget([
-            'selector' => '.easyii-box',
+            'selector' => '.cms-box',
             'options' => $options
         ]);
     }
@@ -93,7 +93,7 @@ class Gallery extends \yii\easyii\components\API
     private function findPhoto($id)
     {
         if(!($photo = Photo::findOne($id))) {
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return new PhotoObject($photo);
     }

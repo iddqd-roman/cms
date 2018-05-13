@@ -1,8 +1,8 @@
 <?php
-use yii\easyii\modules\page\models\Page;
+use yii\cms\modules\page\models\Page;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\SeoForm;
+use yii\cms\widgets\SeoForm;
 ?>
 <?php $form = ActiveForm::begin([
     'enableAjaxValidation' => true,
@@ -12,9 +12,9 @@ use yii\easyii\widgets\SeoForm;
 
 <?php if(!empty($parent)) : ?>
     <div class="form-group field-category-title required">
-        <label for="category-parent" class="control-label"><?= Yii::t('easyii/page', 'Parent page') ?></label>
+        <label for="category-parent" class="control-label"><?= Yii::t('cms/page', 'Parent page') ?></label>
         <select class="form-control" id="category-parent" name="parent">
-            <option value="" class="smooth"><?= Yii::t('easyii', 'No') ?></option>
+            <option value="" class="smooth"><?= Yii::t('cms', 'No') ?></option>
             <?php foreach(Page::cats() as $node) : ?>
                 <option
                     value="<?= $node->id ?>"
@@ -26,7 +26,7 @@ use yii\easyii\widgets\SeoForm;
     </div>
 <?php endif; ?>
 
-<?= $form->field($model, 'text')->widget(\yii\easyii\widgets\Redactor::className()) ?>
+<?= $form->field($model, 'text')->widget(\yii\cms\widgets\Redactor::className()) ?>
 
 <?= $dataForm ?>
 
@@ -37,5 +37,5 @@ use yii\easyii\widgets\SeoForm;
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
 
-<?= Html::submitButton(Yii::t('easyii','Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms','Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

@@ -1,8 +1,8 @@
 <?php
-use yii\easyii\modules\menu\models\Menu;
+use yii\cms\modules\menu\models\Menu;
 use yii\helpers\Url;
 use yii\helpers\Html;
-$this->title = Yii::t('easyii/menu', 'Menu');
+$this->title = Yii::t('cms/menu', 'Menu');
 
 $module = $this->context->module->id;
 ?>
@@ -16,10 +16,10 @@ $module = $this->context->module->id;
                 <?php if(IS_ROOT) : ?>
                     <th width="50">#</th>
                 <?php endif; ?>
-                <th><?= Yii::t('easyii', 'Title')?></th>
+                <th><?= Yii::t('cms', 'Title')?></th>
                 <?php if(IS_ROOT) : ?>
-                    <th><?= Yii::t('easyii', 'Slug')?></th>
-                    <th width="100"><?= Yii::t('easyii', 'Status') ?></th>
+                    <th><?= Yii::t('cms', 'Slug')?></th>
+                    <th width="100"><?= Yii::t('cms', 'Status') ?></th>
                     <th width="60"></th>
                 <?php endif; ?>
             </tr>
@@ -42,7 +42,7 @@ $module = $this->context->module->id;
                     </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
+                            <a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
                         </div>
                     </td>
                 <?php endif; ?>
@@ -54,5 +54,5 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

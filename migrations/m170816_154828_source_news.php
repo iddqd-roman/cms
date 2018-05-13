@@ -1,7 +1,7 @@
 <?php
 
 use yii\db\Migration;
-use yii\easyii\modules\news\models\News;
+use yii\cms\modules\news\models\News;
 /**
  * Class m170816_154828_source_news
  */

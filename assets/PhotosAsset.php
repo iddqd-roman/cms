@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class PhotosAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/assets/photos';
+    public $sourcePath = '@cms/assets/photos';
     public $css = [
         'photos.css',
     ];

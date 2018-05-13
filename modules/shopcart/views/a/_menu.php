@@ -43,7 +43,7 @@ if($action === 'view')
             <?php if($backTo === 'index') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Pending') ?>
+            <?= Yii::t('cms/shopcart', 'Pending') ?>
             <?php if($this->context->pending > 0) : ?>
                 <span class="badge"><?= $this->context->pending ?></span>
             <?php endif; ?>
@@ -54,7 +54,7 @@ if($action === 'view')
             <?php if($backTo === 'processed') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Processed') ?>
+            <?= Yii::t('cms/shopcart', 'Processed') ?>
             <?php if($this->context->processed > 0) : ?>
                 <span class="badge"><?= $this->context->processed ?></span>
             <?php endif; ?>
@@ -65,7 +65,7 @@ if($action === 'view')
             <?php if($backTo === 'sent') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Sent') ?>
+            <?= Yii::t('cms/shopcart', 'Sent') ?>
             <?php if($this->context->sent > 0) : ?>
                 <span class="badge"><?= $this->context->sent ?></span>
             <?php endif; ?>
@@ -76,7 +76,7 @@ if($action === 'view')
             <?php if($backTo === 'completed') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Completed') ?>
+            <?= Yii::t('cms/shopcart', 'Completed') ?>
         </a>
     </li>
     <li <?= ($action === 'fails') ? 'class="active"' : '' ?>>
@@ -84,7 +84,7 @@ if($action === 'view')
             <?php if($backTo === 'fails') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Fails') ?>
+            <?= Yii::t('cms/shopcart', 'Fails') ?>
         </a>
     </li>
     <li <?= ($action === 'blank') ? 'class="active"' : '' ?>>
@@ -92,7 +92,7 @@ if($action === 'view')
             <?php if($backTo === 'blank') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/shopcart', 'Blank') ?>
+            <?= Yii::t('cms/shopcart', 'Blank') ?>
         </a>
     </li>
 </ul>

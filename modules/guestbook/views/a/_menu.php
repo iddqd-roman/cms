@@ -27,7 +27,7 @@ if($action === 'view')
             <?php if($backTo === 'index') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii', 'All') ?>
+            <?= Yii::t('cms', 'All') ?>
         </a>
     </li>
     <li <?= ($action === 'noanswer') ? 'class="active"' : '' ?>>
@@ -35,7 +35,7 @@ if($action === 'view')
             <?php if($backTo === 'noanswer') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/guestbook', 'No answer') ?>
+            <?= Yii::t('cms/guestbook', 'No answer') ?>
             <?php if($this->context->noAnswer > 0) : ?>
                 <span class="badge"><?= $this->context->noAnswer ?></span>
             <?php endif; ?>
@@ -43,9 +43,9 @@ if($action === 'view')
     </li>
     <li class="pull-right">
         <?php if($action === 'view') : ?>
-            <a href="<?= Url::to(['/admin/'.$module.'/a/setnew', 'id' => Yii::$app->request->get('id')]) ?>" class="text-warning"><span class="glyphicon glyphicon-eye-close"></span> <?= Yii::t('easyii/guestbook', 'Mark as new') ?></a>
+            <a href="<?= Url::to(['/admin/'.$module.'/a/setnew', 'id' => Yii::$app->request->get('id')]) ?>" class="text-warning"><span class="glyphicon glyphicon-eye-close"></span> <?= Yii::t('cms/guestbook', 'Mark as new') ?></a>
         <?php else : ?>
-            <a href="<?= Url::to(['/admin/'.$module.'/a/viewall']) ?>" class="text-warning"><span class="glyphicon glyphicon-eye-open"></span> <?= Yii::t('easyii/guestbook', 'Mark all as viewed') ?></a>
+            <a href="<?= Url::to(['/admin/'.$module.'/a/viewall']) ?>" class="text-warning"><span class="glyphicon glyphicon-eye-open"></span> <?= Yii::t('cms/guestbook', 'Mark all as viewed') ?></a>
         <?php endif; ?>
     </li>
 </ul>

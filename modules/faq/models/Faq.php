@@ -1,21 +1,21 @@
 <?php
-namespace yii\easyii\modules\faq\models;
+namespace yii\cms\modules\faq\models;
 
 use Yii;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\behaviors\Taggable;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\behaviors\Taggable;
 
-class Faq extends \yii\easyii\components\ActiveRecord
+class Faq extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
-    const CACHE_KEY = 'easyii_faq';
+    const CACHE_KEY = 'cms_faq';
 
     public static function tableName()
     {
-        return 'easyii_faq';
+        return 'cms_faq';
     }
 
     public function rules()
@@ -32,9 +32,9 @@ class Faq extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'question' => Yii::t('easyii/faq', 'Question'),
-            'answer' => Yii::t('easyii/faq', 'Answer'),
-            'tagNames' => Yii::t('easyii', 'Tags'),
+            'question' => Yii::t('cms/faq', 'Question'),
+            'answer' => Yii::t('cms/faq', 'Answer'),
+            'tagNames' => Yii::t('cms', 'Tags'),
         ];
     }
 

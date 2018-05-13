@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
-use yii\easyii\assets\DateTimePickerAsset;
-use yii\easyii\helpers\Data;
+use yii\cms\assets\DateTimePickerAsset;
+use yii\cms\helpers\Data;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\AssetBundle;

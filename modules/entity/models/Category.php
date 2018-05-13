@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\entity\models;
+namespace yii\cms\modules\entity\models;
 
-use yii\easyii\components\CategoryWithFieldsModel;
+use yii\cms\components\CategoryWithFieldsModel;
 
 class Category extends CategoryWithFieldsModel
 {
     public static function tableName()
     {
-        return 'easyii_entity_categories';
+        return 'cms_entity_categories';
     }
 
     public function rules()
@@ -19,7 +19,7 @@ class Category extends CategoryWithFieldsModel
 
     public function attributeLabels()
     {
-        return array_merge(['cache' => \Yii::t('easyii', 'Cache')], parent::attributeLabels());
+        return array_merge(['cache' => \Yii::t('cms', 'Cache')], parent::attributeLabels());
     }
 
     public function getItems()

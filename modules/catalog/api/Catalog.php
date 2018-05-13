@@ -1,19 +1,19 @@
 <?php
-namespace yii\easyii\modules\catalog\api;
+namespace yii\cms\modules\catalog\api;
 
 use Yii;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\modules\catalog\models\ItemData;
-use yii\easyii\widgets\Fancybox;
-use yii\easyii\modules\catalog\models\Category;
-use yii\easyii\modules\catalog\models\Item;
+use yii\cms\modules\catalog\models\ItemData;
+use yii\cms\widgets\Fancybox;
+use yii\cms\modules\catalog\models\Category;
+use yii\cms\modules\catalog\models\Item;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 
 /**
  * Catalog module API
- * @package yii\easyii\modules\catalog\api
+ * @package yii\cms\modules\catalog\api
  *
  * @method static CategoryObject cat(mixed $id_slug) Get catalog category by id or slug
  * @method static array tree() Get catalog categories as tree
@@ -26,7 +26,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Catalog extends \yii\easyii\components\API
+class Catalog extends \yii\cms\components\API
 {
     private $_cats;
     private $_adp;
@@ -127,7 +127,7 @@ class Catalog extends \yii\easyii\components\API
     public function api_plugin($options = [])
     {
         Fancybox::widget([
-            'selector' => '.easyii-box',
+            'selector' => '.cms-box',
             'options' => $options
         ]);
     }
@@ -140,7 +140,7 @@ class Catalog extends \yii\easyii\components\API
             $condition = 'slug=:id_slug';
         }
         if(!($item = Item::find()->where($condition, [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one())){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return new ItemObject($item);
     }

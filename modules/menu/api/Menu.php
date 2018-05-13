@@ -1,21 +1,21 @@
 <?php
-namespace yii\easyii\modules\menu\api;
+namespace yii\cms\modules\menu\api;
 
 use Yii;
-use yii\easyii\components\API;
-use yii\easyii\helpers\Data;
+use yii\cms\components\API;
+use yii\cms\helpers\Data;
 use yii\helpers\Url;
-use yii\easyii\modules\menu\models\Menu as MenuModel;
+use yii\cms\modules\menu\models\Menu as MenuModel;
 use yii\helpers\Html;
 
 /**
  * Page module API
- * @package yii\easyii\modules\menu\api
+ * @package yii\cms\modules\menu\api
  *
  * @method static string widget($id_slug, array $options = []) Menu widget
  * @method static array items($id_slug) array of all Menu items
  */
-class Menu extends \yii\easyii\components\API
+class Menu extends \yii\cms\components\API
 {
     private $_items = [];
     public $options = [];
@@ -37,7 +37,7 @@ class Menu extends \yii\easyii\components\API
         $this->options['items'] = $this->api_items($id_slug);
         if (!count($this->options['items'])) {
             return LIVE_EDIT_ENABLED
-                ? Html::a(Yii::t('easyii/menu/api', 'Create menu'), ['/admin/menu/a/create', 'slug' => $id_slug], ['target' => '_blank'])
+                ? Html::a(Yii::t('cms/menu/api', 'Create menu'), ['/admin/menu/a/create', 'slug' => $id_slug], ['target' => '_blank'])
                 : '';
         }
 

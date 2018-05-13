@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
 use yii\base\InvalidParamException;
-use yii\easyii\models;
+use yii\cms\models;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 
 /**
- * Base easyii controller component
- * @package yii\easyii\components
+ * Base cms controller component
+ * @package yii\cms\components
  */
 class Controller extends \yii\web\Controller
 {
@@ -136,7 +136,7 @@ class Controller extends \yii\web\Controller
             throw new InvalidParamException('Controller `modelClass` is not set');
         }
         if(!($model = $modelClass::findOne($id))){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return $model;
     }
@@ -152,7 +152,7 @@ class Controller extends \yii\web\Controller
             throw new InvalidParamException('Controller `categoryClass` is not set');
         }
         if(!($model = $categoryClass::findOne($id))){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return $model;
     }

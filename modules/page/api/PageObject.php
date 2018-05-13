@@ -1,10 +1,10 @@
 <?php
-namespace yii\easyii\modules\page\api;
+namespace yii\cms\modules\page\api;
 
-use yii\easyii\components\API;
+use yii\cms\components\API;
 use yii\helpers\Url;
 
-class PageObject extends \yii\easyii\components\ApiObject
+class PageObject extends \yii\cms\components\ApiObject
 {
     public $data;
     public $slug;

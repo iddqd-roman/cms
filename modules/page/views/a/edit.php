@@ -1,5 +1,5 @@
 <?php
-$this->title = Yii::t('easyii/page', 'Edit page');
+$this->title = Yii::t('cms/page', 'Edit page');
 ?>
 <?= $this->render('_menu') ?>
 <?= $this->render('_submenu', ['model' => $model]); ?>

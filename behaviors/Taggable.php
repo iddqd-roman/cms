@@ -1,10 +1,10 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii\easyii\models\Tag;
-use yii\easyii\models\TagAssign;
+use yii\cms\models\Tag;
+use yii\cms\models\TagAssign;
 
 class Taggable extends \yii\base\Behavior
 {

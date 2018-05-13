@@ -15,5 +15,5 @@
     'Installation completed' => 'Встановлення завершене',
     'Installation error' => 'Помилка встановленняи',
     'Can not connect to database. Please configure `{0}`. ' => 'Помилка при підключенні до бази даних. Будь ласка перевірте налаштування `{0}`. ',
-    'EasyiiCMS is already installed. If you want to reinstall easyiiCMS, please drop all tables with prefix `easyii_` from your database manually. ' => 'EasyiiCMS вже встановлена. Якщо ви хочете здійснити перевстановлення - видаліть всі таблиці з префіксом `easyii_` у вашій базі даних. '
+    'cmsCMS is already installed. If you want to reinstall cmsCMS, please drop all tables with prefix `cms_` from your database manually. ' => 'cmsCMS вже встановлена. Якщо ви хочете здійснити перевстановлення - видаліть всі таблиці з префіксом `cms_` у вашій базі даних. '
 ];

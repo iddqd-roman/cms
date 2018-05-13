@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\modules\faq\api;
+namespace yii\cms\modules\faq\api;
 
 use Yii;
-use yii\easyii\helpers\Data;
-use yii\easyii\modules\faq\FaqModule;
-use yii\easyii\modules\faq\models\Faq as FaqModel;
+use yii\cms\helpers\Data;
+use yii\cms\modules\faq\FaqModule;
+use yii\cms\modules\faq\models\Faq as FaqModel;
 
 
 /**
  * FAQ module API
- * @package yii\easyii\modules\faq\api
+ * @package yii\cms\modules\faq\api
  *
  * @method static array items() list of all FAQ as FaqObject objects
  */
 
-class Faq extends \yii\easyii\components\API
+class Faq extends \yii\cms\components\API
 {
     public function api_items($options = [])
     {

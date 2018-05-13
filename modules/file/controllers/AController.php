@@ -1,26 +1,26 @@
 <?php
-namespace yii\easyii\modules\file\controllers;
+namespace yii\cms\modules\file\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
 use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\file\models\File;
-use yii\easyii\helpers\Upload;
+use yii\cms\components\Controller;
+use yii\cms\modules\file\models\File;
+use yii\cms\helpers\Upload;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\file\models\File';
+    public $modelClass = 'yii\cms\modules\file\models\File';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/file', 'File deleted')
+                'successMessage' => Yii::t('cms/file', 'File deleted')
             ],
             'up' => SortByNumAction::className(),
             'down' => SortByNumAction::className(),
@@ -55,15 +55,15 @@ class AController extends Controller
                         $model->size = $fileInstanse->size;
 
                         if($model->save()){
-                            $this->flash('success', Yii::t('easyii/file', 'File created'));
+                            $this->flash('success', Yii::t('cms/file', 'File created'));
                             return $this->redirect(['/admin/'.$this->module->id]);
                         }
                         else{
-                            $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                            $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                         }
                     }
                     else {
-                        $this->flash('error', Yii::t('easyii/file', 'File error. {0}', $model->formatErrors()));
+                        $this->flash('error', Yii::t('cms/file', 'File error. {0}', $model->formatErrors()));
                     }
                 }
                 else {
@@ -100,7 +100,7 @@ class AController extends Controller
                         $model->time = time();
                     }
                     else {
-                        $this->flash('error', Yii::t('easyii/file', 'File error. {0}', $model->formatErrors()));
+                        $this->flash('error', Yii::t('cms/file', 'File error. {0}', $model->formatErrors()));
                         return $this->refresh();
                     }
                 }
@@ -109,10 +109,10 @@ class AController extends Controller
                 }
 
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/file', 'File updated'));
+                    $this->flash('success', Yii::t('cms/file', 'File updated'));
                 }
                 else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }

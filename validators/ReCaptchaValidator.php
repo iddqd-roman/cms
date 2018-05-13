@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\validators;
+namespace yii\cms\validators;
 
 use Yii;
 use yii\base\Exception;
@@ -7,7 +7,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\Json;
 use yii\validators\Validator;
 
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 
 class ReCaptchaValidator extends Validator
 {

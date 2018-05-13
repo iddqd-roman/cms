@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\article;
+namespace yii\cms\modules\article;
 
-class ArticleModule extends \yii\easyii\components\Module
+class ArticleModule extends \yii\cms\components\Module
 {
     public $settings = [
         'categoryThumb' => true,

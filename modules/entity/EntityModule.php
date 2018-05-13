@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\entity;
+namespace yii\cms\modules\entity;
 
-class EntityModule extends \yii\easyii\components\Module
+class EntityModule extends \yii\cms\components\Module
 {
     public $settings = [
         'categoryThumb' => true,

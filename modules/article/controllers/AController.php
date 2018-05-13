@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\modules\article\controllers;
+namespace yii\cms\modules\article\controllers;
 
-use yii\easyii\components\CategoryController;
+use yii\cms\components\CategoryController;
 
 class AController extends CategoryController
 {
     /** @var string  */
-    public $categoryClass = 'yii\easyii\modules\article\models\Category';
+    public $categoryClass = 'yii\cms\modules\article\models\Category';
 
     /** @var string  */
     public $moduleName = 'article';

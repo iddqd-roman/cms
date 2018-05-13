@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\news;
+namespace yii\cms\modules\news;
 
-class NewsModule extends \yii\easyii\components\Module
+class NewsModule extends \yii\cms\components\Module
 {
     public $settings = [
         'enableThumb' => true,

@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\entity\api;
+namespace yii\cms\modules\entity\api;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\components\API;
-use yii\easyii\helpers\Data;
-use yii\easyii\modules\entity\models\Category;
-use yii\easyii\modules\entity\models\Item;
+use yii\cms\components\API;
+use yii\cms\helpers\Data;
+use yii\cms\modules\entity\models\Category;
+use yii\cms\modules\entity\models\Item;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \yii\easyii\components\ApiObject
+class CategoryObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $description;

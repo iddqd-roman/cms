@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\gallery\models;
+namespace yii\cms\modules\gallery\models;
 
-use yii\easyii\models\Photo;
+use yii\cms\models\Photo;
 
-class Category extends \yii\easyii\components\CategoryModel
+class Category extends \yii\cms\components\CategoryModel
 {
     public static function tableName()
     {
-        return 'easyii_gallery_categories';
+        return 'cms_gallery_categories';
     }
 
     public function getPhotos()

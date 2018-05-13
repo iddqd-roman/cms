@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\components;
-use yii\easyii\behaviors\JsonColumns;
-use yii\easyii\behaviors\SortableModel;
+namespace yii\cms\components;
+use yii\cms\behaviors\JsonColumns;
+use yii\cms\behaviors\SortableModel;
 
 /**
  * Extended CategoryModel with fields. Shared by categories
- * @package yii\easyii\components
+ * @package yii\cms\components
  * @inheritdoc
  */
 class CategoryWithFieldsModel extends CategoryModel

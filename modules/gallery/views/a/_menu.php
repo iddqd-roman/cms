@@ -10,9 +10,9 @@ $module = $this->context->module->id;
             <?php if($action === 'edit' || $action === 'photos') : ?>
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
             <?php endif; ?>
-            <?= Yii::t('easyii/gallery', 'Albums') ?>
+            <?= Yii::t('cms/gallery', 'Albums') ?>
         </a>
     </li>
-    <li <?= ($action === 'create') ? 'class="active"' : '' ?>><a href="<?= Url::to(['/admin/'.$module.'/a/create']) ?>"><?= Yii::t('easyii', 'Create') ?></a></li>
+    <li <?= ($action === 'create') ? 'class="active"' : '' ?>><a href="<?= Url::to(['/admin/'.$module.'/a/create']) ?>"><?= Yii::t('cms', 'Create') ?></a></li>
 </ul>
 <br/>

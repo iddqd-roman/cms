@@ -1,23 +1,23 @@
 <?php
-namespace yii\easyii\modules\text\models;
+namespace yii\cms\modules\text\models;
 
 use Yii;
-use yii\easyii\behaviors\CacheFlush;
+use yii\cms\behaviors\CacheFlush;
 
-class Text extends \yii\easyii\components\ActiveRecord
+class Text extends \yii\cms\components\ActiveRecord
 {
-    const CACHE_KEY = 'easyii_text';
+    const CACHE_KEY = 'cms_text';
 
     public static function tableName()
     {
-        return 'easyii_texts';
+        return 'cms_texts';
     }
 
     public function rules()
     {
         return [
             ['text', 'trim'],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['slug', 'unique']
         ];
@@ -26,8 +26,8 @@ class Text extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'text' => Yii::t('easyii', 'Text'),
-            'slug' => Yii::t('easyii', 'Slug'),
+            'text' => Yii::t('cms', 'Text'),
+            'slug' => Yii::t('cms', 'Slug'),
         ];
     }
 

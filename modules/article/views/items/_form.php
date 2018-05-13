@@ -1,12 +1,12 @@
 <?php
-use yii\easyii\helpers\Image;
-use yii\easyii\modules\article\models\Category;
-use yii\easyii\widgets\DateTimePicker;
-use yii\easyii\widgets\TagsInput;
+use yii\cms\helpers\Image;
+use yii\cms\modules\article\models\Category;
+use yii\cms\widgets\DateTimePicker;
+use yii\cms\widgets\TagsInput;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\SeoForm;
+use yii\cms\widgets\SeoForm;
 
 $module = $this->context->module->id;
 ?>
@@ -20,7 +20,7 @@ $module = $this->context->module->id;
 <?php if($this->context->module->settings['articleThumb']) : ?>
     <?php if($model->image_file) : ?>
         <a href="<?= $model->image ?>" class="fancybox"><img src="<?= Image::thumb($model->image_file, 240, 180) ?>"></a>
-        <a href="<?= Url::to(['/admin/'.$module.'/items/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('easyii', 'Clear image')?>"><?= Yii::t('easyii', 'Clear image')?></a>
+        <a href="<?= Url::to(['/admin/'.$module.'/items/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('cms', 'Clear image')?>"><?= Yii::t('cms', 'Clear image')?></a>
     <?php endif; ?>
     <?= $form->field($model, 'image_file')->fileInput() ?>
 <?php endif; ?>
@@ -33,7 +33,7 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'source')->textInput() ?>
 <?php endif; ?>
 
-<?= $form->field($model, 'text')->widget(\yii\easyii\widgets\Redactor::className()) ?>
+<?= $form->field($model, 'text')->widget(\yii\cms\widgets\Redactor::className()) ?>
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
@@ -46,5 +46,5 @@ $module = $this->context->module->id;
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
 
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

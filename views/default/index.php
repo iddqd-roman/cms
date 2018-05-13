@@ -1,11 +1,11 @@
 <?php
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii', 'Welcome');
+$this->title = Yii::t('cms', 'Welcome');
 ?>
 <?php if(count($notifications)) : ?>
-    <h2><?= Yii::t('easyii', 'New on website') ?></h2>
+    <h2><?= Yii::t('cms', 'New on website') ?></h2>
     <div class="row welcome-notifications">
         <?php foreach($notifications as $i => $module) : ?>
             <div class="col-md-3">
@@ -22,11 +22,11 @@ $this->title = Yii::t('easyii', 'Welcome');
     <hr class="margin-30"/>
 <?php endif; ?>
 <?php if(Setting::get('ga_service_email') && Setting::get('ga_profile_id') && Setting::get('ga_p12_file')) : ?>
-    <?= \yii\easyii\widgets\GoogleCharts::widget([
+    <?= \yii\cms\widgets\GoogleCharts::widget([
         'email' => Setting::get('ga_service_email'),
         'ids' => Setting::get('ga_profile_id'),
         'p12' => Setting::get('ga_p12_file')
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'Welcome to control panel, choose which section you want to manage in left menu.') ?></p>
+    <p><?= Yii::t('cms', 'Welcome to control panel, choose which section you want to manage in left menu.') ?></p>
 <?php endif; ?>

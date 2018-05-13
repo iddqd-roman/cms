@@ -1,25 +1,25 @@
 <?php
-namespace yii\easyii\modules\carousel\controllers;
+namespace yii\cms\modules\carousel\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
 use yii\widgets\ActiveForm;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\carousel\models\Carousel;
+use yii\cms\components\Controller;
+use yii\cms\modules\carousel\models\Carousel;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\carousel\models\Carousel';
+    public $modelClass = 'yii\cms\modules\carousel\models\Carousel';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/carousel', 'Carousel item deleted')
+                'successMessage' => Yii::t('cms/carousel', 'Carousel item deleted')
             ],
             'up' => SortByNumAction::className(),
             'down' => SortByNumAction::className(),
@@ -51,11 +51,11 @@ class AController extends Controller
             else{
                 $model->status = Carousel::STATUS_ON;
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/carousel', 'Carousel created'));
+                    $this->flash('success', Yii::t('cms/carousel', 'Carousel created'));
                     return $this->redirect(['/admin/'.$this->module->id]);
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }
@@ -78,10 +78,10 @@ class AController extends Controller
             }
             else{
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/carousel', 'Carousel updated'));
+                    $this->flash('success', Yii::t('cms/carousel', 'Carousel updated'));
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii/carousel','Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms/carousel','Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }

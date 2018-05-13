@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\modules\shopcart\controllers;
+namespace yii\cms\modules\shopcart\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\shopcart\models\Good;
-use yii\easyii\modules\shopcart\models\Order;
+use yii\cms\actions\DeleteAction;
+use yii\cms\components\Controller;
+use yii\cms\modules\shopcart\models\Good;
+use yii\cms\modules\shopcart\models\Order;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\shopcart\models\Order';
+    public $modelClass = 'yii\cms\modules\shopcart\models\Order';
     public $pending = 0;
     public $processed = 0;
     public $sent = 0;
@@ -20,7 +20,7 @@ class AController extends Controller
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/shopcart', 'Order deleted')
+                'successMessage' => Yii::t('cms/shopcart', 'Order deleted')
             ]
         ];
     }
@@ -112,10 +112,10 @@ class AController extends Controller
                 if($newStatus != $oldStatus && $request->post('notify')){
                     $order->notifyUser();
                 }
-                $this->flash('success', Yii::t('easyii/shopcart', 'Order updated'));
+                $this->flash('success', Yii::t('cms/shopcart', 'Order updated'));
             }
             else {
-                $this->flash('error', Yii::t('easyii', 'Update error. {0}', $order->formatErrors()));
+                $this->flash('error', Yii::t('cms', 'Update error. {0}', $order->formatErrors()));
             }
             return $this->refresh();
         }

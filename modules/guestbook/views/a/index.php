@@ -2,9 +2,9 @@
 use yii\helpers\Html;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
-use yii\easyii\modules\guestbook\models\Guestbook;
+use yii\cms\modules\guestbook\models\Guestbook;
 
-$this->title = Yii::t('easyii/guestbook', 'Guestbook');
+$this->title = Yii::t('cms/guestbook', 'Guestbook');
 
 $module = $this->context->module->id;
 ?>
@@ -16,10 +16,10 @@ $module = $this->context->module->id;
         <thead>
             <tr>
                 <th width="50">#</th>
-                <th><?= Yii::t('easyii', $this->context->module->settings['enableTitle'] ? 'Title' : 'Text') ?></th>
-                <th width="150"><?= Yii::t('easyii', 'Date') ?></th>
-                <th width="100"><?= Yii::t('easyii/guestbook', 'Answer') ?></th>
-                <th width="100"><?= Yii::t('easyii', 'Status') ?></th>
+                <th><?= Yii::t('cms', $this->context->module->settings['enableTitle'] ? 'Title' : 'Text') ?></th>
+                <th width="150"><?= Yii::t('cms', 'Date') ?></th>
+                <th width="100"><?= Yii::t('cms/guestbook', 'Answer') ?></th>
+                <th width="100"><?= Yii::t('cms', 'Status') ?></th>
                 <th width="30"></th>
             </tr>
         </thead>
@@ -38,9 +38,9 @@ $module = $this->context->module->id;
                 <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                 <td>
                     <?php if($item->answer != '') : ?>
-                        <span class="text-success"><?= Yii::t('easyii', 'Yes') ?></span>
+                        <span class="text-success"><?= Yii::t('cms', 'Yes') ?></span>
                     <?php else : ?>
-                        <span class="text-danger"><?= Yii::t('easyii', 'No') ?></span>
+                        <span class="text-danger"><?= Yii::t('cms', 'No') ?></span>
                     <?php endif; ?>
                 </td>
                 <td class="status">
@@ -50,7 +50,7 @@ $module = $this->context->module->id;
                         'data-link' => Url::to(['/admin/'.$module.'/a']),
                     ]) ?>
                 </td>
-                <td class="control"><a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"></a></td>
+                <td class="control"><a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"></a></td>
             </tr>
     <?php endforeach; ?>
         </tbody>
@@ -59,5 +59,5 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

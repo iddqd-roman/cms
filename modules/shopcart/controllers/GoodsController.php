@@ -1,10 +1,10 @@
 <?php
-namespace yii\easyii\modules\shopcart\controllers;
+namespace yii\cms\modules\shopcart\controllers;
 
 use Yii;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\shopcart\models\Good;
+use yii\cms\actions\DeleteAction;
+use yii\cms\components\Controller;
+use yii\cms\modules\shopcart\models\Good;
 
 class GoodsController extends Controller
 {
@@ -14,7 +14,7 @@ class GoodsController extends Controller
             'delete' => [
                 'class' => DeleteAction::className(),
                 'model' => Good::className(),
-                'successMessage' => Yii::t('easyii/shopcart', 'Item deleted')
+                'successMessage' => Yii::t('cms/shopcart', 'Item deleted')
             ]
         ];
     }

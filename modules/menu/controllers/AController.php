@@ -1,17 +1,17 @@
 <?php
-namespace yii\easyii\modules\menu\controllers;
+namespace yii\cms\modules\menu\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\modules\menu\models\Menu;
+use yii\cms\actions\DeleteAction;
+use yii\cms\modules\menu\models\Menu;
 use yii\widgets\ActiveForm;
-use yii\easyii\components\Controller;
-use yii\easyii\actions\ChangeStatusAction;
+use yii\cms\components\Controller;
+use yii\cms\actions\ChangeStatusAction;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\menu\models\Menu';
+    public $modelClass = 'yii\cms\modules\menu\models\Menu';
     public $rootActions = ['create', 'delete'];
 
     public function actions()
@@ -19,7 +19,7 @@ class AController extends Controller
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/menu', 'Menu deleted')
+                'successMessage' => Yii::t('cms/menu', 'Menu deleted')
             ],
             'on' => ChangeStatusAction::className(),
             'off' => ChangeStatusAction::className(),
@@ -47,11 +47,11 @@ class AController extends Controller
             }
             else{
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/menu', 'Menu created'));
+                    $this->flash('success', Yii::t('cms/menu', 'Menu created'));
                     return $this->redirect(['/admin/'.$this->module->id.'/a/edit', 'id' => $model->primaryKey]);
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -77,10 +77,10 @@ class AController extends Controller
             }
             else{
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/menu', 'Menu updated'));
+                    $this->flash('success', Yii::t('cms/menu', 'Menu updated'));
                 }
                 else{
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->redirect(['/admin/'.$this->module->id]);
             }

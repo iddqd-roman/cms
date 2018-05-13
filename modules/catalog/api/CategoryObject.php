@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\catalog\api;
+namespace yii\cms\modules\catalog\api;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\components\API;
-use yii\easyii\modules\catalog\models\Item;
+use yii\cms\components\API;
+use yii\cms\modules\catalog\models\Item;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \yii\easyii\components\ApiObject
+class CategoryObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $description;

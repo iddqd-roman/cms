@@ -10,5 +10,5 @@ $this->title = $model->title;
 <?php $form = ActiveForm::begin(['enableAjaxValidation' => true]) ?>
 <?= $form->field($formModel, 'title') ?>
 <?= $form->field($formModel, 'name') ?>
-<?= Html::submitButton(Yii::t('easyii', 'Copy'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Copy'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

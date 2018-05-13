@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 class GD
 {

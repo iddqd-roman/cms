@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\modules\carousel\models;
+namespace yii\cms\modules\carousel\models;
 
 use Yii;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\ImageFile;
-use yii\easyii\behaviors\SortableModel;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\ImageFile;
+use yii\cms\behaviors\SortableModel;
 
-class Carousel extends \yii\easyii\components\ActiveRecord
+class Carousel extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
-    const CACHE_KEY = 'easyii_carousel';
+    const CACHE_KEY = 'cms_carousel';
 
     public static function tableName()
     {
-        return 'easyii_carousel';
+        return 'cms_carousel';
     }
 
     public function rules()
@@ -31,10 +31,10 @@ class Carousel extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'image_file' => Yii::t('easyii', 'Image'),
-            'link' =>  Yii::t('easyii', 'Link'),
-            'title' => Yii::t('easyii', 'Title'),
-            'text' => Yii::t('easyii', 'Text'),
+            'image_file' => Yii::t('cms', 'Image'),
+            'link' =>  Yii::t('cms', 'Link'),
+            'title' => Yii::t('cms', 'Title'),
+            'text' => Yii::t('cms', 'Text'),
         ];
     }
 

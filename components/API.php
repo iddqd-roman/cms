@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
 
 /**
  * Base API component. Used by all modules
- * @package yii\easyii\components
+ * @package yii\cms\components
  */
 class API extends \yii\base\Object
 {
@@ -40,6 +40,6 @@ class API extends \yii\base\Object
      */
     public static  function liveEdit($text, $path, $tag = 'span')
     {
-        return $text ? '<'.$tag.' class="easyiicms-edit" data-edit="'.$path.'">'.$text.'</'.$tag.'>' : '';
+        return $text ? '<'.$tag.' class="cmscms-edit" data-edit="'.$path.'">'.$text.'</'.$tag.'>' : '';
     }
 }

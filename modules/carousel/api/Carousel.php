@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\modules\carousel\api;
+namespace yii\cms\modules\carousel\api;
 
 use Yii;
-use yii\easyii\components\API;
-use yii\easyii\helpers\Data;
-use yii\easyii\modules\carousel\models\Carousel as CarouselModel;
+use yii\cms\components\API;
+use yii\cms\helpers\Data;
+use yii\cms\modules\carousel\models\Carousel as CarouselModel;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 /**
  * Carousel module API
- * @package yii\easyii\modules\carousel\api
+ * @package yii\cms\modules\carousel\api
  * @method static string widget(int $width, int $height, array $clientOptions = []) Bootstrap carousel widget
  * @method static array items() array of all Carousel items as CarouselObject objects. Useful to create carousel on other widgets.
  */
@@ -37,7 +37,7 @@ class Carousel extends API
     public function api_widget($width, $height, $clientOptions = [])
     {
         if(!count($this->_items)){
-            return LIVE_EDIT_ENABLED ? Html::a(Yii::t('easyii/carousel/api', 'Create carousel'), ['/admin/carousel/a/create'], ['target' => '_blank']) : '';
+            return LIVE_EDIT_ENABLED ? Html::a(Yii::t('cms/carousel/api', 'Create carousel'), ['/admin/carousel/a/create'], ['target' => '_blank']) : '';
         }
         if(count($clientOptions)){
             $this->clientOptions = array_merge($this->clientOptions, $clientOptions);

@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use yii\base\Behavior;
-use yii\easyii\components\CategoryWithFieldsModel;
-use yii\easyii\helpers\Image;
-use yii\easyii\helpers\Upload;
-use yii\easyii\widgets\DateTimePicker;
-use yii\easyii\widgets\GooglePlacesAutoComplete;
+use yii\cms\components\CategoryWithFieldsModel;
+use yii\cms\helpers\Image;
+use yii\cms\helpers\Upload;
+use yii\cms\widgets\DateTimePicker;
+use yii\cms\widgets\GooglePlacesAutoComplete;
 use yii\helpers\Html;
 use yii\validators\FileValidator;
 use yii\web\UploadedFile;
@@ -27,7 +27,7 @@ class Fields extends Behavior
             }
             elseif ($field->type === CategoryWithFieldsModel::FIELD_TYPE_HTML) {
                 $result .= '<div class="form-group"><label>'. $field->title .'</label>';
-                $result .= \yii\easyii\widgets\Redactor::widget([
+                $result .= \yii\cms\widgets\Redactor::widget([
                     'name' => "Data[{$field->name}]",
                     'value' => $value,
                 ]);
@@ -37,7 +37,7 @@ class Fields extends Behavior
                 $result .= '<div class="checkbox"><label>'. Html::checkbox("Data[{$field->name}]", $value, ['uncheck' => 0]) .' '. $field->title .'</label></div>';
             }
             elseif ($field->type === CategoryWithFieldsModel::FIELD_TYPE_SELECT) {
-                $options = ['' => \Yii::t('easyii', 'Select')];
+                $options = ['' => \Yii::t('cms', 'Select')];
                 foreach($field->options as $option){
                     $options[$option] = $option;
                 }
@@ -62,7 +62,7 @@ class Fields extends Behavior
                     } else {
                         $result .= Html::a($basename, [$value], ['target' => 'blank']);
                     }
-                    $result .= ' ' . Html::a($isImage ? \Yii::t('easyii', 'Delete') : '<i class="glyphicon glyphicon-remove"></i>', ['/admin/' . $this->owner->module->id . '/a/delete-data-file', 'file' => $basename], ['class' => 'confirm-delete', 'data-reload' => 1, 'title' => \Yii::t('easyii', 'Delete')]);
+                    $result .= ' ' . Html::a($isImage ? \Yii::t('cms', 'Delete') : '<i class="glyphicon glyphicon-remove"></i>', ['/admin/' . $this->owner->module->id . '/a/delete-data-file', 'file' => $basename], ['class' => 'confirm-delete', 'data-reload' => 1, 'title' => \Yii::t('cms', 'Delete')]);
                 }
                 $result .= '</p>' . Html::fileInput("Data[{$field->name}]"). '</div>';
             }
@@ -101,7 +101,7 @@ class Fields extends Behavior
                 $result .= '</div>';
                 $result .= '<div id="catalog-field-'.$field->name.'">';
                 if(is_array($value)){
-                    $items = \yii\easyii\modules\catalog\models\Item::find()->where(['in', 'id', $value])->all();
+                    $items = \yii\cms\modules\catalog\models\Item::find()->where(['in', 'id', $value])->all();
                     foreach($items as $item){
                         $result .= '<div class="alert alert-info fade in chosen-item" data-id="'.$item->id.'">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>'

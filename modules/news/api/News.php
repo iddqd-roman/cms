@@ -1,19 +1,19 @@
 <?php
-namespace yii\easyii\modules\news\api;
+namespace yii\cms\modules\news\api;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\models\Tag;
-use yii\easyii\modules\news\NewsModule;
-use yii\easyii\widgets\Fancybox;
+use yii\cms\models\Tag;
+use yii\cms\modules\news\NewsModule;
+use yii\cms\widgets\Fancybox;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 
-use yii\easyii\modules\news\models\News as NewsModel;
+use yii\cms\modules\news\models\News as NewsModel;
 
 /**
  * News module API
- * @package yii\easyii\modules\news\api
+ * @package yii\cms\modules\news\api
  *
  * @method static NewsObject get(mixed $id_slug) Get news object by id or slug
  * @method static array items(array $options = []) Get list of news as NewsObject objects
@@ -23,7 +23,7 @@ use yii\easyii\modules\news\models\News as NewsModel;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class News extends \yii\easyii\components\API
+class News extends \yii\cms\components\API
 {
     private $_adp;
     private $_item = [];
@@ -89,7 +89,7 @@ class News extends \yii\easyii\components\API
     public function api_plugin($options = [])
     {
         Fancybox::widget([
-            'selector' => '.easyii-box',
+            'selector' => '.cms-box',
             'options' => $options
         ]);
     }
@@ -112,7 +112,7 @@ class News extends \yii\easyii\components\API
             $condition = 'slug=:id_slug';
         }
         if(!($news = NewsModel::find()->where($condition, [':id_slug' => $id_slug])->status(NewsModel::STATUS_ON)->one())) {
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         $news->updateCounters(['views' => 1]);
         return new NewsObject($news);

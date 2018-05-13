@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
-use yii\easyii\helpers\Image;
+use yii\cms\helpers\Image;
 
 /**
  * Class ApiObject
- * @package yii\easyii\components
+ * @package yii\cms\components
  * @var integer $id
  * @var string $image
  */

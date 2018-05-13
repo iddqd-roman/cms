@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii\modules\entity\controllers;
+namespace yii\cms\modules\entity\controllers;
 
-use yii\easyii\components\CategoryController;
-use yii\easyii\modules\entity\EntityModule;
-use yii\easyii\modules\entity\models\Category;
+use yii\cms\components\CategoryController;
+use yii\cms\modules\entity\EntityModule;
+use yii\cms\modules\entity\models\Category;
 
 class AController extends CategoryController
 {
-    public $categoryClass = 'yii\easyii\modules\entity\models\Category';
-    public $modelClass = 'yii\easyii\modules\entity\models\Item';
+    public $categoryClass = 'yii\cms\modules\entity\models\Category';
+    public $modelClass = 'yii\cms\modules\entity\models\Item';
     public $moduleName = 'entity';
 
     public function getSameCats($cat)

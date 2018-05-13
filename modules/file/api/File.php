@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\file\api;
+namespace yii\cms\modules\file\api;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\modules\file\models\File as FileModel;
+use yii\cms\modules\file\models\File as FileModel;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 
 /**
  * File module API
- * @package yii\easyii\modules\file\api
+ * @package yii\cms\modules\file\api
  *
  * @method static FileObject get(mixed $id_slug) Get a file by id or slug
  * @method static array items(array $options = []) Get list of files as FileObject objects
@@ -18,7 +18,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class File extends \yii\easyii\components\API
+class File extends \yii\cms\components\API
 {
     private $_adp;
     private $_item = [];
@@ -89,7 +89,7 @@ class File extends \yii\easyii\components\API
             $condition = 'slug=:id_slug';
         }
         if(!($file = FileModel::find()->where($condition, [':id_slug' => $id_slug])->one())){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return new FileObject($file);
     }

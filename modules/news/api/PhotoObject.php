@@ -1,19 +1,19 @@
 <?php
-namespace yii\easyii\modules\news\api;
+namespace yii\cms\modules\news\api;
 
 use Yii;
-use yii\easyii\components\API;
+use yii\cms\components\API;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-class PhotoObject extends \yii\easyii\components\ApiObject
+class PhotoObject extends \yii\cms\components\ApiObject
 {
     public $description;
 
     public function box($width, $height){
         $img = Html::img($this->thumb($width, $height));
         $a = Html::a($img, $this->image, [
-            'class' => 'easyii-box',
+            'class' => 'cms-box',
             'rel' => 'news-'.$this->model->item_id,
             'title' => $this->description
         ]);

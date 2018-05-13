@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
 
 /**
  * JsonColumns behavior
- * @package yii\easyii\behaviors
+ * @package yii\cms\behaviors
  * @inheritdoc
  */
 class JsonColumns extends \yii\base\Behavior

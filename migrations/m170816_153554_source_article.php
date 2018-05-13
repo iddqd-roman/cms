@@ -1,7 +1,7 @@
 <?php
 
 use yii\db\Migration;
-use yii\easyii\modules\article;
+use yii\cms\modules\article;
 
 /**
  * Class m170816_153554_source_article

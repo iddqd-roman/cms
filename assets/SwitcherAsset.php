@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class SwitcherAsset extends \yii\web\AssetBundle
 {

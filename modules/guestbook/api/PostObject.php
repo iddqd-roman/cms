@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\modules\guestbook\api;
+namespace yii\cms\modules\guestbook\api;
 
 use Yii;
-use yii\easyii\components\API;
+use yii\cms\components\API;
 use yii\helpers\Url;
 
-class PostObject extends \yii\easyii\components\ApiObject
+class PostObject extends \yii\cms\components\ApiObject
 {
     public $image;
     public $time;

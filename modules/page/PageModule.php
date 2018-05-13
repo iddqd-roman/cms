@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\modules\page;
+namespace yii\cms\modules\page;
 
 use Yii;
 
-class PageModule extends \yii\easyii\components\Module
+class PageModule extends \yii\cms\components\Module
 {
     public $settings = [
         'slugImmutable' => true,

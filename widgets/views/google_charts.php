@@ -2,25 +2,25 @@
 use yii\helpers\Url;
 ?>
 <h2>
-    <?= Yii::t('easyii', 'Statistics') ?>
+    <?= Yii::t('cms', 'Statistics') ?>
     <div class="btn-group pull-right" role="group">
-        <a href="<?= Url::current(['period' => 30]) ?>" type="button" class="btn btn-<?= ($period == 30 ? 'primary' : 'default') ?>"><?= Yii::t('easyii', 'Month') ?></a>
-        <a href="<?= Url::current(['period' => 7]) ?>" type="button" class="btn btn-<?= ($period == 7 ? 'primary' : 'default') ?>"><?= Yii::t('easyii', 'Week') ?></a>
-        <a href="<?= Url::current(['period' => '']) ?>" type="button" class="btn btn-<?= ($period ? 'default' : 'primary') ?>"><?= Yii::t('easyii', 'Today') ?></a>
+        <a href="<?= Url::current(['period' => 30]) ?>" type="button" class="btn btn-<?= ($period == 30 ? 'primary' : 'default') ?>"><?= Yii::t('cms', 'Month') ?></a>
+        <a href="<?= Url::current(['period' => 7]) ?>" type="button" class="btn btn-<?= ($period == 7 ? 'primary' : 'default') ?>"><?= Yii::t('cms', 'Week') ?></a>
+        <a href="<?= Url::current(['period' => '']) ?>" type="button" class="btn btn-<?= ($period ? 'default' : 'primary') ?>"><?= Yii::t('cms', 'Today') ?></a>
     </div>
 </h2>
 
 <div class="active-users">
     <span class="pull-left img-circle online-circle"></span>
-    <?= Yii::t('easyii', 'Active users') ?>:
+    <?= Yii::t('cms', 'Active users') ?>:
     <b id="active-users-count"></b>
 </div>
 
 <br />
 
 <table class="chart-table">
-    <tr><th><?= Yii::t('easyii', 'Sessions and views') ?></th></tr>
-    <tr><td><div id="chart-1-container"><br/><span class="small smooth"><?= Yii::t('easyii', 'chart is loading') ?>...</span></div></td></tr>
+    <tr><th><?= Yii::t('cms', 'Sessions and views') ?></th></tr>
+    <tr><td><div id="chart-1-container"><br/><span class="small smooth"><?= Yii::t('cms', 'chart is loading') ?>...</span></div></td></tr>
 </table>
 
 <br />
@@ -28,14 +28,14 @@ use yii\helpers\Url;
 <div class="row">
     <div class="col-md-6">
         <table class="chart-table">
-            <tr><th><?= Yii::t('easyii', 'Countries') ?></th></tr>
-            <tr><td><div id="chart-2-container"><br/><span class="small smooth"><?= Yii::t('easyii', 'chart is loading') ?>...</span></div></td></tr>
+            <tr><th><?= Yii::t('cms', 'Countries') ?></th></tr>
+            <tr><td><div id="chart-2-container"><br/><span class="small smooth"><?= Yii::t('cms', 'chart is loading') ?>...</span></div></td></tr>
         </table>
     </div>
     <div class="col-md-6">
         <table class="chart-table">
-            <tr><th><?= Yii::t('easyii', 'Sources') ?></th></tr>
-            <tr><td><div id="chart-3-container"><br/><span class="small smooth"><?= Yii::t('easyii', 'chart is loading') ?>...</span></div></td></tr>
+            <tr><th><?= Yii::t('cms', 'Sources') ?></th></tr>
+            <tr><td><div id="chart-3-container"><br/><span class="small smooth"><?= Yii::t('cms', 'chart is loading') ?>...</span></div></td></tr>
         </table>
     </div>
 </div>

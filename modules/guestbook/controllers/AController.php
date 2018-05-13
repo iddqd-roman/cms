@@ -1,17 +1,17 @@
 <?php
-namespace yii\easyii\modules\guestbook\controllers;
+namespace yii\cms\modules\guestbook\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\components\Controller;
-use yii\easyii\models\Module;
-use yii\easyii\modules\guestbook\models\Guestbook;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\components\Controller;
+use yii\cms\models\Module;
+use yii\cms\modules\guestbook\models\Guestbook;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\guestbook\models\Guestbook';
+    public $modelClass = 'yii\cms\modules\guestbook\models\Guestbook';
     public $new = 0;
     public $noAnswer = 0;
 
@@ -20,7 +20,7 @@ class AController extends Controller
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/guestbook', 'Entry deleted')
+                'successMessage' => Yii::t('cms/guestbook', 'Entry deleted')
             ],
             'on' => ChangeStatusAction::className(),
             'off' => ChangeStatusAction::className(),
@@ -73,9 +73,9 @@ class AController extends Controller
                 if (Yii::$app->request->post('mailUser')) {
                     $model->notifyUser();
                 }
-                $this->flash('success', Yii::t('easyii/guestbook', 'Answer successfully saved'));
+                $this->flash('success', Yii::t('cms/guestbook', 'Answer successfully saved'));
             } else {
-                $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
             }
             return $this->refresh();
         } else {
@@ -92,7 +92,7 @@ class AController extends Controller
         $module->notice = 0;
         $module->save();
 
-        $this->flash('success', Yii::t('easyii/guestbook', 'Guestbook updated'));
+        $this->flash('success', Yii::t('cms/guestbook', 'Guestbook updated'));
 
         return $this->back();
     }
@@ -103,9 +103,9 @@ class AController extends Controller
 
         $model->new = 1;
         if ($model->update()) {
-            $this->flash('success', Yii::t('easyii/guestbook', 'Guestbook updated'));
+            $this->flash('success', Yii::t('cms/guestbook', 'Guestbook updated'));
         } else {
-            $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+            $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
         }
         return $this->redirect($this->getReturnUrl(['/admin/' . $this->module->id]));
     }

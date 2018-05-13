@@ -1,7 +1,7 @@
 <?php
-use yii\easyii\modules\menu\MenuAsset;
+use yii\cms\modules\menu\MenuAsset;
 
-$this->title = Yii::t('easyii/menu', 'Edit menu');
+$this->title = Yii::t('cms/menu', 'Edit menu');
 ?>
 <?= $this->render('_menu') ?>
 <?= $this->render('_form', ['model' => $model]) ?>

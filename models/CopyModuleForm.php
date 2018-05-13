@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
 use yii\base\Model;
@@ -21,7 +21,7 @@ class CopyModuleForm extends Model
     {
         return [
             'name' => 'New module name',
-            'title' => Yii::t('easyii', 'Title'),
+            'title' => Yii::t('cms', 'Title'),
         ];
     }
 }

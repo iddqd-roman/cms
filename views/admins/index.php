@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii', 'Admins');
+$this->title = Yii::t('cms', 'Admins');
 ?>
 
 <?= $this->render('_menu') ?>
@@ -11,7 +11,7 @@ $this->title = Yii::t('easyii', 'Admins');
         <thead>
         <tr>
             <th width="50">#</th>
-            <th><?= Yii::t('easyii', 'Username') ?></th>
+            <th><?= Yii::t('cms', 'Username') ?></th>
             <th width="30"></th>
         </tr>
         </thead>
@@ -20,7 +20,7 @@ $this->title = Yii::t('easyii', 'Admins');
             <tr>
                 <td><?= $admin->id ?></td>
                 <td><a href="<?= Url::to(['/admin/admins/edit', 'id' => $admin->id]) ?>"><?= $admin->username ?></a></td>
-                <td><a href="<?= Url::to(['/admin/admins/delete', 'id' => $admin->id]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"></a></td>
+                <td><a href="<?= Url::to(['/admin/admins/delete', 'id' => $admin->id]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -29,5 +29,5 @@ $this->title = Yii::t('easyii', 'Admins');
         ]) ?>
     </table>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

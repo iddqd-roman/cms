@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\news\api;
+namespace yii\cms\modules\news\api;
 
 use Yii;
-use yii\easyii\components\API;
-use yii\easyii\models\Photo;
-use yii\easyii\modules\news\models\News as NewsModel;
+use yii\cms\components\API;
+use yii\cms\models\Photo;
+use yii\cms\modules\news\models\News as NewsModel;
 use yii\helpers\Url;
 
-class NewsObject extends \yii\easyii\components\ApiObject
+class NewsObject extends \yii\cms\components\ApiObject
 {
     /** @var  string */
     public $slug;

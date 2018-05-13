@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
-class Tag extends \yii\easyii\components\ActiveRecord
+class Tag extends \yii\cms\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_tags';
+        return 'cms_tags';
     }
 
     public function rules()

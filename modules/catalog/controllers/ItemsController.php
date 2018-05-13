@@ -1,25 +1,25 @@
 <?php
-namespace yii\easyii\modules\catalog\controllers;
+namespace yii\cms\modules\catalog\controllers;
 
 use Yii;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\ClearImageAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByDateAction;
-use yii\easyii\behaviors\Fields;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\catalog\CatalogModule;
-use yii\easyii\modules\catalog\models\Category;
-use yii\easyii\modules\catalog\models\Item;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\ClearImageAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByDateAction;
+use yii\cms\behaviors\Fields;
+use yii\cms\components\Controller;
+use yii\cms\modules\catalog\CatalogModule;
+use yii\cms\modules\catalog\models\Category;
+use yii\cms\modules\catalog\models\Item;
 use yii\widgets\ActiveForm;
 
-use yii\easyii\actions\CopyAction;
+use yii\cms\actions\CopyAction;
 use yii\helpers\ArrayHelper;
 
 class ItemsController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\catalog\models\Item';
-    public $categoryClass = 'yii\easyii\modules\catalog\models\Category';
+    public $modelClass = 'yii\cms\modules\catalog\models\Item';
+    public $categoryClass = 'yii\cms\modules\catalog\models\Category';
 
     public function actions()
     {
@@ -28,7 +28,7 @@ class ItemsController extends Controller
             'delete' => [
                 'class' => DeleteAction::className(),
                 'model' => $className,
-                'successMessage' => Yii::t('easyii/catalog', 'Item deleted')
+                'successMessage' => Yii::t('cms/catalog', 'Item deleted')
             ],
             'clear-image' => ClearImageAction::className(),
             'up' => [
@@ -45,7 +45,7 @@ class ItemsController extends Controller
             /* ADDED BY ROMAN DEVELOPER */
             'copy' => [
                 'class' => CopyAction::className(),
-                'successMessage' => Yii::t('easyii/catalog', 'Элемент скопирован')
+                'successMessage' => Yii::t('cms/catalog', 'Элемент скопирован')
             ],
             /* /ADDED BY ROMAN DEVELOPER */
         ];
@@ -147,7 +147,7 @@ class ItemsController extends Controller
             ]);
         }
         else{
-            $this->flash('error', Yii::t('easyii', 'Failed to export category'));
+            $this->flash('error', Yii::t('cms', 'Failed to export category'));
         }
         return $this->redirect(['/admin/'.$this->module->id.'/items/'.$id]);
     }
@@ -200,10 +200,10 @@ class ItemsController extends Controller
                 $model->data = $this->parseData($model);
 
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii/catalog', 'Item created'));
+                    $this->flash('success', Yii::t('cms/catalog', 'Item created'));
                     return $this->redirect(['/admin/'.$this->module->id.'/items/edit/', 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -231,10 +231,10 @@ class ItemsController extends Controller
                 $model->data = $this->parseData($model);
                 
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii/catalog', 'Item updated'));
+                    $this->flash('success', Yii::t('cms/catalog', 'Item updated'));
                     return $this->redirect(['/admin/'.$this->module->id.'/items/edit', 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }

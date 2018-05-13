@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use Yii;
 use yii\base\Widget;
 use yii\base\InvalidConfigException;
 use yii\helpers\Json;
 
-use yii\easyii\assets\FancyboxAsset;
+use yii\cms\assets\FancyboxAsset;
 
 class Fancybox extends Widget
 {

@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\text;
+namespace yii\cms\modules\text;
 
-class TextModule extends \yii\easyii\components\Module
+class TextModule extends \yii\cms\components\Module
 {
     public static $installConfig = [
         'title' => [

@@ -1,5 +1,5 @@
 <?php
-$this->title = Yii::t('easyii', 'Logs');
+$this->title = Yii::t('cms', 'Logs');
 ?>
 
 <?= $this->render('_menu') ?>
@@ -9,11 +9,11 @@ $this->title = Yii::t('easyii', 'Logs');
         <thead>
         <tr>
             <th width="50">#</th>
-            <th><?= Yii::t('easyii', 'Username') ?></th>
-            <th><?= Yii::t('easyii', 'Password') ?></th>
+            <th><?= Yii::t('cms', 'Username') ?></th>
+            <th><?= Yii::t('cms', 'Password') ?></th>
             <th>IP</th>
             <th>USER AGENT</th>
-            <th><?= Yii::t('easyii', 'Date') ?></th>
+            <th><?= Yii::t('cms', 'Date') ?></th>
         </tr>
         </thead>
         <tbody>
@@ -33,5 +33,5 @@ $this->title = Yii::t('easyii', 'Logs');
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

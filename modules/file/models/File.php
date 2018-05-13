@@ -1,18 +1,18 @@
 <?php
-namespace yii\easyii\modules\file\models;
+namespace yii\cms\modules\file\models;
 
 use Yii;
-use yii\easyii\behaviors\SeoBehavior;
-use yii\easyii\behaviors\SlugBehavior;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\helpers\Upload;
-use yii\easyii\modules\file\FileModule;
+use yii\cms\behaviors\SeoBehavior;
+use yii\cms\behaviors\SlugBehavior;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\helpers\Upload;
+use yii\cms\modules\file\FileModule;
 
-class File extends \yii\easyii\components\ActiveRecord
+class File extends \yii\cms\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_files';
+        return 'cms_files';
     }
 
     public function rules()
@@ -22,7 +22,7 @@ class File extends \yii\easyii\components\ActiveRecord
             ['title', 'required'],
             ['title', 'string', 'max' => 128],
             ['title', 'trim'],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             [['downloads', 'size'], 'integer'],
             ['time', 'default', 'value' => time()]
@@ -32,9 +32,9 @@ class File extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'file' => Yii::t('easyii', 'File'),
-            'slug' => Yii::t('easyii', 'Slug')
+            'title' => Yii::t('cms', 'Title'),
+            'file' => Yii::t('cms', 'File'),
+            'slug' => Yii::t('cms', 'Slug')
         ];
     }
 

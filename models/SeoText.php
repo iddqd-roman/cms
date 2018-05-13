@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\validators\EscapeValidator;
 
-class SeoText extends \yii\easyii\components\ActiveRecord
+class SeoText extends \yii\cms\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_seotext';
+        return 'cms_seotext';
     }
 
     public function rules()

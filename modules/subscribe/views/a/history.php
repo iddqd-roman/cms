@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii/subscribe', 'History');
+$this->title = Yii::t('cms/subscribe', 'History');
 
 $module = $this->context->module->id;
 ?>
@@ -13,9 +13,9 @@ $module = $this->context->module->id;
         <thead>
             <tr>
                 <th width="50">#</th>
-                <th><?= Yii::t('easyii/subscribe', 'Subject') ?></th>
-                <th width="150"><?= Yii::t('easyii', 'Date') ?></th>
-                <th width="120"><?= Yii::t('easyii/subscribe', 'Sent') ?></th>
+                <th><?= Yii::t('cms/subscribe', 'Subject') ?></th>
+                <th width="150"><?= Yii::t('cms', 'Date') ?></th>
+                <th width="120"><?= Yii::t('cms/subscribe', 'Sent') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -33,5 +33,5 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

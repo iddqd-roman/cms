@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii\easyii\models\SeoText;
+use yii\cms\models\SeoText;
 
 class SeoBehavior extends \yii\base\Behavior
 {

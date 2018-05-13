@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
-use yii\easyii\models\Module as ModuleModel;
+use yii\cms\models\Module as ModuleModel;
 
 /**
  * Base module class. Inherit from this if you are creating your own modules manually
- * @package yii\easyii\components
+ * @package yii\cms\components
  */
 class Module extends \yii\base\Module
 {
@@ -63,13 +63,13 @@ class Module extends \yii\base\Module
         }
 
         if($moduleClassFile){
-            Yii::$app->i18n->translations['easyii/'.$moduleName.'*'] = [
+            Yii::$app->i18n->translations['cms/'.$moduleName.'*'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en-US',
                 'basePath' => dirname($moduleClassFile) . DIRECTORY_SEPARATOR . 'messages',
                 'fileMap' => [
-                    'easyii/'.$moduleName => 'admin.php',
-                    'easyii/'.$moduleName.'/api' => 'api.php'
+                    'cms/'.$moduleName => 'admin.php',
+                    'cms/'.$moduleName.'/api' => 'api.php'
                 ]
             ];
         }

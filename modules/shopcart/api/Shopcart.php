@@ -1,18 +1,18 @@
 <?php
-namespace yii\easyii\modules\shopcart\api;
+namespace yii\cms\modules\shopcart\api;
 
 use Yii;
-use yii\easyii\modules\catalog\models\Item;
-use yii\easyii\modules\shopcart\models\Good;
-use yii\easyii\modules\shopcart\models\Order;
-use yii\easyii\modules\shopcart\ShopcartModule;
+use yii\cms\modules\catalog\models\Item;
+use yii\cms\modules\shopcart\models\Good;
+use yii\cms\modules\shopcart\models\Order;
+use yii\cms\modules\shopcart\ShopcartModule;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /**
  * Shopcart module API
- * @package yii\easyii\modules\shopcart\api
+ * @package yii\cms\modules\shopcart\api
  *
  * @method static GoodObject goods() Get list of added to shopcart goods as GoodObject objects.
  * @method static OrderObject order(int $id) Get an order by id as OrderObject
@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
  * @method static array cost() returns total cost of current shopcart.
  */
 
-class Shopcart extends \yii\easyii\components\API
+class Shopcart extends \yii\cms\components\API
 {
     const SENT_VAR = 'shopcart_sent';
 
@@ -76,7 +76,7 @@ class Shopcart extends \yii\easyii\components\API
 
         echo $form->field($model, 'comment')->textarea();
 
-        echo Html::submitButton(Yii::t('easyii', 'Send'), ['class' => 'btn btn-primary']);
+        echo Html::submitButton(Yii::t('cms', 'Send'), ['class' => 'btn btn-primary']);
         ActiveForm::end();
 
         return ob_get_clean();

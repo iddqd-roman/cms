@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use yii\base\InvalidConfigException;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 use yii\web\JsExpression;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
@@ -53,7 +53,7 @@ class GooglePlacesAutoComplete extends InputWidget {
                 '.Html::textInput('', $visibleValue, ['class' => 'form-control gmaps-autocomplete', 'id' => $this->inputId]).'
                 '.($this->hasModel() ? Html::activeHiddenInput($this->model, $this->attribute, ['id' => $this->hiddenId]) : Html::hiddenInput($this->name, $this->value, ['id' => $this->hiddenId])).'
                 <span class="input-group-btn">
-                    <button class="btn btn-default show-on-map ' . (empty($parts[1]) ? 'disabled' : '') . '" type="button"><i class="glyphicon glyphicon-map-marker"></i> ' . \Yii::t('easyii', 'Show on map') . '</button>
+                    <button class="btn btn-default show-on-map ' . (empty($parts[1]) ? 'disabled' : '') . '" type="button"><i class="glyphicon glyphicon-map-marker"></i> ' . \Yii::t('cms', 'Show on map') . '</button>
                 </span>
             </div>
         ';

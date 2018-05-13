@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\actions;
+namespace yii\cms\actions;
 
 use Yii;
-use yii\easyii\components\CategoryWithFieldsModel;
+use yii\cms\components\CategoryWithFieldsModel;
 
 class FieldsAction extends \yii\base\Action
 {
@@ -12,7 +12,7 @@ class FieldsAction extends \yii\base\Action
     {
         $modelClass = $this->model ? $this->model : $this->controller->modelClass;
 
-        /** @var \yii\easyii\components\CategoryWithFieldsModel $model */
+        /** @var \yii\cms\components\CategoryWithFieldsModel $model */
         if(!($model = $modelClass::findOne($id))){
             return $this->controller->redirect(['/admin/' . $this->controller->module->id]);
         }
@@ -66,14 +66,14 @@ class FieldsAction extends \yii\base\Action
                     $modelClass::updateAll(['fields' => json_encode($model->fields)], ['in', 'id', $ids]);
                 }
 
-                $this->controller->flash('success', Yii::t('easyii', 'Category updated'));
+                $this->controller->flash('success', Yii::t('cms', 'Category updated'));
             } elseif($model->hasErrors()) {
-                $this->controller->flash('error', Yii::t('easyii','Update error. {0}', $model->formatErrors()));
+                $this->controller->flash('error', Yii::t('cms','Update error. {0}', $model->formatErrors()));
             }
             return $this->controller->refresh();
         }
         else {
-            return $this->controller->render('@easyii/views/category/fields', [
+            return $this->controller->render('@cms/views/category/fields', [
                 'model' => $model
             ]);
         }

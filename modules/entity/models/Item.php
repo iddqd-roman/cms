@@ -1,19 +1,19 @@
 <?php
-namespace yii\easyii\modules\entity\models;
+namespace yii\cms\modules\entity\models;
 
 use Yii;
-use yii\easyii\behaviors\JsonColumns;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\models\Photo;
+use yii\cms\behaviors\JsonColumns;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\models\Photo;
 
-class Item extends \yii\easyii\components\ActiveRecord
+class Item extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
     public static function tableName()
     {
-        return 'easyii_entity_items';
+        return 'cms_entity_items';
     }
 
     public function rules()
@@ -30,8 +30,8 @@ class Item extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'category_id' => Yii::t('easyii', 'Category'),
+            'title' => Yii::t('cms', 'Title'),
+            'category_id' => Yii::t('cms', 'Category'),
         ];
     }
 

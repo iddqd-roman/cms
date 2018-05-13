@@ -1,4 +1,4 @@
-#easyii-navbar {
+#cms-navbar {
     background: #1d212a none repeat scroll 0 0;
     border-color: #080808;
     border-width: 0 0 1px;
@@ -16,15 +16,15 @@
     font-family: "Open Sans",sans-serif !important;
     box-sizing: border-box;
 }
-#easyii-navbar::before, #easyii-navbar::after{
+#cms-navbar::before, #cms-navbar::after{
     content: " ";
     display: table;
     box-sizing: border-box;
 }
-#easyii-navbar::after{
+#cms-navbar::after{
     clear: both;
 }
-#easyii-navbar .easyii-container {
+#cms-navbar .cms-container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -33,39 +33,39 @@
     box-sizing: border-box;
 }
 @media (min-width: 768px) {
-    #easyii-navbar .easyii-container {
+    #cms-navbar .cms-container {
         width: 750px;
     }
 }
 @media (min-width: 992px) {
-    #easyii-navbar .easyii-container {
+    #cms-navbar .cms-container {
         width: 970px;
     }
 }
 @media (min-width: 1200px) {
-    #easyii-navbar .easyii-container {
+    #cms-navbar .cms-container {
         width: 1170px;
     }
 }
-#easyii-navbar a {
+#cms-navbar a {
     color: #9d9d9d;
     text-decoration: none;
 }
-#easyii-navbar a:hover,#easyii-navbar a:active {
+#cms-navbar a:hover,#cms-navbar a:active {
     color: #fff;
 }
-#easyii-navbar .live-edit-label {
+#cms-navbar .live-edit-label {
     margin: 0 10px 0 20px;
     cursor: pointer;
     font-weight: normal;
 }
-#easyii-navbar .live-edit-label:hover {
+#cms-navbar .live-edit-label:hover {
     color: #fff;
 }
-#easyii-navbar .pull-left {
+#cms-navbar .pull-left {
     float: left;
 }
-#easyii-navbar .pull-right {
+#cms-navbar .pull-right {
     float: right;
 }
 @font-face {
@@ -73,7 +73,7 @@
     src: url('../fonts/glyphicons-halflings-regular.eot');
     src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-#easyii-navbar .glyphicon {
+#cms-navbar .glyphicon {
     position: relative;
     top: 1px;
     display: inline-block;
@@ -93,7 +93,7 @@
 .glyphicon-log-out:before {
     content: "\e163";
 }
-#easyii-navbar .switcher{
+#cms-navbar .switcher{
     margin-top: 15px;
     border: none;
     background: #b3b8c3;
@@ -105,34 +105,34 @@
     padding: 1px;
     box-sizing: border-box;
 }
-#easyii-navbar .switcher .slider{
+#cms-navbar .switcher .slider{
     background: #f0f3f3;
     height: 18px;
     border-radius: 10px;
     box-shadow: 0 0 2px 1px #999;
 }
-#easyii-navbar .switcher.is-active{
+#cms-navbar .switcher.is-active{
     background: #27b6af;
 }
-#easyii-navbar .switcher .textNo{
+#cms-navbar .switcher .textNo{
     color: #fff;
 }
-/*#easyii-navbar li.live-edit a:hover{
+/*#cms-navbar li.live-edit a:hover{
     background: #27b6af;
 }*/
 
-span.easyiicms-edit{
+span.cmscms-edit{
     display: inline-block;
 }
 
-.easyiicms-edit{
+.cmscms-edit{
     position: relative;
 }
-.easyiicms-goedit{
+.cmscms-goedit{
     position: absolute; top: 0; left: 0;
 
 }
-.easyiicms-goedit:hover{
+.cmscms-goedit:hover{
     border: 1px solid #337ab7;
     box-shadow: 0 0 10px #337ab7;
     background-color: rgba(51, 122, 183, 0.2);

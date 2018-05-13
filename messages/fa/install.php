@@ -17,5 +17,5 @@ return [
     'Installation completed' => 'نصب کامل شد',
     'Installation error' => 'خطا در نصب',
     'Cannot connect to database. Please configure `{0}`.' => 'به دیتابیس نمی توان متصل شد لطفادر `{0}` تنظیم کنید.',
-    'EasyiiCMS is already installed. If you want to reinstall easyiiCMS, please drop all tables with prefix `easyii_` from your database manually.' => 'EasyiiCMS در حال حاضر نصب شده است. اگر می خواهید نصب را مجدد انجام دهید لطفا تمامی جدول های دیتابیس با _easyii را حذف نمایید.'
+    'cmsCMS is already installed. If you want to reinstall cmsCMS, please drop all tables with prefix `cms_` from your database manually.' => 'cmsCMS در حال حاضر نصب شده است. اگر می خواهید نصب را مجدد انجام دهید لطفا تمامی جدول های دیتابیس با _cms را حذف نمایید.'
 ];

@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\modules\faq;
+namespace yii\cms\modules\faq;
 
 use Yii;
 
-class FaqModule extends \yii\easyii\components\Module
+class FaqModule extends \yii\cms\components\Module
 {
     public $settings = [
         'questionHtmlEditor' => true,

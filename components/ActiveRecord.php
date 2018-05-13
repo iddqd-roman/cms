@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 /**
- * Base active record class for easyii models
- * @package yii\easyii\components
+ * Base active record class for cms models
+ * @package yii\cms\components
  */
 class ActiveRecord extends \yii\db\ActiveRecord
 {

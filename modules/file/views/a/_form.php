@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\SeoForm;
+use yii\cms\widgets\SeoForm;
 ?>
 <?php $form = ActiveForm::begin([
     'enableAjaxValidation' => true,
@@ -19,5 +19,5 @@ use yii\easyii\widgets\SeoForm;
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
 
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

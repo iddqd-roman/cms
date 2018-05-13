@@ -1,24 +1,24 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
 
-use yii\easyii\helpers\Data;
-use yii\easyii\behaviors\CacheFlush;
+use yii\cms\helpers\Data;
+use yii\cms\behaviors\CacheFlush;
 
-class Setting extends \yii\easyii\components\ActiveRecord
+class Setting extends \yii\cms\components\ActiveRecord
 {
     const VISIBLE_NONE = 0;
     const VISIBLE_ROOT = 1;
     const VISIBLE_ALL = 2;
 
-    const CACHE_KEY = 'easyii_settings';
+    const CACHE_KEY = 'cms_settings';
 
     static $_data;
 
     public static function tableName()
     {
-        return 'easyii_settings';
+        return 'cms_settings';
     }
 
     public function rules()
@@ -35,10 +35,10 @@ class Setting extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('easyii', 'Name'),
-            'title' => Yii::t('easyii', 'Title'),
-            'value' => Yii::t('easyii', 'Value'),
-            'visibility' => Yii::t('easyii', 'Only for developer')
+            'name' => Yii::t('cms', 'Name'),
+            'title' => Yii::t('cms', 'Title'),
+            'value' => Yii::t('cms', 'Value'),
+            'visibility' => Yii::t('cms', 'Only for developer')
         ];
     }
 

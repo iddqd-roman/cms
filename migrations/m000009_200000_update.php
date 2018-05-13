@@ -1,18 +1,18 @@
 <?php
-use yii\easyii\helpers\Data;
-use yii\easyii\helpers\MigrationHelper;
-use yii\easyii\models;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\entity;
-use yii\easyii\modules\catalog;
-use yii\easyii\modules\page\models\Page;
-use yii\easyii\modules\shopcart;
-use yii\easyii\modules\file;
-use yii\easyii\modules\article;
-use yii\easyii\modules\carousel\models\Carousel;
-use yii\easyii\modules\gallery;
-use yii\easyii\modules\news\models\News;
-use yii\easyii\modules\entity\EntityModule;
+use yii\cms\helpers\Data;
+use yii\cms\helpers\MigrationHelper;
+use yii\cms\models;
+use yii\cms\models\Setting;
+use yii\cms\modules\entity;
+use yii\cms\modules\catalog;
+use yii\cms\modules\page\models\Page;
+use yii\cms\modules\shopcart;
+use yii\cms\modules\file;
+use yii\cms\modules\article;
+use yii\cms\modules\carousel\models\Carousel;
+use yii\cms\modules\gallery;
+use yii\cms\modules\news\models\News;
+use yii\cms\modules\entity\EntityModule;
 
 class m000009_200000_update extends \yii\db\Migration
 {

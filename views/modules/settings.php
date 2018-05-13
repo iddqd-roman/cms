@@ -23,9 +23,9 @@ $this->title = $model->title;
             </div>
         <?php endif; ?>
     <?php endforeach; ?>
-    <?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
     <?php Html::endForm(); ?>
 <?php else : ?>
-    <?= $model->title ?> <?= Yii::t('easyii', 'module doesn`t have any settings.') ?>
+    <?= $model->title ?> <?= Yii::t('cms', 'module doesn`t have any settings.') ?>
 <?php endif; ?>
-<a href="<?= Url::to(['/admin/modules/restore-settings', 'id' => $model->id]) ?>" class="pull-right text-warning"><i class="glyphicon glyphicon-flash"></i> <?= Yii::t('easyii', 'Restore default settings') ?></a>
+<a href="<?= Url::to(['/admin/modules/restore-settings', 'id' => $model->id]) ?>" class="pull-right text-warning"><i class="glyphicon glyphicon-flash"></i> <?= Yii::t('cms', 'Restore default settings') ?></a>

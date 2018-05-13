@@ -17,5 +17,5 @@ use yii\widgets\ActiveForm;
 <?php if($this->context->module->settings['enableText']) : ?>
     <?= $form->field($model, 'text')->textarea() ?>
 <?php endif; ?>
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\helpers\WebConsole;
-use yii\easyii\models\LoginForm;
-use yii\easyii\models\Setting;
+use yii\cms\helpers\WebConsole;
+use yii\cms\models\LoginForm;
+use yii\cms\models\Setting;
 use yii\helpers\FileHelper;
 
-class SystemController extends \yii\easyii\components\Controller
+class SystemController extends \yii\cms\components\Controller
 {
     public $rootActions = ['all'];
 
@@ -21,7 +21,7 @@ class SystemController extends \yii\easyii\components\Controller
     {
         $result = WebConsole::migrate();
 
-        Setting::set('easyii_version', \yii\easyii\AdminModule::VERSION);
+        Setting::set('cms_version', \yii\cms\AdminModule::VERSION);
         Yii::$app->cache->flush();
 
         return $this->render('update', ['result' => $result]);
@@ -30,7 +30,7 @@ class SystemController extends \yii\easyii\components\Controller
     public function actionFlushCache()
     {
         Yii::$app->cache->flush();
-        $this->flash('success', Yii::t('easyii', 'Cache flushed'));
+        $this->flash('success', Yii::t('cms', 'Cache flushed'));
         return $this->back();
     }
 
@@ -45,7 +45,7 @@ class SystemController extends \yii\easyii\components\Controller
                 unlink($asset);
             }
         }
-        $this->flash('success', Yii::t('easyii', 'Assets cleared'));
+        $this->flash('success', Yii::t('cms', 'Assets cleared'));
         return $this->back();
     }
 

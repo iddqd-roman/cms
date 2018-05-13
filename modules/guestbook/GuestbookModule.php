@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\guestbook;
+namespace yii\cms\modules\guestbook;
 
-class GuestbookModule extends \yii\easyii\components\Module
+class GuestbookModule extends \yii\cms\components\Module
 {
     public $settings = [
         'enableTitle' => false,
@@ -10,12 +10,12 @@ class GuestbookModule extends \yii\easyii\components\Module
         'enableCaptcha' => false,
         'mailAdminOnNewPost' => true,
         'subjectOnNewPost' => 'New message in the guestbook.',
-        'templateOnNewPost' => '@easyii/modules/guestbook/mail/en/new_post',
+        'templateOnNewPost' => '@cms/modules/guestbook/mail/en/new_post',
         'telegramAdminOnNewPost' => false,
-        'telegramTemplateOnNewPost' => '@easyii/modules/guestbook/telegram/en/new_post',
+        'telegramTemplateOnNewPost' => '@cms/modules/guestbook/telegram/en/new_post',
         'frontendGuestbookRoute' => '/guestbook',
         'subjectNotifyUser' => 'Your post in the guestbook answered',
-        'templateNotifyUser' => '@easyii/modules/guestbook/mail/en/notify_user'
+        'templateNotifyUser' => '@cms/modules/guestbook/mail/en/notify_user'
     ];
 
     public static $installConfig = [

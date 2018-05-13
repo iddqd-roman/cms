@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\validators;
+namespace yii\cms\validators;
 
 use yii\validators\Validator;
 

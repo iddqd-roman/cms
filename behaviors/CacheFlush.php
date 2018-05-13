@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
 
 /**
  * CacheFlush behavior
- * @package yii\easyii\behaviors
+ * @package yii\cms\behaviors
  * @inheritdoc
  */
 class CacheFlush extends \yii\base\Behavior

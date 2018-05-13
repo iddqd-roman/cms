@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 
 class Mail
 {
@@ -19,7 +19,7 @@ class Mail
     public static function send($toEmail, $subject, $template, $data = [], $options = [])
     {
         if(empty(Yii::$app->mailer) || !Yii::$app->mailer instanceof \yii\mail\BaseMailer) {
-            throw new InvalidConfigException('EasyiiCMS required `mailer` component.');
+            throw new InvalidConfigException('cmsCMS required `mailer` component.');
         }
         /** @var \yii\mail\BaseMailer $mailer */
         $mailer = Yii::$app->mailer;

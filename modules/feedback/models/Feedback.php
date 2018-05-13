@@ -1,17 +1,17 @@
 <?php
-namespace yii\easyii\modules\feedback\models;
+namespace yii\cms\modules\feedback\models;
 
 use Yii;
-use yii\easyii\behaviors\CalculateNotice;
-use yii\easyii\helpers\Mail;
-use yii\easyii\helpers\Telegram;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\feedback\FeedbackModule;
-use yii\easyii\validators\ReCaptchaValidator;
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\behaviors\CalculateNotice;
+use yii\cms\helpers\Mail;
+use yii\cms\helpers\Telegram;
+use yii\cms\models\Setting;
+use yii\cms\modules\feedback\FeedbackModule;
+use yii\cms\validators\ReCaptchaValidator;
+use yii\cms\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Feedback extends \yii\easyii\components\ActiveRecord
+class Feedback extends \yii\cms\components\ActiveRecord
 {
     const STATUS_NEW = 0;
     const STATUS_VIEW = 1;
@@ -23,7 +23,7 @@ class Feedback extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_feedback';
+        return 'cms_feedback';
     }
 
     public function rules()
@@ -72,13 +72,13 @@ class Feedback extends \yii\easyii\components\ActiveRecord
     {
         return [
             'email' => 'E-mail',
-            'name' => Yii::t('easyii', 'Name'),
-            'title' => Yii::t('easyii', 'Title'),
-            'text' => Yii::t('easyii', 'Text'),
-            'answer_subject' => Yii::t('easyii/feedback', 'Subject'),
-            'answer_text' => Yii::t('easyii', 'Text'),
-            'phone' => Yii::t('easyii/feedback', 'Phone'),
-            'reCaptcha' => Yii::t('easyii', 'Anti-spam check')
+            'name' => Yii::t('cms', 'Name'),
+            'title' => Yii::t('cms', 'Title'),
+            'text' => Yii::t('cms', 'Text'),
+            'answer_subject' => Yii::t('cms/feedback', 'Subject'),
+            'answer_text' => Yii::t('cms', 'Text'),
+            'phone' => Yii::t('cms/feedback', 'Phone'),
+            'reCaptcha' => Yii::t('cms', 'Anti-spam check')
         ];
     }
 

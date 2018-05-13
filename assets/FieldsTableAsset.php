@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class FieldsTableAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/assets/fields_table';
+    public $sourcePath = '@cms/assets/fields_table';
     public $css = [
         'fields.css',
     ];

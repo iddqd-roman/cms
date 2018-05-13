@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\ClearImageAction;
-use yii\easyii\actions\FieldsAction;
-use yii\easyii\helpers\Upload;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\ClearImageAction;
+use yii\cms\actions\FieldsAction;
+use yii\cms\helpers\Upload;
 use yii\widgets\ActiveForm;
 
 /**
  * Category controller component
- * @package yii\easyii\components
+ * @package yii\cms\components
  */
 class CategoryController extends Controller
 {
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     public function actionIndex()
     {
         $class = $this->categoryClass;
-        return $this->render('@easyii/views/category/index', [
+        return $this->render('@cms/views/category/index', [
             'cats' => $class::cats()
         ]);
     }
@@ -79,15 +79,15 @@ class CategoryController extends Controller
                 $model->status = $class::STATUS_ON;
 
                 if ($model->create(Yii::$app->request->post('parent', null))) {
-                    $this->flash('success', Yii::t('easyii', 'Category created'));
+                    $this->flash('success', Yii::t('cms', 'Category created'));
                     return $this->redirect(['/admin/' . $this->moduleName, 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
         } else {
-            return $this->render('@easyii/views/category/create', [
+            return $this->render('@cms/views/category/create', [
                 'model' => $model,
                 'parent' => $parent
             ]);
@@ -111,14 +111,14 @@ class CategoryController extends Controller
                 return ActiveForm::validate($model);
             } else {
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii', 'Category updated'));
+                    $this->flash('success', Yii::t('cms', 'Category updated'));
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }
         } else {
-            return $this->render('@easyii/views/category/edit', [
+            return $this->render('@cms/views/category/edit', [
                 'model' => $model
             ]);
         }
@@ -139,7 +139,7 @@ class CategoryController extends Controller
             $child->afterDelete();
         }
 
-        return $this->formatResponse(Yii::t('easyii', 'Category deleted'));
+        return $this->formatResponse(Yii::t('cms', 'Category deleted'));
     }
 
     public function actionDeleteDataFile($file)
@@ -155,7 +155,7 @@ class CategoryController extends Controller
             }
             $model->update();
         }
-        return $this->formatResponse(Yii::t('easyii', 'Deleted'));
+        return $this->formatResponse(Yii::t('cms', 'Deleted'));
     }
 
     /**
@@ -247,6 +247,6 @@ class CategoryController extends Controller
         $modelClass::updateAll(['status' => $status], ['in', 'id', $ids]);
         $model->trigger(\yii\db\ActiveRecord::EVENT_AFTER_UPDATE);
 
-        return $this->formatResponse(Yii::t('easyii', 'Status successfully changed'));
+        return $this->formatResponse(Yii::t('cms', 'Status successfully changed'));
     }
 }

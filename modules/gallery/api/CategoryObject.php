@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii\modules\gallery\api;
+namespace yii\cms\modules\gallery\api;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\components\API;
-use yii\easyii\models\Photo;
-use yii\easyii\modules\gallery\models\Category;
+use yii\cms\components\API;
+use yii\cms\models\Photo;
+use yii\cms\modules\gallery\models\Category;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \yii\easyii\components\ApiObject
+class CategoryObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $description;

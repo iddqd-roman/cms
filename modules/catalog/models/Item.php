@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\catalog\models;
+namespace yii\cms\modules\catalog\models;
 
 use Yii;
-use yii\easyii\behaviors\ImageFile;
-use yii\easyii\behaviors\JsonColumns;
-use yii\easyii\behaviors\SeoBehavior;
-use yii\easyii\behaviors\SlugBehavior;
-use yii\easyii\models\Photo;
-use yii\easyii\modules\catalog\CatalogModule;
+use yii\cms\behaviors\ImageFile;
+use yii\cms\behaviors\JsonColumns;
+use yii\cms\behaviors\SeoBehavior;
+use yii\cms\behaviors\SlugBehavior;
+use yii\cms\models\Photo;
+use yii\cms\modules\catalog\CatalogModule;
 
-class Item extends \yii\easyii\components\ActiveRecord
+class Item extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -18,7 +18,7 @@ class Item extends \yii\easyii\components\ActiveRecord
     
     public static function tableName()
     {
-        return 'easyii_catalog_items';
+        return 'cms_catalog_items';
     }
 
     public function rules()
@@ -33,7 +33,7 @@ class Item extends \yii\easyii\components\ActiveRecord
             ['discount', 'integer', 'max' => 99],
             [['status', 'category_id', 'available', 'time'], 'integer'],
             ['time', 'default', 'value' => time()],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['available', 'default', 'value' => 1],
             ['status', 'default', 'value' => self::STATUS_ON],
@@ -43,15 +43,15 @@ class Item extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'category_id' => Yii::t('easyii', 'Category'),
-            'image_file' => Yii::t('easyii', 'Image'),
-            'description' => Yii::t('easyii', 'Description'),
-            'available' => Yii::t('easyii/catalog', 'Available'),
-            'price' => Yii::t('easyii/catalog', 'Price'),
-            'discount' => Yii::t('easyii/catalog', 'Discount'),
-            'time' => Yii::t('easyii', 'Date'),
-            'slug' => Yii::t('easyii', 'Slug'),
+            'title' => Yii::t('cms', 'Title'),
+            'category_id' => Yii::t('cms', 'Category'),
+            'image_file' => Yii::t('cms', 'Image'),
+            'description' => Yii::t('cms', 'Description'),
+            'available' => Yii::t('cms/catalog', 'Available'),
+            'price' => Yii::t('cms/catalog', 'Price'),
+            'discount' => Yii::t('cms/catalog', 'Discount'),
+            'time' => Yii::t('cms', 'Date'),
+            'slug' => Yii::t('cms', 'Slug'),
         ];
     }
 

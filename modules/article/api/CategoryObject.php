@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\modules\article\api;
+namespace yii\cms\modules\article\api;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\components\API;
-use yii\easyii\models\Tag;
-use yii\easyii\modules\article\ArticleModule;
-use yii\easyii\modules\article\models\Item;
+use yii\cms\components\API;
+use yii\cms\models\Tag;
+use yii\cms\modules\article\ArticleModule;
+use yii\cms\modules\article\models\Item;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \yii\easyii\components\ApiObject
+class CategoryObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $description;

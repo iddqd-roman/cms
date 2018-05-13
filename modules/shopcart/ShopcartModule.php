@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii\modules\shopcart;
+namespace yii\cms\modules\shopcart;
 
-class ShopcartModule extends \yii\easyii\components\Module
+class ShopcartModule extends \yii\cms\components\Module
 {
     public $settings = [
         'mailAdminOnNewOrder' => true,
         'subjectOnNewOrder' => 'New order',
-        'templateOnNewOrder' => '@easyii/modules/shopcart/mail/en/new_order',
+        'templateOnNewOrder' => '@cms/modules/shopcart/mail/en/new_order',
         'subjectNotifyUser' => 'Your order status changed',
-        'templateNotifyUser' => '@easyii/modules/shopcart/mail/en/notify_user',
+        'templateNotifyUser' => '@cms/modules/shopcart/mail/en/notify_user',
         'frontendShopcartRoute' => '/shopcart/order',
         'enablePhone' => true,
         'enableEmail' => true

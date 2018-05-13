@@ -8,5 +8,5 @@ use yii\widgets\ActiveForm;
 <?= $form->field($model, 'class') ?>
 <?= $form->field($model, 'title') ?>
 <?= $form->field($model, 'icon') ?>
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

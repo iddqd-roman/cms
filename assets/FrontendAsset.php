@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class FrontendAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/media';
+    public $sourcePath = '@cms/media';
     public $css = [
         'css/frontend.css',
     ];
@@ -12,6 +12,6 @@ class FrontendAsset extends \yii\web\AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'yii\easyii\assets\SwitcherAsset'
+        'yii\cms\assets\SwitcherAsset'
     ];
 }

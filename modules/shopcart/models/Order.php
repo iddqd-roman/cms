@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\shopcart\models;
+namespace yii\cms\modules\shopcart\models;
 
 use Yii;
-use yii\easyii\behaviors\CalculateNotice;
-use yii\easyii\helpers\Mail;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\shopcart\ShopcartModule;
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\behaviors\CalculateNotice;
+use yii\cms\helpers\Mail;
+use yii\cms\models\Setting;
+use yii\cms\modules\shopcart\ShopcartModule;
+use yii\cms\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Order extends \yii\easyii\components\ActiveRecord
+class Order extends \yii\cms\components\ActiveRecord
 {
     const STATUS_BLANK = 0;
     const STATUS_PENDING = 1;
@@ -20,11 +20,11 @@ class Order extends \yii\easyii\components\ActiveRecord
     const STATUS_ERROR = 6;
     const STATUS_COMPLETED = 7;
 
-    const SESSION_KEY = 'easyii_shopcart_at';
+    const SESSION_KEY = 'cms_shopcart_at';
 
     public static function tableName()
     {
-        return 'easyii_shopcart_orders';
+        return 'cms_shopcart_orders';
     }
 
     public function rules()
@@ -47,12 +47,12 @@ class Order extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('easyii', 'Name'),
-            'email' => Yii::t('easyii', 'E-mail'),
-            'address' => Yii::t('easyii/shopcart', 'Address'),
-            'phone' => Yii::t('easyii/shopcart', 'Phone'),
-            'comment' => Yii::t('easyii/shopcart', 'Comment'),
-            'remark' => Yii::t('easyii/shopcart', 'Admin remark'),
+            'name' => Yii::t('cms', 'Name'),
+            'email' => Yii::t('cms', 'E-mail'),
+            'address' => Yii::t('cms/shopcart', 'Address'),
+            'phone' => Yii::t('cms/shopcart', 'Phone'),
+            'comment' => Yii::t('cms/shopcart', 'Comment'),
+            'remark' => Yii::t('cms/shopcart', 'Admin remark'),
         ];
     }
 
@@ -77,14 +77,14 @@ class Order extends \yii\easyii\components\ActiveRecord
     public static function states()
     {
         return [
-            self::STATUS_BLANK => Yii::t('easyii/shopcart', 'Blank'),
-            self::STATUS_PENDING => Yii::t('easyii/shopcart', 'Pending'),
-            self::STATUS_PROCESSED => Yii::t('easyii/shopcart', 'Processed'),
-            self::STATUS_DECLINED => Yii::t('easyii/shopcart', 'Declined'),
-            self::STATUS_SENT => Yii::t('easyii/shopcart', 'Sent'),
-            self::STATUS_RETURNED => Yii::t('easyii/shopcart', 'Returned'),
-            self::STATUS_ERROR => Yii::t('easyii/shopcart', 'Error'),
-            self::STATUS_COMPLETED => Yii::t('easyii/shopcart', 'Completed'),
+            self::STATUS_BLANK => Yii::t('cms/shopcart', 'Blank'),
+            self::STATUS_PENDING => Yii::t('cms/shopcart', 'Pending'),
+            self::STATUS_PROCESSED => Yii::t('cms/shopcart', 'Processed'),
+            self::STATUS_DECLINED => Yii::t('cms/shopcart', 'Declined'),
+            self::STATUS_SENT => Yii::t('cms/shopcart', 'Sent'),
+            self::STATUS_RETURNED => Yii::t('cms/shopcart', 'Returned'),
+            self::STATUS_ERROR => Yii::t('cms/shopcart', 'Error'),
+            self::STATUS_COMPLETED => Yii::t('cms/shopcart', 'Completed'),
         ];
     }
 

@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\modules\feedback\controllers;
+namespace yii\cms\modules\feedback\controllers;
 
 use Yii;
-use yii\easyii\modules\feedback\models\Feedback as FeedbackModel;
+use yii\cms\modules\feedback\models\Feedback as FeedbackModel;
 
 class SendController extends \yii\web\Controller
 {

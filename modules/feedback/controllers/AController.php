@@ -1,16 +1,16 @@
 <?php
-namespace yii\easyii\modules\feedback\controllers;
+namespace yii\cms\modules\feedback\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\components\Controller;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\feedback\models\Feedback;
+use yii\cms\actions\DeleteAction;
+use yii\cms\components\Controller;
+use yii\cms\models\Setting;
+use yii\cms\modules\feedback\models\Feedback;
 
 class AController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\feedback\models\Feedback';
+    public $modelClass = 'yii\cms\modules\feedback\models\Feedback';
     public $new = 0;
     public $noAnswer = 0;
 
@@ -19,7 +19,7 @@ class AController extends Controller
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/feedback', 'Feedback deleted')
+                'successMessage' => Yii::t('cms/feedback', 'Feedback deleted')
             ]
         ];
     }
@@ -83,20 +83,20 @@ class AController extends Controller
                 if ($model->sendAnswer()) {
                     $model->status = Feedback::STATUS_ANSWERED;
                     $model->save();
-                    $this->flash('success', Yii::t('easyii/feedback', 'Answer successfully sent'));
+                    $this->flash('success', Yii::t('cms/feedback', 'Answer successfully sent'));
                 } else {
-                    $this->flash('error', Yii::t('easyii/feedback', 'An error has occurred while sending mail'));
+                    $this->flash('error', Yii::t('cms/feedback', 'An error has occurred while sending mail'));
                 }
             } else {
-                $this->flash('error', Yii::t('easyii/feedback', 'Please fill correct `Admin E-mail` in Settings'));
+                $this->flash('error', Yii::t('cms/feedback', 'Please fill correct `Admin E-mail` in Settings'));
             }
 
             return $this->refresh();
         } else {
             if (!$model->answer_text) {
-                $model->answer_subject = Yii::t('easyii/feedback', $this->module->settings['answerSubject']);
-                if ($this->module->settings['answerHeader']) $model->answer_text = Yii::t('easyii/feedback', $this->module->settings['answerHeader']) . " " . $model->name . ".\n";
-                if ($this->module->settings['answerFooter']) $model->answer_text .= "\n\n" . Yii::t('easyii/feedback', $this->module->settings['answerFooter']);
+                $model->answer_subject = Yii::t('cms/feedback', $this->module->settings['answerSubject']);
+                if ($this->module->settings['answerHeader']) $model->answer_text = Yii::t('cms/feedback', $this->module->settings['answerHeader']) . " " . $model->name . ".\n";
+                if ($this->module->settings['answerFooter']) $model->answer_text .= "\n\n" . Yii::t('cms/feedback', $this->module->settings['answerFooter']);
             }
 
             return $this->render('view', [
@@ -111,9 +111,9 @@ class AController extends Controller
 
         $model->status = Feedback::STATUS_ANSWERED;
         if ($model->update()) {
-            $this->flash('success', Yii::t('easyii/feedback', 'Feedback updated'));
+            $this->flash('success', Yii::t('cms/feedback', 'Feedback updated'));
         } else {
-            $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+            $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
         }
         return $this->back();
     }

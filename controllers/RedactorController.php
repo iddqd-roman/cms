@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use vova07\imperavi\actions\GetAction;
 use Yii;
-use yii\easyii\helpers\Upload;
-use yii\easyii\models;
+use yii\cms\helpers\Upload;
+use yii\cms\models;
 use yii\helpers\Url;
 
-class RedactorController extends \yii\easyii\components\Controller
+class RedactorController extends \yii\cms\components\Controller
 {
     public function actions()
     {

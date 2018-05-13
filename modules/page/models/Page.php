@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\modules\page\models;
+namespace yii\cms\modules\page\models;
 
 use Yii;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\JsonColumns;
-use yii\easyii\behaviors\SeoBehavior;
-use yii\easyii\behaviors\SlugBehavior;
-use yii\easyii\components\CategoryWithFieldsModel;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\JsonColumns;
+use yii\cms\behaviors\SeoBehavior;
+use yii\cms\behaviors\SlugBehavior;
+use yii\cms\components\CategoryWithFieldsModel;
 use creocoder\nestedsets\NestedSetsBehavior;
-use yii\easyii\modules\page\PageModule;
+use yii\cms\modules\page\PageModule;
 
 class Page extends CategoryWithFieldsModel
 {
     public static function tableName()
     {
-        return 'easyii_pages';
+        return 'cms_pages';
     }
 
     public function rules()
@@ -23,7 +23,7 @@ class Page extends CategoryWithFieldsModel
             ['title', 'required'],
             [['title', 'text'], 'trim'],
             ['title', 'string', 'max' => 128],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             [['status', 'show_in_menu'], 'integer'],
             ['status', 'default', 'value' => self::STATUS_ON],
@@ -35,10 +35,10 @@ class Page extends CategoryWithFieldsModel
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'text' => Yii::t('easyii', 'Text'),
-            'slug' => Yii::t('easyii', 'Slug'),
-            'show_in_menu' => Yii::t('easyii/page', 'Show in menu'),
+            'title' => Yii::t('cms', 'Title'),
+            'text' => Yii::t('cms', 'Text'),
+            'slug' => Yii::t('cms', 'Slug'),
+            'show_in_menu' => Yii::t('cms/page', 'Show in menu'),
         ];
     }
 

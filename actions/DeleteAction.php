@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\actions;
+namespace yii\cms\actions;
 
 class DeleteAction extends \yii\base\Action
 {
@@ -12,7 +12,7 @@ class DeleteAction extends \yii\base\Action
         if(($model = $modelClass::findOne($id))){
             $model->delete();
         } else {
-            $this->controller->error = \Yii::t('easyii', 'Not found');
+            $this->controller->error = \Yii::t('cms', 'Not found');
         }
         return $this->controller->formatResponse($this->successMessage);
     }

@@ -1,25 +1,25 @@
 <?php
-namespace yii\easyii\modules\feedback\api;
+namespace yii\cms\modules\feedback\api;
 
 use Yii;
-use yii\easyii\modules\feedback\FeedbackModule;
-use yii\easyii\modules\feedback\models\Feedback as FeedbackModel;
+use yii\cms\modules\feedback\FeedbackModule;
+use yii\cms\modules\feedback\models\Feedback as FeedbackModel;
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\ReCaptcha;
+use yii\cms\widgets\ReCaptcha;
 
 
 /**
  * Feedback module API
- * @package yii\easyii\modules\feedback\api
+ * @package yii\cms\modules\feedback\api
  *
  * @method static string form(array $options = []) Returns fully worked standalone html form.
  * @method static array save(array $attributes) If you using your own form, this function will be useful for manual saving feedback's.
  */
 
-class Feedback extends \yii\easyii\components\API
+class Feedback extends \yii\cms\components\API
 {
     const SENT_VAR = 'feedback_sent';
 
@@ -52,7 +52,7 @@ class Feedback extends \yii\easyii\components\API
 
         if(FeedbackModule::setting('enableCaptcha')) echo $form->field($model, 'reCaptcha')->widget(ReCaptcha::className());
 
-        echo Html::submitButton(Yii::t('easyii', 'Send'), ['class' => 'btn btn-primary']);
+        echo Html::submitButton(Yii::t('cms', 'Send'), ['class' => 'btn btn-primary']);
         ActiveForm::end();
 
         return ob_get_clean();

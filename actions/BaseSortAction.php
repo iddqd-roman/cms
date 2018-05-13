@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\actions;
+namespace yii\cms\actions;
 
 class BaseSortAction extends \yii\base\Action
 {
@@ -49,7 +49,7 @@ class BaseSortAction extends \yii\base\Action
                 $success = ['swap_id' => $modelSwap->primaryKey];
             }
         } else {
-            $this->controller->error = \Yii::t('easyii', 'Not found');
+            $this->controller->error = \Yii::t('cms', 'Not found');
         }
 
         return $this->controller->formatResponse($success);

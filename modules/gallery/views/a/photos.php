@@ -1,9 +1,9 @@
 <?php
-use yii\easyii\widgets\Photos;
+use yii\cms\widgets\Photos;
 
 $this->title = $model->title;
 ?>
 
-<?= $this->render('@easyii/views/category/_menu') ?>
+<?= $this->render('@cms/views/category/_menu') ?>
 
 <?= Photos::widget(['model' => $model])?>

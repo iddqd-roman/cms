@@ -1,10 +1,10 @@
 <?php
-use yii\easyii\modules\shopcart\models\News;
-use yii\easyii\modules\shopcart\models\Order;
+use yii\cms\modules\shopcart\models\News;
+use yii\cms\modules\shopcart\models\Order;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii/shopcart', 'Orders');
+$this->title = Yii::t('cms/shopcart', 'Orders');
 
 $module = $this->context->module->id;
 ?>
@@ -16,11 +16,11 @@ $module = $this->context->module->id;
         <thead>
             <tr>
                 <th width="100">#</th>
-                <th><?= Yii::t('easyii', 'Name') ?></th>
-                <th><?= Yii::t('easyii/shopcart', 'Address') ?></th>
-                <th width="100"><?= Yii::t('easyii/shopcart', 'Cost') ?></th>
-                <th width="150"><?= Yii::t('easyii', 'Date') ?></th>
-                <th width="90"><?= Yii::t('easyii', 'Status') ?></th>
+                <th><?= Yii::t('cms', 'Name') ?></th>
+                <th><?= Yii::t('cms/shopcart', 'Address') ?></th>
+                <th width="100"><?= Yii::t('cms/shopcart', 'Cost') ?></th>
+                <th width="150"><?= Yii::t('cms', 'Date') ?></th>
+                <th width="90"><?= Yii::t('cms', 'Status') ?></th>
                 <th width="90"></th>
             </tr>
         </thead>
@@ -40,8 +40,8 @@ $module = $this->context->module->id;
                 <td><?= Order::statusName($item->status) ?></td>
                 <td class="control">
                     <div class="btn-group btn-group-sm" role="group">
-                        <a href="<?= Url::to(['/admin/'.$module.'/a/view', 'id' => $item->primaryKey]) ?>" class="btn btn-default" title="<?= Yii::t('easyii/shopcart', 'View') ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
-                        <a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a href="<?= Url::to(['/admin/'.$module.'/a/view', 'id' => $item->primaryKey]) ?>" class="btn btn-default" title="<?= Yii::t('cms/shopcart', 'View') ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a href="<?= Url::to(['/admin/'.$module.'/a/delete', 'id' => $item->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
                     </div>
                 </td>
             </tr>
@@ -52,5 +52,5 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ]) ?>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

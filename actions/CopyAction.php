@@ -4,11 +4,11 @@
 * url for this action is /admin/catalog/items/copy/<id>
 */
 
-namespace yii\easyii\actions;
+namespace yii\cms\actions;
 
 use Yii;
-use yii\easyii\modules\catalog\models\Item;
-use yii\easyii\modules\catalog\models\Category;
+use yii\cms\modules\catalog\models\Item;
+use yii\cms\modules\catalog\models\Category;
 
 
 class CopyAction extends \yii\base\Action
@@ -37,11 +37,11 @@ class CopyAction extends \yii\base\Action
         if ($model->load($copied_data)) {
             $model->data = $copied_data['Data'];
             if(!$model->save()){
-                $this->controller->error = Yii::t('easyii', 'Ошибка копирования');
+                $this->controller->error = Yii::t('cms', 'Ошибка копирования');
             }
         }
         else {
-            $this->controller->error = Yii::t('easyii', 'Ошибка копирования');
+            $this->controller->error = Yii::t('cms', 'Ошибка копирования');
         }
         return $this->controller->formatResponse($this->successMessage);
     }

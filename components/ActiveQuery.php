@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 /**
  * Base active query class for models
- * @package yii\easyii\components
+ * @package yii\cms\components
  */
 class ActiveQuery extends \yii\db\ActiveQuery
 {

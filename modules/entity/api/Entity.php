@@ -1,18 +1,18 @@
 <?php
-namespace yii\easyii\modules\entity\api;
+namespace yii\cms\modules\entity\api;
 
 use Yii;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\widgets\Fancybox;
-use yii\easyii\modules\entity\models\Category;
-use yii\easyii\modules\entity\models\Item;
+use yii\cms\widgets\Fancybox;
+use yii\cms\modules\entity\models\Category;
+use yii\cms\modules\entity\models\Item;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 
 /**
  * Catalog module API
- * @package yii\easyii\modules\entity\api
+ * @package yii\cms\modules\entity\api
  *
  * @method static CategoryObject cat(mixed $id_slug) Get catalog category by id or slug
  * @method static array tree() Get catalog categories as tree
@@ -25,7 +25,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Entity extends \yii\easyii\components\API
+class Entity extends \yii\cms\components\API
 {
     private $_cats;
     private $_adp;
@@ -119,7 +119,7 @@ class Entity extends \yii\easyii\components\API
     public function api_plugin($options = [])
     {
         Fancybox::widget([
-            'selector' => '.easyii-box',
+            'selector' => '.cms-box',
             'options' => $options
         ]);
     }
@@ -127,7 +127,7 @@ class Entity extends \yii\easyii\components\API
     private function findItem($id)
     {
         if(!($item = Item::find()->where(['id' => ':id'], [':id' => $id])->status(Item::STATUS_ON)->one())){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
 
         return new ItemObject($item);

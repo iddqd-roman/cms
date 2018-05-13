@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\modules\file\api;
+namespace yii\cms\modules\file\api;
 
 use Yii;
-use yii\easyii\components\API;
+use yii\cms\components\API;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-class FileObject extends \yii\easyii\components\ApiObject
+class FileObject extends \yii\cms\components\ApiObject
 {
     public $slug;
     public $downloads;

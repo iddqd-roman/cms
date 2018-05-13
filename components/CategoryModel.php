@@ -1,23 +1,23 @@
 <?php
-namespace yii\easyii\components;
+namespace yii\cms\components;
 
 use Yii;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\ImageFile;
-use yii\easyii\behaviors\SeoBehavior;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\ImageFile;
+use yii\cms\behaviors\SeoBehavior;
 use creocoder\nestedsets\NestedSetsBehavior;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\behaviors\SlugBehavior;
-use yii\easyii\behaviors\Taggable;
-use yii\easyii\models\SeoText;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\behaviors\SlugBehavior;
+use yii\cms\behaviors\Taggable;
+use yii\cms\models\SeoText;
 use yii\web\NotFoundHttpException;
 
 /**
  * Base CategoryModel. Shared by categories
- * @package yii\easyii\components
+ * @package yii\cms\components
  * @inheritdoc
  */
-class CategoryModel extends \yii\easyii\components\ActiveRecord
+class CategoryModel extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -37,7 +37,7 @@ class CategoryModel extends \yii\easyii\components\ActiveRecord
             [['title', 'slug'], 'string', 'max' => 128],
             ['description', 'safe'],
             ['image_file', 'image'],
-            ['slug', 'match', 'pattern' => static::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => static::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['tagNames', 'safe'],
             ['status', 'integer'],
@@ -48,11 +48,11 @@ class CategoryModel extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'description' => Yii::t('easyii', 'Description'),
-            'image_file' => Yii::t('easyii', 'Image'),
-            'slug' => Yii::t('easyii', 'Slug'),
-            'tagNames' => Yii::t('easyii', 'Tags'),
+            'title' => Yii::t('cms', 'Title'),
+            'description' => Yii::t('cms', 'Description'),
+            'image_file' => Yii::t('cms', 'Image'),
+            'slug' => Yii::t('cms', 'Slug'),
+            'tagNames' => Yii::t('cms', 'Tags'),
         ];
     }
 
@@ -188,7 +188,7 @@ class CategoryModel extends \yii\easyii\components\ActiveRecord
                 return $cat;
             }
         }
-        throw new NotFoundHttpException(Yii::t('easyii', 'Category not found'));
+        throw new NotFoundHttpException(Yii::t('cms', 'Category not found'));
     }
 
     /**

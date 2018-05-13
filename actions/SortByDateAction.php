@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\actions;
+namespace yii\cms\actions;
 
 class SortByDateAction extends BaseSortAction
 {

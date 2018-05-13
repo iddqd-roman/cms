@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\modules\article\api;
+namespace yii\cms\modules\article\api;
 
 use Yii;
 
 use yii\data\ActiveDataProvider;
-use yii\easyii\models\Tag;
-use yii\easyii\modules\article\ArticleModule;
-use yii\easyii\modules\article\models\Category;
-use yii\easyii\modules\article\models\Item;
-use yii\easyii\widgets\Fancybox;
+use yii\cms\models\Tag;
+use yii\cms\modules\article\ArticleModule;
+use yii\cms\modules\article\models\Category;
+use yii\cms\modules\article\models\Item;
+use yii\cms\widgets\Fancybox;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 
 /**
  * Article module API
- * @package yii\easyii\modules\article\api
+ * @package yii\cms\modules\article\api
  *
  * @method static CategoryObject cat(mixed $id_slug) Get article category by id or slug
  * @method static array tree() Get article categories as tree
@@ -27,7 +27,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Article extends \yii\easyii\components\API
+class Article extends \yii\cms\components\API
 {
     private $_cats;
     private $_adp;
@@ -129,7 +129,7 @@ class Article extends \yii\easyii\components\API
     public function api_plugin($options = [])
     {
         Fancybox::widget([
-            'selector' => '.easyii-box',
+            'selector' => '.cms-box',
             'options' => $options
         ]);
     }
@@ -152,7 +152,7 @@ class Article extends \yii\easyii\components\API
             $condition = 'slug=:id_slug';
         }
         if(!($article = Item::find()->where($condition, [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one())) {
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         $article->updateCounters(['views' => 1]);
         return new ArticleObject($article);

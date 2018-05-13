@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\modules\file\controllers;
+namespace yii\cms\modules\file\controllers;
 
 use Yii;
-use yii\easyii\helpers\Upload;
-use yii\easyii\modules\file\models\File;
+use yii\cms\helpers\Upload;
+use yii\cms\modules\file\models\File;
 
 class DownloadController extends \yii\web\Controller
 {
@@ -15,7 +15,7 @@ class DownloadController extends \yii\web\Controller
             Yii::$app->response->sendFile(Upload::getAbsolutePath($model->file));
         }
         else{
-            throw new \yii\web\NotFoundHttpException(Yii::t('easyii/file/api', 'File not found'));
+            throw new \yii\web\NotFoundHttpException(Yii::t('cms/file/api', 'File not found'));
         }
     }
 }

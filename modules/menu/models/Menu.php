@@ -1,21 +1,21 @@
 <?php
-namespace yii\easyii\modules\menu\models;
+namespace yii\cms\modules\menu\models;
 
 use Yii;
 use yii\behaviors\SluggableBehavior;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\SortableModel;
-use yii\easyii\modules\menu\MenuModule;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\SortableModel;
+use yii\cms\modules\menu\MenuModule;
 
-class Menu extends \yii\easyii\components\ActiveRecord
+class Menu extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
-    const CACHE_KEY = 'easyii_menu';
+    const CACHE_KEY = 'cms_menu';
 
     public static function tableName()
     {
-        return 'easyii_menu';
+        return 'cms_menu';
     }
 
     public function rules()
@@ -24,7 +24,7 @@ class Menu extends \yii\easyii\components\ActiveRecord
             ['title', 'required'],
             ['title', 'string', 'max' => 128],
             [['title', 'items'], 'trim'],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['items', 'default', 'value' => '[]'],
             ['slug', 'unique'],
@@ -36,9 +36,9 @@ class Menu extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'slug' => Yii::t('easyii', 'Slug'),
-            'items' => Yii::t('easyii', 'Items'),
+            'title' => Yii::t('cms', 'Title'),
+            'slug' => Yii::t('cms', 'Slug'),
+            'items' => Yii::t('cms', 'Items'),
         ];
     }
 

@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\modules\gallery\controllers;
+namespace yii\cms\modules\gallery\controllers;
 
-use yii\easyii\components\CategoryController;
+use yii\cms\components\CategoryController;
 
 class AController extends CategoryController
 {
-    public $categoryClass = 'yii\easyii\modules\gallery\models\Category';
+    public $categoryClass = 'yii\cms\modules\gallery\models\Category';
     public $moduleName = 'gallery';
     public $viewRoute = '/a/photos';
 

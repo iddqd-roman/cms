@@ -1,28 +1,28 @@
 <?php
-namespace yii\easyii\modules\entity\controllers;
+namespace yii\cms\modules\entity\controllers;
 
 use Yii;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
-use yii\easyii\behaviors\Fields;
-use yii\easyii\components\Controller;
-use yii\easyii\modules\entity\EntityModule;
-use yii\easyii\modules\entity\models\Category;
-use yii\easyii\modules\entity\models\Item;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
+use yii\cms\behaviors\Fields;
+use yii\cms\components\Controller;
+use yii\cms\modules\entity\EntityModule;
+use yii\cms\modules\entity\models\Category;
+use yii\cms\modules\entity\models\Item;
 use yii\widgets\ActiveForm;
 
 class ItemsController extends Controller
 {
-    public $modelClass = 'yii\easyii\modules\entity\models\Item';
-    public $categoryClass = 'yii\easyii\modules\entity\models\Category';
+    public $modelClass = 'yii\cms\modules\entity\models\Item';
+    public $categoryClass = 'yii\cms\modules\entity\models\Category';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii/entity', 'Item deleted')
+                'successMessage' => Yii::t('cms/entity', 'Item deleted')
             ],
             'up' => [
                 'class' => SortByNumAction::className(),
@@ -66,10 +66,10 @@ class ItemsController extends Controller
                 $model->data = $this->parseData($model);
 
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii/entity', 'Item created'));
+                    $this->flash('success', Yii::t('cms/entity', 'Item created'));
                     return $this->redirect(['/admin/'.$this->module->id.'/items/edit/', 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Create error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }
@@ -97,10 +97,10 @@ class ItemsController extends Controller
                 $model->data = $this->parseData($model);
 
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii/entity', 'Item updated'));
+                    $this->flash('success', Yii::t('cms/entity', 'Item updated'));
                     return $this->redirect(['/admin/'.$this->module->id.'/items/edit', 'id' => $model->primaryKey]);
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                     return $this->refresh();
                 }
             }

@@ -1,21 +1,21 @@
 {
-    "name": "noumo/easyii",
+    "name": "iddqd-roman/cms",
     "version": "dev-master",
     "description": "Easy CMS based on Yii2 Framework - Development package",
-    "keywords": ["easyii"],
-    "homepage": "http://easyiicms.com",
+    "keywords": ["cms"],
+    "homepage": "http://cmscms.com",
     "type": "yii2-extension",
     "license": "GNU GPL V3",
     "minimum-stability": "dev",
     "support": {
-        "wiki": "http://easyiicms.com/docs",
-        "source": "https://github.com/noumo/easyii.git",
-        "issues": "https://github.com/noumo/easyii/issues"
+        "wiki": "http://cmscms.com/docs",
+        "source": "https://github.com/iddqd-roman/cms.git",
+        "issues": "https://github.com/iddqd-roman/cms/issues"
     },
     "authors": [
         {
             "name": "Ivan Vasilkov",
-            "email": "noumohope@gmail.com",
+            "email": "iddqd-romanhope@gmail.com",
             "role" : "Developer"
         }
     ],
@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "yii\\easyii\\": "/"
+            "yii\\cms\\": "/"
         }
     },
     "extra": {

@@ -10,10 +10,10 @@ $action = $this->context->action->id;
                 <?php if($action === 'edit') : ?>
                     <i class="glyphicon glyphicon-chevron-left font-12"></i>
                 <?php endif; ?>
-                <?= Yii::t('easyii', 'List') ?>
+                <?= Yii::t('cms', 'List') ?>
             </a>
         </li>
-        <li <?= ($action === 'create') ? 'class="active"' : '' ?>><a href="<?= Url::to(['/admin/settings/create']) ?>"><?= Yii::t('easyii', 'Create') ?></a></li>
+        <li <?= ($action === 'create') ? 'class="active"' : '' ?>><a href="<?= Url::to(['/admin/settings/create']) ?>"><?= Yii::t('cms', 'Create') ?></a></li>
     </ul>
     <br/>
 <?php elseif($action === 'edit') : ?>
@@ -21,7 +21,7 @@ $action = $this->context->action->id;
         <li>
             <a href="<?= $this->context->getReturnUrl('/admin/settings') ?>">
                 <i class="glyphicon glyphicon-chevron-left font-12"></i>
-                <?= Yii::t('easyii', 'Back') ?>
+                <?= Yii::t('cms', 'Back') ?>
             </a>
         </li>
     </ul>

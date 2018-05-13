@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\shopcart\models;
+namespace yii\cms\modules\shopcart\models;
 
-use yii\easyii\modules\catalog\models\Item;
+use yii\cms\modules\catalog\models\Item;
 use Yii;
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\validators\EscapeValidator;
 
-class Good extends \yii\easyii\components\ActiveRecord
+class Good extends \yii\cms\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_shopcart_goods';
+        return 'cms_shopcart_goods';
     }
 
     public function rules()

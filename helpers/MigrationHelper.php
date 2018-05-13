@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 use Yii;
-use yii\easyii\models\Module;
+use yii\cms\models\Module;
 
 class MigrationHelper
 {

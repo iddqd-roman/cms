@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use yii\base\Widget;
 use yii\base\InvalidConfigException;

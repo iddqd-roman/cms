@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class AdminAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/media';
+    public $sourcePath = '@cms/media';
     public $css = [
         'css/admin.css',
     ];
@@ -13,8 +13,8 @@ class AdminAsset extends \yii\web\AssetBundle
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
-        'yii\easyii\assets\SwitcherAsset',
-        'yii\easyii\assets\FancyboxAsset',
+        'yii\cms\assets\SwitcherAsset',
+        'yii\cms\assets\FancyboxAsset',
     ];
     public $jsOptions = array(
         'position' => \yii\web\View::POS_HEAD

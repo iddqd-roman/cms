@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\file;
+namespace yii\cms\modules\file;
 
-class FileModule extends \yii\easyii\components\Module
+class FileModule extends \yii\cms\components\Module
 {
     public $settings = [
         'slugImmutable' => false

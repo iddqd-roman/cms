@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\modules\shopcart\controllers;
+namespace yii\cms\modules\shopcart\controllers;
 
 use Yii;
-use yii\easyii\modules\shopcart\api\Shopcart;
-use yii\easyii\modules\shopcart\models\Order;
+use yii\cms\modules\shopcart\api\Shopcart;
+use yii\cms\modules\shopcart\models\Order;
 
 class SendController extends \yii\web\Controller
 {

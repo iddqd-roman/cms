@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\modules\article\models;
+namespace yii\cms\modules\article\models;
 
-class Category extends \yii\easyii\components\CategoryModel
+class Category extends \yii\cms\components\CategoryModel
 {
     public static function tableName()
     {
-        return 'easyii_article_categories';
+        return 'cms_article_categories';
     }
 
     public function getItems()

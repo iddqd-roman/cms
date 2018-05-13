@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii\easyii\models\Module;
+use yii\cms\models\Module;
 
 class CalculateNotice extends \yii\base\Behavior
 {
@@ -20,7 +20,7 @@ class CalculateNotice extends \yii\base\Behavior
 
     public function updateNotice()
     {
-        $moduleName = \yii\easyii\components\Module::getModuleName(get_class($this->owner));
+        $moduleName = \yii\cms\components\Module::getModuleName(get_class($this->owner));
         if(($module = Module::findOne(['name' => $moduleName]))){
             $module->notice = call_user_func($this->callback);
             $module->update();

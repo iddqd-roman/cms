@@ -1,9 +1,9 @@
 <?php
 
 use yii\db\Schema;
-use yii\easyii\models;
-use \yii\easyii\modules\content\modules\contentElements\models\ElementOption;
-use yii\easyii\modules\menu\models\Menu;
+use yii\cms\models;
+use \yii\cms\modules\content\modules\contentElements\models\ElementOption;
+use yii\cms\modules\menu\models\Menu;
 
 class m000009_200004_update extends \yii\db\Migration
 {
@@ -11,10 +11,10 @@ class m000009_200004_update extends \yii\db\Migration
     
     public function up()
     {
-		$this->alterColumn(yii\easyii\modules\catalog\models\Category::tableName(),'description', $this->text());
-		$this->alterColumn(yii\easyii\modules\article\models\Category::tableName(),'description', $this->text());
-		$this->alterColumn(yii\easyii\modules\gallery\models\Category::tableName(),'description', $this->text());
-		$this->alterColumn(yii\easyii\modules\entity\models\Category::tableName(),'description', $this->text());
+		$this->alterColumn(yii\cms\modules\catalog\models\Category::tableName(),'description', $this->text());
+		$this->alterColumn(yii\cms\modules\article\models\Category::tableName(),'description', $this->text());
+		$this->alterColumn(yii\cms\modules\gallery\models\Category::tableName(),'description', $this->text());
+		$this->alterColumn(yii\cms\modules\entity\models\Category::tableName(),'description', $this->text());
 	}
 
     public function down()

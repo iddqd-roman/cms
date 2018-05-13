@@ -1,11 +1,11 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use yii\db\ActiveRecord;
 
 /**
  * Sortable behavior. Enables model to be sorted manually by admin
- * @package yii\easyii\behaviors
+ * @package yii\cms\behaviors
  */
 class SortableModel extends \yii\base\Behavior
 {

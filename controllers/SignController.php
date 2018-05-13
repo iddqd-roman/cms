@@ -1,8 +1,8 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
-use yii\easyii\models;
+use yii\cms\models;
 
 class SignController extends \yii\web\Controller
 {

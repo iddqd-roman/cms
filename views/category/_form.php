@@ -1,10 +1,10 @@
 <?php
-use yii\easyii\helpers\Image;
-use yii\easyii\widgets\TagsInput;
+use yii\cms\helpers\Image;
+use yii\cms\widgets\TagsInput;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\SeoForm;
+use yii\cms\widgets\SeoForm;
 
 $class = $this->context->categoryClass;
 $settings = $this->context->module->settings;
@@ -17,9 +17,9 @@ $settings = $this->context->module->settings;
 
 <?php if(!empty($parent)) : ?>
     <div class="form-group field-category-title required">
-        <label for="category-parent" class="control-label"><?= Yii::t('easyii', 'Parent category') ?></label>
+        <label for="category-parent" class="control-label"><?= Yii::t('cms', 'Parent category') ?></label>
         <select class="form-control" id="category-parent" name="parent">
-            <option value="" class="smooth"><?= Yii::t('easyii', 'No') ?></option>
+            <option value="" class="smooth"><?= Yii::t('cms', 'No') ?></option>
             <?php foreach($class::find()->sort()->asArray()->all() as $node) : ?>
                 <option
                     value="<?= $node['id'] ?>"
@@ -32,13 +32,13 @@ $settings = $this->context->module->settings;
 <?php endif; ?>
 
 <?php if(!empty($settings['categoryDescription'])) : ?>
-    <?= $form->field($model, 'description')->widget(\yii\easyii\widgets\Redactor::className()) ?>
+    <?= $form->field($model, 'description')->widget(\yii\cms\widgets\Redactor::className()) ?>
 <?php endif; ?>
 
 <?php if(!empty($settings['categoryThumb'])) : ?>
     <?php if($model->image_file) : ?>
         <a href="<?= $model->image ?>" class="fancybox"><img src="<?= Image::thumb($model->image_file, 240, 180) ?>"></a>
-        <a href="<?= Url::to(['/admin/'.$this->context->moduleName.'/a/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('easyii', 'Clear image')?>"><?= Yii::t('easyii', 'Clear image')?></a>
+        <a href="<?= Url::to(['/admin/'.$this->context->moduleName.'/a/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('cms', 'Clear image')?>"><?= Yii::t('cms', 'Clear image')?></a>
     <?php endif; ?>
     <?= $form->field($model, 'image_file')->fileInput() ?>
 <?php endif; ?>
@@ -55,5 +55,5 @@ $settings = $this->context->module->settings;
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
 
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

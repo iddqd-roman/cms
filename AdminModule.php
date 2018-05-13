@@ -1,14 +1,14 @@
 <?php
-namespace yii\easyii;
+namespace yii\cms;
 
 use Yii;
 use yii\web\View;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
 
-use yii\easyii\models\Module;
-use yii\easyii\models\Setting;
-use yii\easyii\assets\LiveAsset;
+use yii\cms\models\Module;
+use yii\cms\models\Setting;
+use yii\cms\assets\LiveAsset;
 
 class AdminModule extends \yii\base\Module implements BootstrapInterface
 {
@@ -16,7 +16,7 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
 
     public $settings;
     public $activeModules;
-    public $controllerLayout = '@easyii/views/layouts/main';
+    public $controllerLayout = '@cms/views/layouts/main';
 
     private $_installed;
 
@@ -41,14 +41,14 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
 
         if (Yii::$app instanceof yii\web\Application) {
             define('IS_ROOT', !Yii::$app->user->isGuest && Yii::$app->user->identity->isRoot());
-            define('LIVE_EDIT_ENABLED', !Yii::$app->user->isGuest && Yii::$app->session->get('easyii_live_edit'));
+            define('LIVE_EDIT_ENABLED', !Yii::$app->user->isGuest && Yii::$app->session->get('cms_live_edit'));
         }
     }
 
 
     public function bootstrap($app)
     {
-        Yii::setAlias('easyii', '@vendor/noumo/easyii');
+        Yii::setAlias('cms', '@vendor/iddqd-roman/cms');
 
         if (!$app->user->isGuest && strpos($app->request->pathInfo, 'admin') === false) {
             $app->on(Application::EVENT_BEFORE_REQUEST, function () use ($app) {
@@ -60,14 +60,14 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
     public function renderToolbar()
     {
         $view = Yii::$app->getView();
-        echo $view->render('@easyii/views/layouts/frontend-toolbar.php');
+        echo $view->render('@cms/views/layouts/frontend-toolbar.php');
     }
 
     public function getInstalled()
     {
         if ($this->_installed === null) {
             try {
-                $this->_installed = Yii::$app->db->createCommand("SHOW TABLES LIKE 'easyii_%'")->query()->count() > 0 ? true : false;
+                $this->_installed = Yii::$app->db->createCommand("SHOW TABLES LIKE 'cms_%'")->query()->count() > 0 ? true : false;
             } catch (\Exception $e) {
                 $this->_installed = false;
             }

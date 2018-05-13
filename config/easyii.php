@@ -3,7 +3,7 @@
 return [
     'modules' => [
         'admin' => [
-            'class' => 'yii\easyii\AdminModule',
+            'class' => 'yii\cms\AdminModule',
         ],
     ],
     'components' => [
@@ -16,18 +16,18 @@ return [
             ],
          ],
         'user' => [
-            'identityClass' => 'yii\easyii\models\Admin',
+            'identityClass' => 'yii\cms\models\Admin',
             'enableAutoLogin' => true,
             'authTimeout' => 86400,
         ],
         'i18n' => [
             'translations' => [
-                'easyii' => [
+                'cms' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'sourceLanguage' => 'en-US',
-                    'basePath' => '@easyii/messages',
+                    'basePath' => '@cms/messages',
                     'fileMap' => [
-                        'easyii' => 'admin.php',
+                        'cms' => 'admin.php',
                     ]
                 ]
             ],

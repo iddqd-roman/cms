@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\news\models;
+namespace yii\cms\modules\news\models;
 
 use Yii;
-use yii\easyii\behaviors\ImageFile;
-use yii\easyii\behaviors\SeoBehavior;
-use yii\easyii\behaviors\SlugBehavior;
-use yii\easyii\behaviors\Taggable;
-use yii\easyii\models\Photo;
-use yii\easyii\modules\news\NewsModule;
+use yii\cms\behaviors\ImageFile;
+use yii\cms\behaviors\SeoBehavior;
+use yii\cms\behaviors\SlugBehavior;
+use yii\cms\behaviors\Taggable;
+use yii\cms\models\Photo;
+use yii\cms\modules\news\NewsModule;
 use yii\helpers\StringHelper;
 
 /**
@@ -25,14 +25,14 @@ use yii\helpers\StringHelper;
  * @property string $image
  */
 
-class News extends \yii\easyii\components\ActiveRecord
+class News extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
     public static function tableName()
     {
-        return 'easyii_news';
+        return 'cms_news';
     }
 
     public function rules()
@@ -44,7 +44,7 @@ class News extends \yii\easyii\components\ActiveRecord
             ['image_file', 'image'],
             [['views', 'time', 'status'], 'integer'],
             ['time', 'default', 'value' => time()],
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['status', 'default', 'value' => self::STATUS_ON],
             ['tagNames', 'safe']
@@ -54,14 +54,14 @@ class News extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'title' => Yii::t('easyii', 'Title'),
-            'text' => Yii::t('easyii', 'Text'),
-            'short' => Yii::t('easyii/news', 'Short'),
-            'source' => Yii::t('easyii/news', 'Source'),
-            'image_file' => Yii::t('easyii', 'Image'),
-            'time' => Yii::t('easyii', 'Date'),
-            'slug' => Yii::t('easyii', 'Slug'),
-            'tagNames' => Yii::t('easyii', 'Tags'),
+            'title' => Yii::t('cms', 'Title'),
+            'text' => Yii::t('cms', 'Text'),
+            'short' => Yii::t('cms/news', 'Short'),
+            'source' => Yii::t('cms/news', 'Source'),
+            'image_file' => Yii::t('cms', 'Image'),
+            'time' => Yii::t('cms', 'Date'),
+            'slug' => Yii::t('cms', 'Slug'),
+            'tagNames' => Yii::t('cms', 'Tags'),
         ];
     }
 

@@ -1,5 +1,5 @@
 <?php
-use yii\easyii\widgets\Photos;
+use yii\cms\widgets\Photos;
 
 $this->title = $model->title;
 ?>

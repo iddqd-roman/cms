@@ -1,10 +1,10 @@
 <?php
-namespace yii\easyii\modules\faq\api;
+namespace yii\cms\modules\faq\api;
 
-use yii\easyii\components\API;
+use yii\cms\components\API;
 use yii\helpers\Url;
 
-class FaqObject extends \yii\easyii\components\ApiObject
+class FaqObject extends \yii\cms\components\ApiObject
 {
     public function getQuestion(){
         return LIVE_EDIT_ENABLED ? API::liveEdit($this->model->question, $this->editLink) : $this->model->question;

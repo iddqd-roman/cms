@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\modules\subscribe\models;
+namespace yii\cms\modules\subscribe\models;
 
 use Yii;
 
-class Subscriber extends \yii\easyii\components\ActiveRecord
+class Subscriber extends \yii\cms\components\ActiveRecord
 {
     const FLASH_KEY = 'eaysiicms_subscribe_send_result';
 
     public static function tableName()
     {
-        return 'easyii_subscribe_subscribers';
+        return 'cms_subscribe_subscribers';
     }
 
     public function rules()

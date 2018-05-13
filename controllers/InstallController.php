@@ -1,15 +1,15 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
-use yii\easyii\helpers\Data;
+use yii\cms\helpers\Data;
 use yii\web\ServerErrorHttpException;
 
-use yii\easyii\helpers\WebConsole;
-use yii\easyii\models\InstallForm;
-use yii\easyii\models\LoginForm;
-use yii\easyii\models\Module;
-use yii\easyii\models\Setting;
+use yii\cms\helpers\WebConsole;
+use yii\cms\models\InstallForm;
+use yii\cms\models\LoginForm;
+use yii\cms\models\Module;
+use yii\cms\models\Setting;
 
 class InstallController extends \yii\web\Controller
 {
@@ -29,10 +29,10 @@ class InstallController extends \yii\web\Controller
     {
         if(!$this->checkDbConnection()){
             $configFile = str_replace(Yii::getAlias('@webroot'), '', Yii::getAlias('@app')) . '/config/db.php';
-            return $this->showError(Yii::t('easyii/install', 'Cannot connect to database. Please configure `{0}`.', $configFile));
+            return $this->showError(Yii::t('cms/install', 'Cannot connect to database. Please configure `{0}`.', $configFile));
         }
         if($this->module->installed){
-            return $this->showError(Yii::t('easyii/install', 'EasyiiCMS is already installed. If you want to reinstall easyiiCMS, please drop all tables with prefix `easyii_` from your database manually.'));
+            return $this->showError(Yii::t('cms/install', 'cmsCMS is already installed. If you want to reinstall cmsCMS, please drop all tables with prefix `cms_` from your database manually.'));
         }
 
         $installForm = new InstallForm();
@@ -78,12 +78,12 @@ class InstallController extends \yii\web\Controller
 
     private function registerI18n()
     {
-        Yii::$app->i18n->translations['easyii/install'] = [
+        Yii::$app->i18n->translations['cms/install'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@easyii/messages',
+            'basePath' => '@cms/messages',
             'fileMap' => [
-                'easyii/install' => 'install.php',
+                'cms/install' => 'install.php',
             ]
         ];
     }
@@ -123,7 +123,7 @@ class InstallController extends \yii\web\Controller
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'recaptcha_key',
             'value' => $installForm->recaptcha_key,
-            'title' => Yii::t('easyii/install', 'ReCaptcha key'),
+            'title' => Yii::t('cms/install', 'ReCaptcha key'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
@@ -144,63 +144,63 @@ class InstallController extends \yii\web\Controller
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'root_password',
             'value' => $root_password,
-            'title' => Yii::t('easyii/install', 'Root password'),
+            'title' => Yii::t('cms/install', 'Root password'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'auth_time',
             'value' => 86400,
-            'title' => Yii::t('easyii/install', 'Auth time'),
+            'title' => Yii::t('cms/install', 'Auth time'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'robot_email',
             'value' => $installForm->robot_email,
-            'title' => Yii::t('easyii/install', 'Robot E-mail'),
+            'title' => Yii::t('cms/install', 'Robot E-mail'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'admin_email',
             'value' => $installForm->admin_email,
-            'title' => Yii::t('easyii/install', 'Admin E-mail'),
+            'title' => Yii::t('cms/install', 'Admin E-mail'),
             'visibility' => Setting::VISIBLE_ALL
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'telegram_chat_id',
             'value' => $installForm->telegram_chat_id,
-            'title' => Yii::t('easyii/install', 'Telegram chat ID'),
+            'title' => Yii::t('cms/install', 'Telegram chat ID'),
             'visibility' => Setting::VISIBLE_ALL
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'telegram_bot_token',
             'value' => $installForm->telegram_bot_token,
-            'title' => Yii::t('easyii/install', 'Telegram bot token'),
+            'title' => Yii::t('cms/install', 'Telegram bot token'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'metrika',
             'value' => $installForm->metrika,
-            'title' => Yii::t('easyii/install', 'Yandex.Metrika counter'),
+            'title' => Yii::t('cms/install', 'Yandex.Metrika counter'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'recaptcha_secret',
             'value' => $installForm->recaptcha_secret,
-            'title' => Yii::t('easyii/install', 'ReCaptcha secret'),
+            'title' => Yii::t('cms/install', 'ReCaptcha secret'),
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
 
         $db->createCommand()->insert(Setting::tableName(), [
             'name' => 'toolbar_position',
             'value' => 'top',
-            'title' => Yii::t('easyii/install', 'Frontend toolbar position').' ("top" or "bottom" or "hide")',
+            'title' => Yii::t('cms/install', 'Frontend toolbar position').' ("top" or "bottom" or "hide")',
             'visibility' => Setting::VISIBLE_ROOT
         ])->execute();
     }
@@ -209,10 +209,10 @@ class InstallController extends \yii\web\Controller
     {
         $language = Data::getLocale();
 
-        foreach(glob(Yii::getAlias('@easyii'). DIRECTORY_SEPARATOR .'modules/*') as $module)
+        foreach(glob(Yii::getAlias('@cms'). DIRECTORY_SEPARATOR .'modules/*') as $module)
         {
             $moduleName = basename($module);
-            $moduleClass = 'yii\easyii\modules\\' . $moduleName . '\\' . ucfirst($moduleName) . 'Module';
+            $moduleClass = 'yii\cms\modules\\' . $moduleName . '\\' . ucfirst($moduleName) . 'Module';
             $moduleConfig = $moduleClass::$installConfig;
 
             $module = new Module([

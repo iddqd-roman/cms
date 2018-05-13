@@ -8,7 +8,7 @@ $labelOptions = ['class' => 'control-label'];
 $inputOptions = ['class' => 'form-control'];
 ?>
 <p>
-    <a class="dashed-link collapsed" data-toggle="collapse" href="#seo-form" aria-expanded="false" aria-controls="seo-form"><?= Yii::t('easyii', 'Seo texts')?></a>
+    <a class="dashed-link collapsed" data-toggle="collapse" href="#seo-form" aria-expanded="false" aria-controls="seo-form"><?= Yii::t('cms', 'Seo texts')?></a>
 </p>
 
 <div class="collapse" id="seo-form">

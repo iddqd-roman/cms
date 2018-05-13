@@ -1,8 +1,8 @@
 <?php
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii', 'Settings');
+$this->title = Yii::t('cms', 'Settings');
 ?>
 
 <?= $this->render('_menu') ?>
@@ -13,10 +13,10 @@ $this->title = Yii::t('easyii', 'Settings');
         <tr>
             <?php if(IS_ROOT) : ?>
                 <th width="50">#</th>
-                <th><?= Yii::t('easyii', 'Name') ?></th>
+                <th><?= Yii::t('cms', 'Name') ?></th>
             <?php endif; ?>
-            <th><?= Yii::t('easyii', 'Title') ?></th>
-            <th><?= Yii::t('easyii', 'Value') ?></th>
+            <th><?= Yii::t('cms', 'Title') ?></th>
+            <th><?= Yii::t('cms', 'Value') ?></th>
             <?php if(IS_ROOT) : ?>
                 <th width="30"></th>
             <?php endif; ?>
@@ -29,10 +29,10 @@ $this->title = Yii::t('easyii', 'Settings');
                     <td><?= $setting->primaryKey ?></td>
                     <td><?= $setting->name ?></td>
                 <?php endif; ?>
-                <td><a href="<?= Url::to(['/admin/settings/edit', 'id' => $setting->primaryKey]) ?>" title="<?= Yii::t('easyii', 'Edit') ?>"><?= $setting->title ?></a></td>
+                <td><a href="<?= Url::to(['/admin/settings/edit', 'id' => $setting->primaryKey]) ?>" title="<?= Yii::t('cms', 'Edit') ?>"><?= $setting->title ?></a></td>
                 <td style="overflow: hidden"><?= $setting->value ?></td>
                 <?php if(IS_ROOT) : ?>
-                    <td><a href="<?= Url::to(['/admin/settings/delete', 'id' => $setting->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"></a></td>
+                    <td><a href="<?= Url::to(['/admin/settings/delete', 'id' => $setting->primaryKey]) ?>" class="glyphicon glyphicon-remove confirm-delete" title="<?= Yii::t('cms', 'Delete item') ?>"></a></td>
                 <?php endif; ?>
             </tr>
         <?php endforeach; ?>
@@ -42,5 +42,5 @@ $this->title = Yii::t('easyii', 'Settings');
         ]) ?>
     </table>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

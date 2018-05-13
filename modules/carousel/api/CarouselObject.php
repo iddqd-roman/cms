@@ -1,7 +1,7 @@
 <?php
-namespace yii\easyii\modules\carousel\api;
+namespace yii\cms\modules\carousel\api;
 
-class CarouselObject extends \yii\easyii\components\ApiObject
+class CarouselObject extends \yii\cms\components\ApiObject
 {
     public $link;
     public $title;

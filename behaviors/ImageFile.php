@@ -1,12 +1,12 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii\easyii\components\Module;
-use yii\easyii\helpers\Image;
-use yii\easyii\helpers\Upload;
-use yii\easyii\models\SeoText;
+use yii\cms\components\Module;
+use yii\cms\helpers\Image;
+use yii\cms\helpers\Upload;
+use yii\cms\models\SeoText;
 use yii\web\UploadedFile;
 
 class ImageFile extends \yii\base\Behavior

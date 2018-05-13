@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\easyii\models\Setting;
+use yii\cms\models\Setting;
 ?>
 <?php $form = ActiveForm::begin(['enableAjaxValidation' => true]); ?>
 <?php if(IS_ROOT) : ?>
@@ -11,5 +11,5 @@ use yii\easyii\models\Setting;
 <?= $form->field($model, 'title')->textarea(['disabled' => !IS_ROOT]) ?>
 <?= $form->field($model, 'value')->textarea() ?>
 
-<?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton(Yii::t('cms', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>

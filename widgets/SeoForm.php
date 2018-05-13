@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\widgets;
+namespace yii\cms\widgets;
 
 use Yii;
 use yii\base\Widget;

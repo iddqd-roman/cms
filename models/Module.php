@@ -1,22 +1,22 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
 
-use yii\easyii\helpers\Data;
-use yii\easyii\behaviors\CacheFlush;
-use yii\easyii\behaviors\SortableModel;
+use yii\cms\helpers\Data;
+use yii\cms\behaviors\CacheFlush;
+use yii\cms\behaviors\SortableModel;
 
-class Module extends \yii\easyii\components\ActiveRecord
+class Module extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF= 0;
     const STATUS_ON = 1;
 
-    const CACHE_KEY = 'easyii_modules';
+    const CACHE_KEY = 'cms_modules';
 
     public static function tableName()
     {
-        return 'easyii_modules';
+        return 'cms_modules';
     }
 
     public function rules()
@@ -36,11 +36,11 @@ class Module extends \yii\easyii\components\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('easyii', 'Name'),
-            'class' => Yii::t('easyii', 'Class'),
-            'title' => Yii::t('easyii', 'Title'),
-            'icon' => Yii::t('easyii', 'Icon'),
-            'order_num' => Yii::t('easyii', 'Order'),
+            'name' => Yii::t('cms', 'Name'),
+            'class' => Yii::t('cms', 'Class'),
+            'title' => Yii::t('cms', 'Title'),
+            'icon' => Yii::t('cms', 'Icon'),
+            'order_num' => Yii::t('cms', 'Order'),
         ];
     }
 
@@ -100,7 +100,7 @@ class Module extends \yii\easyii\components\ActiveRecord
     public function checkExists($attribute)
     {
         if(!class_exists($this->$attribute)){
-            $this->addError($attribute, Yii::t('easyii', 'Class does not exist'));
+            $this->addError($attribute, Yii::t('cms', 'Class does not exist'));
         }
     }
 

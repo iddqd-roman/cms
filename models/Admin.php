@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
 
-class Admin extends \yii\easyii\components\ActiveRecord implements \yii\web\IdentityInterface
+class Admin extends \yii\cms\components\ActiveRecord implements \yii\web\IdentityInterface
 {
     static $rootUser = [
         'id' => 0,
@@ -15,7 +15,7 @@ class Admin extends \yii\easyii\components\ActiveRecord implements \yii\web\Iden
 
     public static function tableName()
     {
-        return 'easyii_admins';
+        return 'cms_admins';
     }
 
     public function rules()
@@ -32,8 +32,8 @@ class Admin extends \yii\easyii\components\ActiveRecord implements \yii\web\Iden
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('easyii', 'Username'),
-            'password' => Yii::t('easyii', 'Password'),
+            'username' => Yii::t('cms', 'Username'),
+            'password' => Yii::t('cms', 'Password'),
         ];
     }
 

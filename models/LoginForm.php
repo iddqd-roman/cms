@@ -1,11 +1,11 @@
 <?php
 
-namespace yii\easyii\models;
+namespace yii\cms\models;
 
 use Yii;
-use yii\easyii\components\ActiveRecord;
+use yii\cms\components\ActiveRecord;
 
-use yii\easyii\validators\EscapeValidator;
+use yii\cms\validators\EscapeValidator;
 
 class LoginForm extends ActiveRecord
 {
@@ -15,7 +15,7 @@ class LoginForm extends ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_loginform';
+        return 'cms_loginform';
     }
 
     public function rules()
@@ -30,9 +30,9 @@ class LoginForm extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('easyii', 'Username'),
-            'password' => Yii::t('easyii', 'Password'),
-            'remember' => Yii::t('easyii', 'Remember me')
+            'username' => Yii::t('cms', 'Username'),
+            'password' => Yii::t('cms', 'Password'),
+            'remember' => Yii::t('cms', 'Remember me')
         ];
     }
 
@@ -42,7 +42,7 @@ class LoginForm extends ActiveRecord
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, Yii::t('easyii', 'Incorrect username or password.'));
+                $this->addError($attribute, Yii::t('cms', 'Incorrect username or password.'));
             }
         }
     }
@@ -52,7 +52,7 @@ class LoginForm extends ActiveRecord
         $cache = Yii::$app->cache;
 
         if(($tries = (int)$cache->get(self::CACHE_KEY)) > 5){
-            $this->addError('username', Yii::t('easyii', 'You tried to login too often. Please wait 5 minutes.'));
+            $this->addError('username', Yii::t('cms', 'You tried to login too often. Please wait 5 minutes.'));
             return false;
         }
 

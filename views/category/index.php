@@ -1,5 +1,5 @@
 <?php
-use yii\easyii\components\CategoryModel;
+use yii\cms\components\CategoryModel;
 use yii\helpers\Url;
 
 \yii\bootstrap\BootstrapPluginAsset::register($this);
@@ -29,20 +29,20 @@ $baseUrl = '/admin/'.$this->context->moduleName;
                     </td>
                     <td width="120" class="text-right">
                         <div class="dropdown actions">
-                            <i id="dropdownMenu<?= $cat->id ?>" data-toggle="dropdown" aria-expanded="true" title="<?= Yii::t('easyii', 'Actions') ?>" class="glyphicon glyphicon-menu-hamburger"></i>
+                            <i id="dropdownMenu<?= $cat->id ?>" data-toggle="dropdown" aria-expanded="true" title="<?= Yii::t('cms', 'Actions') ?>" class="glyphicon glyphicon-menu-hamburger"></i>
                             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu<?= $cat->id ?>">
-                                <li><a href="<?= Url::to([$baseUrl.'/a/edit', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-pencil font-12"></i> <?= Yii::t('easyii', 'Edit') ?></a></li>
-                                <li><a href="<?= Url::to([$baseUrl.'/a/create', 'parent' => $cat->id]) ?>"><i class="glyphicon glyphicon-plus font-12"></i> <?= Yii::t('easyii', 'Add subcategory') ?></a></li>
+                                <li><a href="<?= Url::to([$baseUrl.'/a/edit', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-pencil font-12"></i> <?= Yii::t('cms', 'Edit') ?></a></li>
+                                <li><a href="<?= Url::to([$baseUrl.'/a/create', 'parent' => $cat->id]) ?>"><i class="glyphicon glyphicon-plus font-12"></i> <?= Yii::t('cms', 'Add subcategory') ?></a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="<?= Url::to([$baseUrl.'/a/up', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-arrow-up font-12"></i> <?= Yii::t('easyii', 'Move up') ?></a></li>
-                                <li><a href="<?= Url::to([$baseUrl.'/a/down', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-arrow-down font-12"></i> <?= Yii::t('easyii', 'Move down') ?></a></li>
+                                <li><a href="<?= Url::to([$baseUrl.'/a/up', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-arrow-up font-12"></i> <?= Yii::t('cms', 'Move up') ?></a></li>
+                                <li><a href="<?= Url::to([$baseUrl.'/a/down', 'id' => $cat->id]) ?>"><i class="glyphicon glyphicon-arrow-down font-12"></i> <?= Yii::t('cms', 'Move down') ?></a></li>
                                 <li role="presentation" class="divider"></li>
                                 <?php if($cat->status == CategoryModel::STATUS_ON) :?>
-                                    <li><a href="<?= Url::to([$baseUrl.'/a/off', 'id' => $cat->id]) ?>" title="<?= Yii::t('easyii', 'Turn Off') ?>'"><i class="glyphicon glyphicon-eye-close font-12"></i> <?= Yii::t('easyii', 'Turn Off') ?></a></li>
+                                    <li><a href="<?= Url::to([$baseUrl.'/a/off', 'id' => $cat->id]) ?>" title="<?= Yii::t('cms', 'Turn Off') ?>'"><i class="glyphicon glyphicon-eye-close font-12"></i> <?= Yii::t('cms', 'Turn Off') ?></a></li>
                                 <?php else : ?>
-                                    <li><a href="<?= Url::to([$baseUrl.'/a/on', 'id' => $cat->id]) ?>" title="<?= Yii::t('easyii', 'Turn On') ?>"><i class="glyphicon glyphicon-eye-open font-12"></i> <?= Yii::t('easyii', 'Turn On') ?></a></li>
+                                    <li><a href="<?= Url::to([$baseUrl.'/a/on', 'id' => $cat->id]) ?>" title="<?= Yii::t('cms', 'Turn On') ?>"><i class="glyphicon glyphicon-eye-open font-12"></i> <?= Yii::t('cms', 'Turn On') ?></a></li>
                                 <?php endif; ?>
-                                <li><a href="<?= Url::to([$baseUrl.'/a/delete', 'id' => $cat->id]) ?>" class="confirm-delete" data-reload="1" title="<?= Yii::t('easyii', 'Delete item') ?>"><i class="glyphicon glyphicon-remove font-12"></i> <?= Yii::t('easyii', 'Delete') ?></a></li>
+                                <li><a href="<?= Url::to([$baseUrl.'/a/delete', 'id' => $cat->id]) ?>" class="confirm-delete" data-reload="1" title="<?= Yii::t('cms', 'Delete item') ?>"><i class="glyphicon glyphicon-remove font-12"></i> <?= Yii::t('cms', 'Delete') ?></a></li>
                             </ul>
                         </div>
                     </td>
@@ -51,5 +51,5 @@ $baseUrl = '/admin/'.$this->context->moduleName;
         </tbody>
     </table>
 <?php else : ?>
-    <p><?= Yii::t('easyii', 'No records found') ?></p>
+    <p><?= Yii::t('cms', 'No records found') ?></p>
 <?php endif; ?>

@@ -1,13 +1,13 @@
 <?php
-namespace yii\easyii\modules\catalog\models;
+namespace yii\cms\modules\catalog\models;
 
-use yii\easyii\components\CategoryWithFieldsModel;
+use yii\cms\components\CategoryWithFieldsModel;
 
 class Category extends CategoryWithFieldsModel
 {
     public static function tableName()
     {
-        return 'easyii_catalog_categories';
+        return 'cms_catalog_categories';
     }
 
     public function getItems()

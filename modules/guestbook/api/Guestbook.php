@@ -1,20 +1,20 @@
 <?php
-namespace yii\easyii\modules\guestbook\api;
+namespace yii\cms\modules\guestbook\api;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\modules\guestbook\GuestbookModule;
+use yii\cms\modules\guestbook\GuestbookModule;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use yii\widgets\LinkPager;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\easyii\modules\guestbook\models\Guestbook as GuestbookModel;
-use yii\easyii\widgets\ReCaptcha;
+use yii\cms\modules\guestbook\models\Guestbook as GuestbookModel;
+use yii\cms\widgets\ReCaptcha;
 
 /**
  * Guestbook module API
- * @package yii\easyii\modules\guestbook\api
+ * @package yii\cms\modules\guestbook\api
  *
  * @method static string form(array $options = []) Returns fully worked standalone html form.
  * @method static array items(array $options = []) Get list of guestbook posts as PostObject objects
@@ -24,7 +24,7 @@ use yii\easyii\widgets\ReCaptcha;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Guestbook extends \yii\easyii\components\API
+class Guestbook extends \yii\cms\components\API
 {
     const SENT_VAR = 'guestbook_sent';
 
@@ -97,7 +97,7 @@ class Guestbook extends \yii\easyii\components\API
 
         if(GuestbookModule::setting('enableCaptcha')) echo $form->field($model, 'reCaptcha')->widget(ReCaptcha::className());
 
-        echo Html::submitButton(Yii::t('easyii', 'Send'), ['class' => 'btn btn-primary']);
+        echo Html::submitButton(Yii::t('cms', 'Send'), ['class' => 'btn btn-primary']);
         ActiveForm::end();
 
         return ob_get_clean();
@@ -127,7 +127,7 @@ class Guestbook extends \yii\easyii\components\API
     private function findPost($id)
     {
         if(!($file = GuestbookModel::find()->where(['id' => ':id'], [':id' => $id])->status(GuestbookModel::STATUS_ON)->one())){
-            throw new NotFoundHttpException(Yii::t('easyii', 'Not found'));
+            throw new NotFoundHttpException(Yii::t('cms', 'Not found'));
         }
         return new PostObject($file);
     }

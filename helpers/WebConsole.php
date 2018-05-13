@@ -1,5 +1,5 @@
 <?php
-namespace yii\easyii\helpers;
+namespace yii\cms\helpers;
 
 use Yii;
 use yii\helpers\FileHelper;
@@ -47,7 +47,7 @@ class WebConsole
     {
         ob_start();
 
-        self::console()->runAction('migrate', ['migrationPath' => '@easyii/migrations/', 'migrationTable' => 'easyii_migration', 'interactive' => false]);
+        self::console()->runAction('migrate', ['migrationPath' => '@cms/migrations/', 'migrationTable' => 'cms_migration', 'interactive' => false]);
 
         $result = file_get_contents(self::$logFile) . "\n" . ob_get_clean();
 

@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\behaviors;
+namespace yii\cms\behaviors;
 
 use yii\behaviors\SluggableBehavior;
 use yii\db\BaseActiveRecord;
-use yii\easyii\components\ActiveRecord;
+use yii\cms\components\ActiveRecord;
 
 class SlugBehavior extends SluggableBehavior
 {
@@ -19,7 +19,7 @@ class SlugBehavior extends SluggableBehavior
         if($this->isEnteredManually()) {
             $slug = $this->owner->{$this->slugAttribute};
             if(!$this->validateSlug($slug)) {
-                $this->owner->addError($this->slugAttribute, \Yii::t('yii', '{attribute} "{value}" has already been taken.', ['attribute' => \Yii::t('easyii', 'Slug'), 'value' => $slug]));
+                $this->owner->addError($this->slugAttribute, \Yii::t('yii', '{attribute} "{value}" has already been taken.', ['attribute' => \Yii::t('cms', 'Slug'), 'value' => $slug]));
                 return null;
             }
             return $slug;

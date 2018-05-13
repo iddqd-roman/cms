@@ -1,9 +1,9 @@
 <?php
-namespace yii\easyii\assets;
+namespace yii\cms\assets;
 
 class EmptyAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/media';
+    public $sourcePath = '@cms/media';
     public $css = [
         'css/empty.css',
     ];

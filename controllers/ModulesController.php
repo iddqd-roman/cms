@@ -1,27 +1,27 @@
 <?php
-namespace yii\easyii\controllers;
+namespace yii\cms\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\easyii\actions\ChangeStatusAction;
-use yii\easyii\actions\DeleteAction;
-use yii\easyii\actions\SortByNumAction;
-use yii\easyii\models\CopyModuleForm;
+use yii\cms\actions\ChangeStatusAction;
+use yii\cms\actions\DeleteAction;
+use yii\cms\actions\SortByNumAction;
+use yii\cms\models\CopyModuleForm;
 use yii\helpers\FileHelper;
 use yii\widgets\ActiveForm;
-use yii\easyii\models\Module;
+use yii\cms\models\Module;
 
-class ModulesController extends \yii\easyii\components\Controller
+class ModulesController extends \yii\cms\components\Controller
 {
     public $rootActions = 'all';
-    public $modelClass = 'yii\easyii\models\Module';
+    public $modelClass = 'yii\cms\models\Module';
 
     public function actions()
     {
         return [
             'delete' => [
                 'class' => DeleteAction::className(),
-                'successMessage' => Yii::t('easyii', 'Module deleted')
+                'successMessage' => Yii::t('cms', 'Module deleted')
             ],
             'up' => SortByNumAction::className(),
             'down' => SortByNumAction::className(),
@@ -52,7 +52,7 @@ class ModulesController extends \yii\easyii\components\Controller
                 return ActiveForm::validate($model);
             } else {
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii', 'Module created'));
+                    $this->flash('success', Yii::t('cms', 'Module created'));
                     return $this->redirect(['/admin/modules']);
                 } else {
                     $this->flash('error', Yii::t('Create error. {0}', $model->formatErrors()));
@@ -76,9 +76,9 @@ class ModulesController extends \yii\easyii\components\Controller
                 return ActiveForm::validate($model);
             } else {
                 if ($model->save()) {
-                    $this->flash('success', Yii::t('easyii', 'Module updated'));
+                    $this->flash('success', Yii::t('cms', 'Module updated'));
                 } else {
-                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                    $this->flash('error', Yii::t('cms', 'Update error. {0}', $model->formatErrors()));
                 }
                 return $this->refresh();
             }
@@ -96,9 +96,9 @@ class ModulesController extends \yii\easyii\components\Controller
         if (Yii::$app->request->post('Settings')) {
             $model->setSettings(Yii::$app->request->post('Settings'));
             if ($model->save()) {
-                $this->flash('success', Yii::t('easyii', 'Module settings updated'));
+                $this->flash('success', Yii::t('cms', 'Module settings updated'));
             } else {
-                $this->flash('error', Yii::t('easyii', Yii::t('easyii', 'Update error. {0}', $model->formatErrors())));
+                $this->flash('error', Yii::t('cms', Yii::t('cms', 'Update error. {0}', $model->formatErrors())));
             }
             return $this->refresh();
         } else {
@@ -114,7 +114,7 @@ class ModulesController extends \yii\easyii\components\Controller
         $model = $this->findModel($id);
         $model->settings = '';
         $model->save();
-        $this->flash('success', Yii::t('easyii', 'Module default settings was restored'));
+        $this->flash('success', Yii::t('cms', 'Module default settings was restored'));
 
         return $this->back();
     }
@@ -125,7 +125,7 @@ class ModulesController extends \yii\easyii\components\Controller
         $formModel = new CopyModuleForm();
 
         if ($module === null) {
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('cms', 'Not found'));
             return $this->redirect('/admin/modules');
         }
         if ($formModel->load(Yii::$app->request->post())) {
@@ -173,7 +173,7 @@ class ModulesController extends \yii\easyii\components\Controller
                 //Renaming module class name
                 $moduleFileContent = file_get_contents($newModuleFile);
                 $moduleFileContent = str_replace($oldModuleClass, $newModuleClass, $moduleFileContent);
-                $moduleFileContent = str_replace('@easyii', '@app', $moduleFileContent);
+                $moduleFileContent = str_replace('@cms', '@app', $moduleFileContent);
                 $moduleFileContent = str_replace('/' . $module->name, '/' . $formModel->name, $moduleFileContent);
                 file_put_contents($newModuleFile, $moduleFileContent);
 
@@ -183,7 +183,7 @@ class ModulesController extends \yii\easyii\components\Controller
                         $fileContent = file_get_contents($file);
                         $fileContent = str_replace($oldNameSpace, $newNameSpace, $fileContent);
                         $fileContent = str_replace($oldModuleClass, $newModuleClass, $fileContent);
-                        $fileContent = str_replace("Yii::t('easyii/" . $module->name, "Yii::t('easyii/" . $formModel->name, $fileContent);
+                        $fileContent = str_replace("Yii::t('cms/" . $module->name, "Yii::t('cms/" . $formModel->name, $fileContent);
                         $fileContent = str_replace("'" . $module->name . "'", "'" . $formModel->name . "'", $fileContent);
                         $fileContent = str_replace('/' . $module->name . '/', '/' . $formModel->name . '/', $fileContent);
 
@@ -198,7 +198,7 @@ class ModulesController extends \yii\easyii\components\Controller
 
                     $oldTableName = $modelClass::tableName();
                     $newTableName = str_replace($module->name, $formModel->name, $oldTableName);
-                    $newTableName = str_replace('easyii', 'app', $newTableName);
+                    $newTableName = str_replace('cms', 'app', $newTableName);
 
                     try {
                         //Drop new table if exists

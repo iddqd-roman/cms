@@ -1,17 +1,17 @@
 <?php
-use yii\easyii\helpers\Data;
-use yii\easyii\helpers\MigrationHelper;
-use yii\easyii\models;
-use yii\easyii\models\Setting;
-use yii\easyii\modules\entity;
-use yii\easyii\modules\catalog;
-use yii\easyii\modules\shopcart;
-use yii\easyii\modules\file;
-use yii\easyii\modules\article;
-use yii\easyii\modules\carousel\models\Carousel;
-use yii\easyii\modules\gallery;
-use yii\easyii\modules\news\models\News;
-use yii\easyii\modules\entity\EntityModule;
+use yii\cms\helpers\Data;
+use yii\cms\helpers\MigrationHelper;
+use yii\cms\models;
+use yii\cms\models\Setting;
+use yii\cms\modules\entity;
+use yii\cms\modules\catalog;
+use yii\cms\modules\shopcart;
+use yii\cms\modules\file;
+use yii\cms\modules\article;
+use yii\cms\modules\carousel\models\Carousel;
+use yii\cms\modules\gallery;
+use yii\cms\modules\news\models\News;
+use yii\cms\modules\entity\EntityModule;
 
 class m000009_100000_update extends \yii\db\Migration
 {
@@ -60,9 +60,9 @@ class m000009_100000_update extends \yii\db\Migration
             'status' => models\Module::STATUS_ON
         ]);
 
-        $this->addColumn(yii\easyii\modules\catalog\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
-        $this->addColumn(yii\easyii\modules\article\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
-        $this->addColumn(yii\easyii\modules\gallery\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
+        $this->addColumn(yii\cms\modules\catalog\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
+        $this->addColumn(yii\cms\modules\article\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
+        $this->addColumn(yii\cms\modules\gallery\models\Category::tableName(), 'description', $this->string(1024) . ' AFTER title');
 
         $this->renameColumn(catalog\models\Category::tableName(), 'image', 'image_file');
         $this->renameColumn(catalog\models\Item::tableName(), 'image', 'image_file');
@@ -87,42 +87,42 @@ class m000009_100000_update extends \yii\db\Migration
         $this->insert(Setting::tableName(), [
             'name' => 'image_max_width',
             'value' => 1900,
-            'title' => Yii::t('easyii/install', 'Max image width on upload which will not resize'),
+            'title' => Yii::t('cms/install', 'Max image width on upload which will not resize'),
             'visibility' => Setting::VISIBLE_ALL
         ]);
 
         $this->insert(Setting::tableName(), [
             'name' => 'redactor_plugins',
             'value' => 'imagemanager, filemanager, table, fullscreen',
-            'title' => Yii::t('easyii/install', 'List of Redactor Widget plugins separated with comma'),
+            'title' => Yii::t('cms/install', 'List of Redactor Widget plugins separated with comma'),
             'visibility' => Setting::VISIBLE_ROOT
         ]);
 
         $this->insert(Setting::tableName(), [
             'name' => 'ga_service_email',
             'value' => '',
-            'title' => Yii::t('easyii/install', 'Google analytics service account email'),
+            'title' => Yii::t('cms/install', 'Google analytics service account email'),
             'visibility' => Setting::VISIBLE_ROOT
         ]);
 
         $this->insert(Setting::tableName(), [
             'name' => 'ga_profile_id',
             'value' => '',
-            'title' => Yii::t('easyii/install', 'Google analytics profile id'),
+            'title' => Yii::t('cms/install', 'Google analytics profile id'),
             'visibility' => Setting::VISIBLE_ROOT
         ]);
 
         $this->insert(Setting::tableName(), [
             'name' => 'ga_p12_file',
             'value' => '',
-            'title' => Yii::t('easyii/install', 'Path to Google analytics service account p12 key file'),
+            'title' => Yii::t('cms/install', 'Path to Google analytics service account p12 key file'),
             'visibility' => Setting::VISIBLE_ROOT
         ]);
 
         $this->insert(Setting::tableName(), [
             'name' => 'gm_api_key',
             'value' => '',
-            'title' => Yii::t('easyii/install', 'Google Maps API key'),
+            'title' => Yii::t('cms/install', 'Google Maps API key'),
             'visibility' => Setting::VISIBLE_ROOT
         ]);
 
@@ -162,7 +162,7 @@ class m000009_100000_update extends \yii\db\Migration
         ]);
 
         //UPDATE VERSION
-        $this->update(models\Setting::tableName(), ['value' => self::VERSION], ['name' => 'easyii_version']);
+        $this->update(models\Setting::tableName(), ['value' => self::VERSION], ['name' => 'cms_version']);
     }
 
     public function down()
@@ -183,7 +183,7 @@ class m000009_100000_update extends \yii\db\Migration
         $this->delete(Setting::tableName(), ['name' => 'redactor_plugins']);
 
         //UPDATE VERSION
-        $this->update(models\Setting::tableName(), ['value' => 0.9], ['name' => 'easyii_version']);
+        $this->update(models\Setting::tableName(), ['value' => 0.9], ['name' => 'cms_version']);
 
         echo 'New image and file paths cannot be reverted.';
     }
@@ -202,12 +202,12 @@ class m000009_100000_update extends \yii\db\Migration
 
     private function registerI18n()
     {
-        Yii::$app->i18n->translations['easyii/install'] = [
+        Yii::$app->i18n->translations['cms/install'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@vendor/noumo/easyii/messages',
+            'basePath' => '@vendor/iddqd-roman/cms/messages',
             'fileMap' => [
-                'easyii/install' => 'install.php',
+                'cms/install' => 'install.php',
             ]
         ];
     }
