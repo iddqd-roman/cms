@@ -10,12 +10,13 @@ use yii\cms\behaviors\Taggable;
 use yii\cms\models\Photo;
 use yii\cms\modules\article\ArticleModule;
 use yii\helpers\StringHelper;
+use yii\web\UploadedFile;
 
 class Item extends \yii\cms\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
-
+    
     public static function tableName()
     {
         return 'cms_article_items';
@@ -33,7 +34,8 @@ class Item extends \yii\cms\components\ActiveRecord
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('cms', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
             ['status', 'default', 'value' => self::STATUS_ON],
-            ['tagNames', 'safe']
+            ['tagNames', 'safe'],
+            ['file', 'file'],
         ];
     }
 
@@ -49,6 +51,7 @@ class Item extends \yii\cms\components\ActiveRecord
             'time' => Yii::t('cms', 'Date'),
             'slug' => Yii::t('cms', 'Slug'),
             'tagNames' => Yii::t('cms', 'Tags'),
+            'file' => Yii::t('cms', 'File'),
         ];
     }
 
@@ -83,7 +86,7 @@ class Item extends \yii\cms\components\ActiveRecord
     {
         if (parent::beforeSave($insert)) {
             $this->short = StringHelper::truncate(ArticleModule::setting('enableShort') ? $this->short : strip_tags($this->text), ArticleModule::setting('shortMaxLength'));
-
+            $this->upload();
             return true;
         } else {
             return false;
@@ -97,5 +100,16 @@ class Item extends \yii\cms\components\ActiveRecord
         foreach($this->getPhotos()->all() as $photo){
             $photo->delete();
         }
+    }
+    
+    public function upload(){
+        $this->file = UploadedFile::getInstance($this, 'file');
+        if(!$this->file){
+            return false;
+        }
+        $file_name = 'article/' . $this->slug . '-' . $this->file->baseName . '.' . $this->file->extension;
+        $this->file->saveAs('uploads/' . $file_name);
+        $this->file = $file_name;
+        return true;
     }
 }

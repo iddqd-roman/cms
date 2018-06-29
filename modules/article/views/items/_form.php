@@ -35,6 +35,8 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'text')->widget(\yii\cms\widgets\Redactor::className()) ?>
 
+<?= $form->field($model, 'file')->fileInput(); ?>
+
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
 <?php if($this->context->module->settings['enableTags']) : ?>
